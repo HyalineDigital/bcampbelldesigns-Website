@@ -317,7 +317,7 @@ export default function IcyVeinsPage() {
                     transition={{ duration: 0.3 }}
                   >
                     <div className="mb-6">
-                      <h3 className="text-xl md:text-2xl font-black text-white mb-6">Visualizing Complexity (The "Infographic" System)</h3>
+                      <h3 className="text-xl md:text-2xl font-black text-white mb-6">Visualizing Complexity (The &quot;Infographic&quot; System)</h3>
                       <div className="flex flex-col md:flex-row gap-6 md:gap-8">
                         <div className="flex-shrink-0 md:w-1/3">
                           <div 

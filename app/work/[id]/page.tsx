@@ -160,7 +160,7 @@ export default function ProjectPage({
                     <div className="flex flex-col md:hidden gap-2 mb-4">
                       {[
                         "Transitioning from Web to Native Desktop",
-                        "Data-Driven Research & \"The Scoreboard 2.0\"",
+                        "Data-Driven Research & &quot;The Scoreboard 2.0&quot;",
                         "Integrity Through Design (Cheater Detection)",
                       ].map((title, index) => (
                         <button
@@ -184,7 +184,7 @@ export default function ProjectPage({
                     <div className="hidden md:flex flex-wrap gap-0 mb-0 border-b border-gray-700/50">
                       {[
                         "Transitioning from Web to Native Desktop",
-                        "Data-Driven Research & \"The Scoreboard 2.0\"",
+                        "Data-Driven Research & &quot;The Scoreboard 2.0&quot;",
                         "Integrity Through Design (Cheater Detection)",
                       ].map((title, index) => (
                         <button
@@ -254,7 +254,7 @@ export default function ProjectPage({
                             <div>
                               <h4 className="text-lg md:text-xl font-bold text-white mb-3">The Discovery</h4>
                               <p className="text-gray-300 text-lg font-light leading-relaxed">
-                                Competitive players needed more than just a "kill-death ratio." They required in-match telemetry, specifically detailed damage-taken breakdowns per round to analyze tactical errors.
+                                Competitive players needed more than just a &quot;kill-death ratio.&quot; They required in-match telemetry, specifically detailed damage-taken breakdowns per round to analyze tactical errors.
                               </p>
                             </div>
                             <div>
@@ -288,7 +288,7 @@ export default function ProjectPage({
                             <div>
                               <h4 className="text-lg md:text-xl font-bold text-white mb-3">The Result</h4>
                               <p className="text-gray-300 text-lg font-light leading-relaxed">
-                                This system turned Tabstats into an essential "anti-cheat" companion, driving high daily active usage and establishing deep user trust within the competitive community.
+                                This system turned Tabstats into an essential &quot;anti-cheat&quot; companion, driving high daily active usage and establishing deep user trust within the competitive community.
                               </p>
                             </div>
                           </div>

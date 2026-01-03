@@ -396,7 +396,7 @@ export default function CaesarsPalaceOnlineCasinoPage() {
           {/* Final Results */}
           <ScrollAnimation direction="up" delay={0.7}>
             <div className="mb-10">
-              <h2 className="text-2xl md:text-3xl font-black text-white mb-6">The Final Results (The "Receipts")</h2>
+              <h2 className="text-2xl md:text-3xl font-black text-white mb-6">The Final Results (The &quot;Receipts&quot;)</h2>
               <div className="space-y-6">
                 <div className="bg-[#FFFFFF]/5 border border-gray-300/10 rounded-xl p-6">
                   <h3 className="text-xl font-bold text-white mb-3">Market Position</h3>
@@ -413,7 +413,7 @@ export default function CaesarsPalaceOnlineCasinoPage() {
                 <div className="bg-[#FFFFFF]/5 border border-gray-300/10 rounded-xl p-6">
                   <h3 className="text-xl font-bold text-white mb-3">KPI Success</h3>
                   <p className="text-gray-300 text-lg font-light leading-relaxed">
-                    Achieved the <span className="text-white font-semibold">"biggest months ever"</span> for all KPIs, including DAU and ARPU, beating the previous months record every month of 2025.
+                    Achieved the <span className="text-white font-semibold">&quot;biggest months ever&quot;</span> for all KPIs, including DAU and ARPU, beating the previous months record every month of 2025.
                   </p>
                 </div>
               </div>
