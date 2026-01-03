@@ -274,7 +274,7 @@ export default function Home() {
             <div className="grid grid-cols-2 md:flex md:flex-nowrap justify-center items-center gap-3 md:gap-12 lg:gap-16">
             <div className="flex items-center justify-center h-6 md:h-8 flex-shrink-0 opacity-80 hover:opacity-100 transition-opacity">
               <Image
-                src="/images/tech-logos/figma.png"
+                src="/images/tech-logos/Figma.png"
                 alt="Figma"
                 width={120}
                 height={40}
@@ -285,7 +285,7 @@ export default function Home() {
             </div>
             <div className="flex items-center justify-center h-6 md:h-8 flex-shrink-0 opacity-80 hover:opacity-100 transition-opacity">
               <Image
-                src="/images/tech-logos/cursor.png"
+                src="/images/tech-logos/Cursor.png"
                 alt="Cursor"
                 width={120}
                 height={40}
@@ -296,7 +296,7 @@ export default function Home() {
             </div>
             <div className="flex items-center justify-center h-6 md:h-8 flex-shrink-0 opacity-80 hover:opacity-100 transition-opacity">
               <Image
-                src="/images/tech-logos/vercel.png"
+                src="/images/tech-logos/Vercel.png"
                 alt="Vercel"
                 width={120}
                 height={40}
@@ -307,7 +307,7 @@ export default function Home() {
             </div>
             <div className="flex items-center justify-center h-6 md:h-8 flex-shrink-0 opacity-80 hover:opacity-100 transition-opacity">
               <Image
-                src="/images/tech-logos/nextjs.png"
+                src="/images/tech-logos/Nextjs.png"
                 alt="Next.js"
                 width={120}
                 height={40}
@@ -318,7 +318,7 @@ export default function Home() {
             </div>
             <div className="flex items-center justify-center h-6 md:h-8 flex-shrink-0 opacity-80 hover:opacity-100 transition-opacity col-span-2 md:col-span-1 justify-self-center md:justify-self-auto">
               <Image
-                src="/images/tech-logos/supabase.png"
+                src="/images/tech-logos/Supabase.png"
                 alt="Supabase"
                 width={120}
                 height={40}
