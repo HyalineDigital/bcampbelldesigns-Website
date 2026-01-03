@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project | Brandon Campbell</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Dark mode (default) */
+            --bg-primary: #0d0d0d;
+            --bg-secondary: #151515;
+            --bg-card: rgba(20, 20, 20, 0.7);
+            --bg-card-hover: rgba(25, 25, 25, 0.75);
+            --text-primary: #ededed;
+            --text-secondary: #9ca3af;
+            --text-tertiary: #6b7280;
+            --border-color: rgba(255, 255, 255, 0.5);
+            --border-hover: rgba(168, 85, 247, 0.5);
+            --nav-bg: rgba(13, 13, 13, 0.85);
+            --nav-border: rgba(255, 255, 255, 0.5);
+            --shadow: rgba(0, 0, 0, 0.4);
+        }
+
+        [data-theme="light"] {
+            /* Light mode */
+            --bg-primary: #fafafa;
+            --bg-secondary: #f5f5f5;
+            --bg-card: rgba(255, 255, 255, 0.9);
+            --bg-card-hover: rgba(255, 255, 255, 0.95);
+            --text-primary: #1a1a1a;
+            --text-secondary: #4b5563;
+            --text-tertiary: #6b7280;
+            --border-color: rgba(0, 0, 0, 0.5);
+            --border-hover: rgba(168, 85, 247, 0.5);
+            --nav-bg: rgba(255, 255, 255, 0.9);
+            --nav-border: rgba(0, 0, 0, 0.5);
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Roboto', sans-serif;
+            background: var(--bg-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
+            color: var(--text-primary);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .bg-dark-primary {
+            background: var(--bg-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .text-accent-purple {
+            color: #a855f7;
+        }
+
+        .text-accent-blue {
+            color: #3b82f6;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #a855f7 0%, #3b82f6 50%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% 200%;
+            animation: gradient-shift 5s ease infinite;
+        }
+
+        @keyframes gradient-shift {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .nav-dock {
+            background: rgba(13, 13, 13, 0.85);
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        .nav-link {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%) scaleX(0);
+            width: 60%;
+            height: 2px;
+            background: linear-gradient(90deg, #a855f7, #3b82f6);
+            border-radius: 2px;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
+        }
+
+        .nav-link:hover {
+            color: #fff;
+            text-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+        }
+
+        .nav-link:hover::after {
+            transform: translateX(-50%) scaleX(1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .glass-card {
+            background: rgba(20, 20, 20, 0.6);
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .project-hero-image {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-hero-image:hover {
+            transform: scale(1.02);
+        }
+    
+        /* Theme Toggle Button */
+        .theme-toggle {
+            width: 48px;
+            height: 28px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            padding: 2px;
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--border-hover);
+        }
+
+        .theme-toggle-slider {
+            width: 22px;
+            height: 22px;
+            background: linear-gradient(135deg, #a855f7, #3b82f6);
+            border-radius: 50%;
+            position: absolute;
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 4px var(--shadow);
+        }
+
+        [data-theme="light"] .theme-toggle-slider {
+            transform: translateX(20px);
+        }
+
+        .theme-toggle-icon {
+            width: 14px;
+            height: 14px;
+            color: white;
+            transition: opacity 0.3s ease;
+        }
+
+        .theme-toggle-icon.sun {
+            opacity: 0;
+        }
+
+        [data-theme="light"] .theme-toggle-icon.sun {
+            opacity: 1;
+        }
+
+        [data-theme="light"] .theme-toggle-icon.moon {
+            opacity: 0;
+        }
+
+    </style>
+</head>
+<body class="bg-dark-primary">
+    <!-- Navigation Dock -->
+    <nav class="fixed top-0 left-0 right-0 z-50 nav-dock mt-4 mx-4 md:mx-8 lg:mx-auto lg:max-w-[1510px] rounded-full px-6 md:px-8 py-3 md:py-4">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center">
+                <a href="concept.html">
+                    <img src="public/images/bc-logo.png" alt="BC Logo" class="h-8 md:h-10 w-auto">
+                </a>
+            </div>
+            <div class="flex items-center gap-6 md:gap-8">
+                <a href="concept.html#work" class="nav-link text-sm font-semibold text-gray-300">Work</a>
+                <a href="about.html" class="nav-link text-sm font-semibold text-gray-300">About</a>
+                <a href="concept.html#contact" class="nav-link text-sm font-semibold text-gray-300">Contact</a>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <div class="theme-toggle-slider">
+                        <svg class="theme-toggle-icon moon w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                        <svg class="theme-toggle-icon sun w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                </button>
+                <a href="https://linkedin.com/in/bcampbelldesigns" target="_blank" rel="noopener noreferrer" class="nav-link text-gray-300 hover:text-blue-400 transition-colors" aria-label="LinkedIn">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Content -->
+    <div id="project-content" class="pt-32 pb-24 px-4 md:px-8 lg:px-12">
+        <div class="max-w-6xl mx-auto">
+            <!-- Loading State -->
+            <div id="loading" class="text-center py-20">
+                <p class="text-gray-400">Loading project...</p>
+            </div>
+
+            <!-- Project Details (hidden until loaded) -->
+            <div id="project-details" class="hidden">
+                <!-- Back Button -->
+                <a href="concept.html#work" class="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-8 transition-colors fade-in">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    Back to Work
+                </a>
+
+                <!-- Project Header -->
+                <div class="mb-12 fade-in">
+                    <div class="grid md:grid-cols-2 gap-8 items-start">
+                        <div>
+                            <span id="project-category" class="text-xs font-bold text-accent-purple uppercase tracking-widest"></span>
+                            <h1 id="project-title" class="text-4xl md:text-5xl lg:text-6xl font-black text-white mt-4 mb-6 leading-tight"></h1>
+                            <p id="project-description" class="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-3xl"></p>
+                            
+                            <!-- Project Tags -->
+                            <div id="project-tags" class="mt-6">
+                                <div class="flex flex-wrap gap-3"></div>
+                            </div>
+                        </div>
+                        <div id="header-image" class="hidden md:block">
+                            <!-- Old Overwolf version image will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Links -->
+                <div id="project-links" class="mb-12 fade-in">
+                    <h2 class="text-2xl font-bold text-white mb-4">Links</h2>
+                    <div class="flex flex-wrap gap-4"></div>
+                </div>
+
+                <!-- Rich Content Section (for detailed case studies) -->
+                <div id="rich-content" class="hidden"></div>
+            </div>
+
+            <!-- Image Lightbox Modal -->
+            <div id="image-lightbox" class="hidden fixed inset-0 z-50 bg-black/95 backdrop-blur-sm flex items-center justify-center p-4">
+                <div class="relative max-w-7xl max-h-[90vh] w-full h-full flex items-center justify-center">
+                    <!-- Close Button -->
+                    <button id="lightbox-close" class="absolute top-4 right-4 z-10 text-white hover:text-accent-purple transition-colors p-2">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                    
+                    <!-- Previous Button -->
+                    <button id="lightbox-prev" class="absolute left-4 z-10 text-white hover:text-accent-purple transition-colors p-3 bg-black/50 rounded-full backdrop-blur-sm">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                    </button>
+                    
+                    <!-- Next Button -->
+                    <button id="lightbox-next" class="absolute right-4 z-10 text-white hover:text-accent-purple transition-colors p-3 bg-black/50 rounded-full backdrop-blur-sm">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                    
+                    <!-- Image Container -->
+                    <div class="w-full h-full flex items-center justify-center">
+                        <img id="lightbox-image" src="" alt="" class="max-w-full max-h-[90vh] object-contain rounded-lg">
+                    </div>
+                    
+                    <!-- Image Counter -->
+                    <div id="lightbox-counter" class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm bg-black/50 px-4 py-2 rounded-full backdrop-blur-sm">
+                        <span id="current-index">1</span> / <span id="total-images">1</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Error State -->
+            <div id="error" class="hidden text-center py-20">
+                <h2 class="text-3xl font-bold text-white mb-4">Project Not Found</h2>
+                <p class="text-gray-400 mb-8">The project you're looking for doesn't exist.</p>
+                <a href="concept.html#work" class="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-full font-bold text-sm uppercase tracking-wider hover:from-purple-500 hover:to-blue-500 transition-all shadow-lg shadow-purple-500/30">
+                    Back to Work
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4 md:px-8 border-t border-gray-800/50">
+        <div class="max-w-[1510px] mx-auto text-center">
+            <p class="text-gray-500 text-sm font-light">
+                © 2024 Brandon Campbell. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Project data with correct file extensions
+        const projects = {
+            "caesars-palace-online-casino": {
+                title: "Caesars Palace Online Casino",
+                category: "Product & UX Design",
+                description: "Caesars Palace Online Casino is a world-class, endlessly rewarding gaming experience delivered from Las Vegas to wherever you play.",
+                image: "public/images/projects/caesars-palace-online-casino/cpo-headerpng.png",
+                tags: ["Casino", "Mobile"],
+                links: { live: "https://www.caesarspalace.com/" },
+                timeline: "June 2024 to Sep 2025",
+                role: "Worked closely with compliance and cross-functional teams to design and launch multiple high-impact features across sportsbook and casino. Led the creation of theReward Center, Credit Shop, and loyalty milestone systems, as well as engagement features likeCaesars Rewards tier gated leaderboards as well as sponsored leaderboards. All projects were user experience-driven features with thousands of players relying on seamless registration, rewards, and gameplay integrations daily.",
+                images: [
+                    "public/images/projects/caesars-palace-online-casino/cpo-headerpng.png",
+                    "public/images/projects/caesars-palace-online-casino/image_3png.png",
+                    "public/images/projects/caesars-palace-online-casino/image75png.png",
+                    "public/images/projects/caesars-palace-online-casino/image76png.png",
+                    "public/images/projects/caesars-palace-online-casino/image77png.png",
+                    "public/images/projects/caesars-palace-online-casino/image78png.png",
+                    "public/images/projects/caesars-palace-online-casino/lockpng.png",
+                ],
+            },
+            "icyveins": {
+                title: "Icy Veins",
+                category: "Product & User Experience Design",
+                description: "Icy Veins is an online gaming website that offers guides, resources, and tools for various Blizzard Entertainment titles. It features class guides written by a team of over 100 writers for World of Warcraft, reviewed by experienced players and theorycrafters, as well as guides for Final Fantasy XIV, Diablo IV, Heroes of the Storm, and WoW Classic.",
+                image: "public/images/projects/icyveins/icy-veins-headerpng.png",
+                tags: ["Gaming", "Esports"],
+                links: { live: "https://www.icy-veins.com/" },
+                timeline: "Apr 2024 to Sep 2025",
+                role: "Product & User Experience Design for the entire brand from product conception to development support across a 20+ projects and a full site overhaul.",
+                images: [
+                    "public/images/projects/icyveins/icy-veins-headerpng.png",
+                    "public/images/projects/icyveins/iv-websitepng.png",
+                    "public/images/projects/icyveins/citadelpng.png",
+                    "public/images/projects/icyveins/stylespng.png",
+                    "public/images/projects/icyveins/generalpng.png",
+                    "public/images/projects/icyveins/guide-componentspng.png",
+                    "public/images/projects/icyveins/lockpng.png",
+                ],
+            },
+            "the-national-forest-foundation": {
+                title: "The National Forest Foundation Mobile App",
+                category: "Case Study",
+                description: "The National Forest Foundation works on behalf of the American public to inspire personal and meaningful connections to America’s National Forests. NFF focuses on driving donations and gathering communities together to help with the preservation of the Nation’s Forests.",
+                image: "public/images/projects/the-national-forest-foundation/ux-design-processpng.png",
+                tags: ["Non-Profit", "Web"],
+                links: { live: "https://www.nationalforests.org/" },
+                timeline: "December 2021 to April 2022",
+                role: "UX/UI designer designing an app for The National Forest Foundation from conception to delivery.",
+                research: {
+                    method: "User Interviews",
+                    oldVersion: "public/images/projects/the-national-forest-foundation/old-version.png",
+                },
+                images: [
+                    "public/images/projects/the-national-forest-foundation/ux-design-processpng.png",
+                    "public/images/projects/the-national-forest-foundation/geran-de-klerk-qzgn45hsen0-unsplashjpg.png",
+                    "public/images/projects/the-national-forest-foundation/ap21230228939305_wide-202bcd71c1916f589849f96e3aab7429898aca54-s1100-c50jpg.png",
+                    "public/images/projects/the-national-forest-foundation/christian-joudrey-mwrr1xj95hg-unsplashjpg.png",
+                    "public/images/projects/the-national-forest-foundation/marita-kavelashvili-ugnrxk1129g-unsplashjpg.png",
+                    "public/images/projects/the-national-forest-foundation/nora-personapng.png",
+                    "public/images/projects/the-national-forest-foundation/pine-watt-2hzmz15wgik-unsplashjpg.png",
+                    "public/images/projects/the-national-forest-foundation/user-journey-jazminejpg.png",
+                    "public/images/projects/the-national-forest-foundation/wireframespng.png",
+                    "public/images/projects/the-national-forest-foundation/wireframes-prototypespng.png",
+                    "public/images/projects/the-national-forest-foundation/annie-spratt-qyaka7w5umy-unsplashjpg.png",
+                    "public/images/projects/the-national-forest-foundation/screens-compare2png.png",
+                    "public/images/projects/the-national-forest-foundation/screens-comparepng.png",
+                    "public/images/projects/the-national-forest-foundation/hi-fi-prototypepng.png",
+                    "public/images/projects/the-national-forest-foundation/lukasz-szmigiel-2shvy8lf6l0-unsplashjpg.png",
+                    "public/images/projects/the-national-forest-foundation/mockup-finishedpng.png",
+                    "public/images/projects/the-national-forest-foundation/zhang-kaiyv-fmyibz2jdhu-unsplashjpg.png",
+                    "public/images/projects/the-national-forest-foundation/matthew-smith-rfflri94rs8-unsplashjpg.png",
+                ],
+            },
+            "tabstats-dashboard": {
+                title: "Stats Dashboard & In-Game Companion App",
+                category: "Dashboard & In-Game Companion",
+                description: "Tabstats is a website and statistics dashboard system founded in 2019. This particular product highlighted below was a downloadable dashboard & in-game companion app that featured a large amount of features to improve and enhance the gameplay experience for “Rainbow Six Siege” players including cheater detection, in-depth stat breakdowns, player profiles and more.",
+                image: "public/images/projects/tabstats-dashboard/tabstats-r6png.png",
+                tags: ["Gaming", "Analytics"],
+                timeline: "Sept 2022 - Feb 2023",
+                role: "Lead product designer focused on enhancing the “Rainbow Six Siege” gameplay experience on PC with a secondary focus on consoles.",
+                goals: [
+                    "The need for more in-depth analytics to help improve game to game, including a more detailed breakdown (in and out of game) of damage taken through the rounds",
+                    "Easier profile searching for quickly checking teammate’s ranks/statistics and past game performance",
+                    "Cheater detection with notifications, this included if a user is currently in a match with a cheater or has previously played with a newly detected cheater",
+                    "More analytical, quick view in-game scoreboard as a highly detailed and informative replacement without having to use a out of game browser",
+                ],
+                research: {
+                    method: "Step one of user research included sifting through a large amount of player feedback from our previous iteration of our overlay that was heavily limited byOverwolf.",
+                    oldVersion: "public/images/projects/tabstats-dashboard/old-version.png",
+                },
+                images: [
+                    "public/images/projects/tabstats-dashboard/tabstats-r6png.png",
+                    "public/images/projects/tabstats-dashboard/2f7db13c-9291-4567-91b2-906b980104abjpg.png",
+                    "public/images/projects/tabstats-dashboard/home-noadspng.png",
+                    "public/images/projects/tabstats-dashboard/favoritespng.png",
+                    "public/images/projects/tabstats-dashboard/matchview-overviewpng.png",
+                    "public/images/projects/tabstats-dashboard/norecentsearchespng.png",
+                    "public/images/projects/tabstats-dashboard/matchview-timelinepng.png",
+                    "public/images/projects/tabstats-dashboard/in-game-advancedscoreboardpng.png",
+                    "public/images/projects/tabstats-dashboard/playernotfoundpng.png",
+                    "public/images/projects/tabstats-dashboard/in-game-playerstatspng.png",
+                    "public/images/projects/tabstats-dashboard/in-game-cheatersdetectedpng.png",
+                    "public/images/projects/tabstats-dashboard/mainmenu-matchmakingpng.png",
+                    "public/images/projects/tabstats-dashboard/profileswitchpng.png",
+                    "public/images/projects/tabstats-dashboard/profileswitch-1png.png",
+                    "public/images/projects/tabstats-dashboard/recentsearchespng.png",
+                    "public/images/projects/tabstats-dashboard/searchresultspng.png",
+                    "public/images/projects/tabstats-dashboard/spectatemode-postroundpng.png",
+                    "public/images/projects/tabstats-dashboard/companionapp-3png.png",
+                    "public/images/projects/tabstats-dashboard/companionapppng.png",
+                    "public/images/projects/tabstats-dashboard/companionapp-1png.png",
+                    "public/images/projects/tabstats-dashboard/companionapp-2png.png",
+                    "public/images/projects/tabstats-dashboard/damagereportpng.png",
+                    "public/images/projects/tabstats-dashboard/generalpng.png",
+                    "public/images/projects/tabstats-dashboard/matchdetailspng.png",
+                    "public/images/projects/tabstats-dashboard/matchviewpng.png",
+                    "public/images/projects/tabstats-dashboard/profilepng.png",
+                    "public/images/projects/tabstats-dashboard/scoreboardpng.png",
+                    "public/images/projects/tabstats-dashboard/searchpng.png",
+                    "public/images/projects/tabstats-dashboard/settingspng.png",
+                    "public/images/projects/tabstats-dashboard/tableitemspng.png",
+                    "public/images/projects/tabstats-dashboard/applicationframepng.png",
+                ],
+            },
+            "tabstats-design-system": {
+                title: "Website UI/UX Design",
+                category: "UI/UX & Product Design",
+                description: "Tabstats is a website and dashboard system founded in 2019. This product was focused around a large scale website created around an API integration with “Ubisoft Connect” and the video game “Rainbow Six Siege”. The website portion was made to integrate with adownloaded dashboard applicationused to track player data, giving deep insights to their gameplay and how they could improve.",
+                image: "public/images/projects/tabstats-design-system/gnhd9nzetuxyjpg.png",
+                tags: ["Design System", "Branding"],
+                timeline: "July 2022 - Feb 2023",
+                role: "Worked closely with Ubisoft & Battleye to acquire assets, implement new changes/updates and more. As well as leading the creation of a dashboard system used to enhance gameplay for users. This was an extremely user experience-dependent product with a large number of users depending on the website & dashboard daily.This project was seen as a leader for cheater detection and the go to statistics/leaderboard website.",
+                research: {
+                    method: "As always, user research and feedback was a driving force behind decisions on the product. Feedback was collected from multiple channels including feedback through our website, discord and reddit communities.A majority of additional features added to the product were due to discovery through countless hours of the QA team surfacing user issues and needs, passing them off to myself and another designer which gave us a solid starting point to conduct user interviews.Multiple rounds of user interviews were conducted every other month and before a major release to ensure the product was always meeting the needs of users.",
+                    oldVersion: "public/images/projects/tabstats-design-system/old-version.png",
+                },
+                images: [
+                    "public/images/projects/tabstats-design-system/gnhd9nzetuxyjpg.png",
+                    "public/images/projects/tabstats-design-system/sidebaritemspng.png",
+                    "public/images/projects/tabstats-design-system/colourspng.png",
+                    "public/images/projects/tabstats-design-system/typographypng.png",
+                    "public/images/projects/tabstats-design-system/graphitemspng.png",
+                    "public/images/projects/tabstats-design-system/sidebarpng.png",
+                    "public/images/projects/tabstats-design-system/graphspng.png",
+                    "public/images/projects/tabstats-design-system/widgetitemspng.png",
+                    "public/images/projects/tabstats-design-system/sidebarcontentonmobilepng.png",
+                    "public/images/projects/tabstats-design-system/bannerspng.png",
+                    "public/images/projects/tabstats-design-system/widgetspng.png",
+                    "public/images/projects/tabstats-design-system/sitemapjpg.png",
+                    "public/images/projects/tabstats-design-system/queued-withpng.png",
+                    "public/images/projects/tabstats-design-system/r6-matchespng.png",
+                    "public/images/projects/tabstats-design-system/advancedpng.png",
+                    "public/images/projects/tabstats-design-system/sessionspng.png",
+                    "public/images/projects/tabstats-design-system/leaderboardspng.png",
+                    "public/images/projects/tabstats-design-system/project_map_3png.png",
+                    "public/images/projects/tabstats-design-system/project_map_4png.png",
+                    "public/images/projects/tabstats-design-system/project_map_5png.png",
+                    "public/images/projects/tabstats-design-system/project_map_6png.png",
+                    "public/images/projects/tabstats-design-system/project_map_7png.png",
+                    "public/images/projects/tabstats-design-system/project_map_8png.png",
+                    "public/images/projects/tabstats-design-system/project_map_1png.png",
+                    "public/images/projects/tabstats-design-system/project_map_2png.png",
+                    "public/images/projects/tabstats-design-system/mockup-finished_tabstaspng.png",
+                ],
+            },
+            "addicting-games-mobile": {
+                title: "Mobile Application Design",
+                category: "Mobile Application",
+                description: "In the current state, the Addicting Games website served as our only limited mobile solution, albeit not providing a native experience. With over 1 million monthly active users, the current mobile solution was not satisfactory and led to a lot of unwanted experiences.The ideal state envisioned a mobile solution that enhances discoverability, ensuring user engagement and fostering a high retention rate. Addicting Games possess a massive library of 1000+ games; however, users encountered difficulty in finding games aligning with their preferences or those similar to their favorites.",
+                image: "public/images/projects/addicting-games-mobile/ag_bgpng.png",
+                tags: ["Gaming", "App"],
+                timeline: "Jul 2023 - Feb 2024",
+                role: "Led the full product design of a native mobile application for iOS and Android. Over 35 screens designed with a design system and full documenation.",
+                research: {
+                    method: "With the addictinggames.com website having over 1 million monthly active users, there was a large amount of data to access and users to gather data from.",
+                    oldVersion: "public/images/projects/addicting-games-mobile/old-version.png",
+                },
+                images: [
+                    "public/images/projects/addicting-games-mobile/ag_bgpng.png",
+                    "public/images/projects/addicting-games-mobile/chalkboardjpg.png",
+                    "public/images/projects/addicting-games-mobile/style_ag_app-1png.png",
+                    "public/images/projects/addicting-games-mobile/components_ag_app-1png.png",
+                    "public/images/projects/addicting-games-mobile/mobile_application_map1png.png",
+                    "public/images/projects/addicting-games-mobile/mockup-finished_agpng.png",
+                ],
+            },
+            "steam-mobile-app-redesign": {
+                title: "Steam Mobile Redesign Concept",
+                category: "Case Study",
+                description: "Steam is a video game digital distribution service and storefront by Valve. It was launched as a standalone software client in September 2003 as a way for Valve to provide automatic updates for their games, and expanded to distributing and offering third-party game publishers' titles.",
+                image: "public/images/projects/steam-mobile-app-redesign/steam-headerjpg.png",
+                tags: ["Concept", "Mobile"],
+                timeline: "October 2021 to February 2022",
+                role: "Conducting interviews, paper and digital wireframing, low and high-fidelity prototyping, conducting usability studies, accounting for accessibility, and iterating on designs.",
+                goals: [
+                    "Doesn’t feel native",
+                    "Clunky feel overall",
+                ],
+                research: {
+                    method: "With COVID making in-person user interviews near impossible, I had the idea to test the ability to conduct the interviews on my Meta Quest 2. This research was done in a specific way so I suggest checking outmy full breakdown on this method on medium. To give a brief synopsis, VRchat was utilized as well as a world called “No Time Two Talk” where you’re matched with people based on a few checkboxes you selected to mark your interests. The world then matches you with people who chose similar categories. This made finding participants for my study much easier. People were surprisingly open to answering questions and having the ability to not only hear the inflection in their voice but also see their body movements like hand gestures made it much easier to determine how strongly a person felt about a particular question. After two quick pre-qualifier questions, I ended up conducting a total of 30 interviews.",
+                    oldVersion: "public/images/projects/steam-mobile-app-redesign/old-version.png",
+                },
+                images: [
+                    "public/images/projects/steam-mobile-app-redesign/steam-headerjpg.png",
+                    "public/images/projects/steam-mobile-app-redesign/review-1png.png",
+                    "public/images/projects/steam-mobile-app-redesign/review-6png.png",
+                    "public/images/projects/steam-mobile-app-redesign/review-2png.png",
+                    "public/images/projects/steam-mobile-app-redesign/review-3png.png",
+                    "public/images/projects/steam-mobile-app-redesign/review-4png.png",
+                    "public/images/projects/steam-mobile-app-redesign/review-5jpg.png",
+                    "public/images/projects/steam-mobile-app-redesign/quest2lowerpng.png",
+                    "public/images/projects/steam-mobile-app-redesign/meta-chart2jpg.png",
+                    "public/images/projects/steam-mobile-app-redesign/meta-chart3jpg.png",
+                    "public/images/projects/steam-mobile-app-redesign/iapng.png",
+                    "public/images/projects/steam-mobile-app-redesign/launchpng.png",
+                    "public/images/projects/steam-mobile-app-redesign/chatpng.png",
+                    "public/images/projects/steam-mobile-app-redesign/loginpng.png",
+                    "public/images/projects/steam-mobile-app-redesign/paymentpng.png",
+                    "public/images/projects/steam-mobile-app-redesign/profilepng.png",
+                    "public/images/projects/steam-mobile-app-redesign/gamepagepng.png",
+                    "public/images/projects/steam-mobile-app-redesign/registerpng.png",
+                    "public/images/projects/steam-mobile-app-redesign/steamguardpng.png",
+                    "public/images/projects/steam-mobile-app-redesign/storepng.png",
+                    "public/images/projects/steam-mobile-app-redesign/thankyoupng.png",
+                    "public/images/projects/steam-mobile-app-redesign/wishlistpng.png",
+                    "public/images/projects/steam-mobile-app-redesign/cartpagepng.png",
+                    "public/images/projects/steam-mobile-app-redesign/friendslistpng.png",
+                    "public/images/projects/steam-mobile-app-redesign/librarypng.png",
+                    "public/images/projects/steam-mobile-app-redesign/screens-compare1-1png.png",
+                    "public/images/projects/steam-mobile-app-redesign/screens-compare1png.png",
+                    "public/images/projects/steam-mobile-app-redesign/screens-compare2-2png.png",
+                    "public/images/projects/steam-mobile-app-redesign/screens-compare2png.png",
+                    "public/images/projects/steam-mobile-app-redesign/hi-fi-prototypepng.png",
+                    "public/images/projects/steam-mobile-app-redesign/game-pagepng.png",
+                    "public/images/projects/steam-mobile-app-redesign/friendspng.png",
+                    "public/images/projects/steam-mobile-app-redesign/purchasepng.png",
+                    "public/images/projects/steam-mobile-app-redesign/thank-youpng.png",
+                    "public/images/projects/steam-mobile-app-redesign/verifypng.png",
+                ],
+            },
+            "overlayed": {
+                title: "In-Game Overlay & Dashboard",
+                category: "In-Game Overlay & Dashboard",
+                description: "Passion project built with previous members from the Tabstats team after it was acquired. This product was built from the ground up for the video game “Escape From Tarkov” for in and out-of-game use, alleviating redundant tasks and improving overall accessibility for new and veteran players.This project expands upon my work previously done for Tabstats as we were expanding into Tarkov previously. Project details are limited due to the project being potentially integrated with Battleye Anti-Cheat and Battlestate Games.",
+                image: "public/images/projects/overlayed/escape_from_tarkov_wallpaper_2560jpg.png",
+                tags: ["Streaming", "UI"],
+                timeline: "Feb 2023 - Nov 2023",
+                role: "Lead product designer focused on enhancing the “Escape From Tarkov” gameplay experience.",
+                images: [
+                    "public/images/projects/overlayed/escape_from_tarkov_wallpaper_2560jpg.png",
+                    "public/images/projects/overlayed/overlayed_picpng.png",
+                    "public/images/projects/overlayed/notifications-ingame-toprightpng.png",
+                    "public/images/projects/overlayed/homepagepng.png",
+                    "public/images/projects/overlayed/keyspng.png",
+                    "public/images/projects/overlayed/mapspng.png",
+                    "public/images/projects/overlayed/weapontypepng.png",
+                    "public/images/projects/overlayed/taskspng.png",
+                    "public/images/projects/overlayed/insureditemspng.png",
+                    "public/images/projects/overlayed/playerstatspng.png",
+                    "public/images/projects/overlayed/ammocomparisonclosedtabspng.png",
+                    "public/images/projects/overlayed/ammocomparisonopentabspng.png",
+                    "public/images/projects/overlayed/extractspng.png",
+                    "public/images/projects/overlayed/fleamarketpng.png",
+                    "public/images/projects/overlayed/hideoutpng.png",
+                    "public/images/projects/overlayed/hideout-1png.png",
+                    "public/images/projects/overlayed/fleamarket-ingamepng.png",
+                    "public/images/projects/overlayed/companionappelementspng.png",
+                    "public/images/projects/overlayed/generaluseelementspng.png",
+                    "public/images/projects/overlayed/in-gameelementspng.png",
+                    "public/images/projects/overlayed/structureelementspng.png",
+                    "public/images/projects/overlayed/taskelementspng.png",
+                ],
+            },
+            "mathgames": {
+                title: "Product: Gamified Learning",
+                category: "Product: Gamified Learning",
+                description: "Teachers and parents have reached out saying their students/children are logging in just to play the games they like with no real direction on the platform. This was further reinforced through research via Google Analytics page session duration, page views and other data. Shortly after data analysis was completed, one on one teacher interviews were conducted to find the correct direction.",
+                image: "public/images/projects/mathgames/81ky7xbcgwljpg.png",
+                tags: ["EdTech", "Web"],
+                timeline: "Oct 2023 - Mar 2024",
+                role: "Lead product designer for the gamification of student learning for grades K-12",
+                research: {
+                    method: "A clear need for a more guided approach for the platform was the correct approach. Students need to feel self-driven in or out of a classroom setting but have fun doing it with the games they know and love on MathGames.",
+                    oldVersion: "public/images/projects/mathgames/old-version.png",
+                },
+                images: [
+                    "public/images/projects/mathgames/81ky7xbcgwljpg.png",
+                    "public/images/projects/mathgames/math-games_objectspng.png",
+                    "public/images/projects/mathgames/mappng.png",
+                    "public/images/projects/mathgames/gamepng.png",
+                    "public/images/projects/mathgames/shoppng.png",
+                ],
+            },
+            "addicting-games-dev-portal": {
+                title: "Product Design: Developer Portal",
+                category: "Product: Developer Portal",
+                description: "This project stemmed from the feedback of developers and a lack of quality submissions that led to long QA times for submitted games to the Addicting Games website. Additionally the finalized product was to be used for further monetization with other game platforms within our network.",
+                image: "public/images/projects/addicting-games-dev-portal/ag_bgpng.png",
+                tags: ["B2B", "Web"],
+                timeline: "Jul 2023 - Oct 2023",
+                role: "Led the full product design of a new onboarding method to facilitate developer’s game management and new developer onboarding.",
+                research: {
+                    method: "Developers currently working with Addicting Games and new developers have reached out with requests on how to add new games, submit updates or remove games entirely.",
+                    oldVersion: "public/images/projects/addicting-games-dev-portal/old-version.png",
+                },
+                images: [
+                    "public/images/projects/addicting-games-dev-portal/ag_bgpng.png",
+                    "public/images/projects/addicting-games-dev-portal/chalkboardjpg.png",
+                    "public/images/projects/addicting-games-dev-portal/developer_style_guide1png.png",
+                    "public/images/projects/addicting-games-dev-portal/developer_ag_components1png.png",
+                    "public/images/projects/addicting-games-dev-portal/assetuploadpng.png",
+                    "public/images/projects/addicting-games-dev-portal/congratulationspng.png",
+                    "public/images/projects/addicting-games-dev-portal/deletegamemodalpng.png",
+                    "public/images/projects/addicting-games-dev-portal/developerprofilepng.png",
+                    "public/images/projects/addicting-games-dev-portal/editgameprofilepng.png",
+                    "public/images/projects/addicting-games-dev-portal/editgameprofile-1png.png",
+                    "public/images/projects/addicting-games-dev-portal/editimagepng.png",
+                    "public/images/projects/addicting-games-dev-portal/faqpng.png",
+                    "public/images/projects/addicting-games-dev-portal/finalcheck-livepreviewpng.png",
+                    "public/images/projects/addicting-games-dev-portal/gameeditspng.png",
+                    "public/images/projects/addicting-games-dev-portal/gameinformationpng.png",
+                    "public/images/projects/addicting-games-dev-portal/imageuploadmodalpng.png",
+                    "public/images/projects/addicting-games-dev-portal/mygamespng.png",
+                    "public/images/projects/addicting-games-dev-portal/qatoolpng.png",
+                    "public/images/projects/addicting-games-dev-portal/quailtyguidelinecheckpng.png",
+                    "public/images/projects/addicting-games-dev-portal/referadeveloperpng.png",
+                    "public/images/projects/addicting-games-dev-portal/submitforreviewpng.png",
+                    "public/images/projects/addicting-games-dev-portal/supportpng.png",
+                    "public/images/projects/addicting-games-dev-portal/uploadcompletepng.png",
+                    "public/images/projects/addicting-games-dev-portal/uploadgamepng.png",
+                    "public/images/projects/addicting-games-dev-portal/uploadimagemodalpng.png",
+                    "public/images/projects/addicting-games-dev-portal/uploadinprogresspng.png",
+                    "public/images/projects/addicting-games-dev-portal/addictinggamesassetspng.png",
+                    "public/images/projects/addicting-games-dev-portal/mockup-finished_agdevpng.png",
+                ],
+            },
+                        "lcs-web-app-2022": {
+                title: "LCS Web App",
+                category: "Esports",
+                description: "",
+                image: "public/images/projects/lcs-web-app-2022/lcsredesignjpg.png",
+                tags: ["League of Legends", "Web"],
+                images: [
+                    "public/images/projects/lcs-web-app-2022/lcsredesignjpg.png",
+                ],
+            },
+            "valorant-dashboard": {
+                title: "Valorant Dashboard Concept",
+                category: "Concept",
+                description: "",
+                image: "public/images/projects/valorant-dashboard/valorant-dashbaordjpg.png",
+                tags: ["Gaming", "UI"],
+                images: [
+                    "public/images/projects/valorant-dashboard/valorant-dashbaordjpg.png",
+                ],
+            },
+            "enthusiast-gaming": {
+                title: "Ad Graphic Creation",
+                category: "Ad Graphics",
+                description: "",
+                image: "public/images/projects/enthusiast-gaming/christopher-farrugia-2yqtqbqzdro-unsplashjpg.png",
+                tags: ["Marketing", "Graphic Design"],
+                images: [
+                    "public/images/projects/enthusiast-gaming/christopher-farrugia-2yqtqbqzdro-unsplashjpg.png",
+                    "public/images/projects/enthusiast-gaming/tng_playerasset_week8_9x16-arizonapng.png",
+                    "public/images/projects/enthusiast-gaming/tng_teamannouncements__week8_16x9png.png",
+                    "public/images/projects/enthusiast-gaming/tng_teamannouncements_week8_9x16png.png",
+                    "public/images/projects/enthusiast-gaming/tng_week8_lineup_9x16png.png",
+                    "public/images/projects/enthusiast-gaming/tng_week8_lineup_headshots_16x9png.png",
+                    "public/images/projects/enthusiast-gaming/tng-week8-showmatchpng.png",
+                    "public/images/projects/enthusiast-gaming/tng-week8-showmatch_verticalpng.png",
+                    "public/images/projects/enthusiast-gaming/usmc_ads_1000jpg.png",
+                    "public/images/projects/enthusiast-gaming/usmc_ads_1064jpg.png",
+                    "public/images/projects/enthusiast-gaming/usmc_ads_1070jpg.png",
+                    "public/images/projects/enthusiast-gaming/usmc_ads_1100jpg.png",
+                    "public/images/projects/enthusiast-gaming/expandedstate_1225x390png.png",
+                    "public/images/projects/enthusiast-gaming/ff_eg_1064jpg.png",
+                    "public/images/projects/enthusiast-gaming/ff_eg_1070jpg.png",
+                    "public/images/projects/enthusiast-gaming/ff_eg_1200jpg.png",
+                ],
+            },
+            "rocket-stream-concept": {
+                title: "Rocket Stream Dashboard Concept",
+                category: "Concept",
+                description: "",
+                image: "public/images/projects/rocket-stream-concept/stream-dashboardjpg.png",
+                tags: ["Streaming", "UI"],
+                images: [
+                    "public/images/projects/rocket-stream-concept/stream-dashboardjpg.png",
+                    "public/images/projects/rocket-stream-concept/stream-learningjpg.png",
+                    "public/images/projects/rocket-stream-concept/stream-mobilejpg.png",
+                ],
+            },
+            "ableton-learning-platform": {
+                title: "Ableton Learning Platform Concept",
+                category: "Case Study",
+                description: "Ableton AGis a German music software company that produces and distributes the production and performance program Ableton Live and a collection of related instruments and sample libraries, as well as their own hardware controller Ableton Push.",
+                image: "public/images/projects/ableton-learning-platform/pexels-tstudio-7173392jpg.png",
+                tags: ["Audio", "Education"],
+                timeline: "October 2021 to Feburary 2022",
+                research: {
+                    method: "Typically among polls and surveys conducted within producer groups, Ableton ends up being the most popular DAW mentioned and voted on.",
+                    oldVersion: "public/images/projects/ableton-learning-platform/old-version.png",
+                },
+                images: [
+                    "public/images/projects/ableton-learning-platform/pexels-tstudio-7173392jpg.png",
+                    "public/images/projects/ableton-learning-platform/pexels-expect-best-351265jpg.png",
+                    "public/images/projects/ableton-learning-platform/abletonlearningpng.png",
+                    "public/images/projects/ableton-learning-platform/wireframepng.png",
+                    "public/images/projects/ableton-learning-platform/pexels-everson-mayer-1481309jpg.png",
+                    "public/images/projects/ableton-learning-platform/screens-compare2jpg.png",
+                    "public/images/projects/ableton-learning-platform/ableton-mobilespng.png",
+                    "public/images/projects/ableton-learning-platform/producerjpg.png",
+                ],
+            },
+            "amazon-luna-concept": {
+                title: "Amazon Luna Homepage Redesign",
+                category: "Concept",
+                description: "",
+                image: "public/images/projects/amazon-luna-concept/amazonlunaconceptpcpng.png",
+                tags: ["Cloud Gaming", "UI"],
+                images: [
+                    "public/images/projects/amazon-luna-concept/amazonlunaconceptpcpng.png",
+                ],
+            },
+            "hertz-car-rental": {
+                title: "Hertz Car Rental - Vehicle Price Comparison",
+                subtitle: "Feature Concept",
+                category: "Concept",
+                description: "",
+                image: "public/images/projects/hertz-car-rental/jake-blucker-tmzcrbkm99y-unsplash1jpg.png",
+                tags: ["Travel", "UI"],
+                role: "The ultimate goal is to lower website bounce rates and increase conversions.",
+                goals: [
+                    "The ultimate goal is to lower website bounce rates and increase conversions.",
+                    "Map out the current online rental process and identify potential drop-off areas.",
+                    "Produce lo-fi design wireframes while incorporating the optimizations found during the research phase. Utilize lo-fi wireframes as talking points for user interviews.",
+                    "Produce hi-fi design mockups to allow the highest level of visual prototyping and production.",
+                ],
+                research: {
+                    method: "Produce hi-fi design mockups to allow the highest level of visual prototyping and production.",
+                },
+                images: [
+                    "public/images/projects/hertz-car-rental/jake-blucker-tmzcrbkm99y-unsplash1jpg.png",
+                    "public/images/projects/hertz-car-rental/high-fivehiclechoicepng.png",
+                    "public/images/projects/hertz-car-rental/hertzflowchartpng.png",
+                    "public/images/projects/hertz-car-rental/low-fivehiclechoicepng.png",
+                ],
+            },
+            "aidium-first-aid": {
+                title: "Aidium First Aid Training Responsive Application",
+                category: "Application",
+                description: "Aidium is a responsive website, mobile, and tablet app that helps users learn first-aid.",
+                image: "public/images/projects/aidium-first-aid/aidium-headerpng.png",
+                tags: ["Health", "Mobile"],
+                timeline: "December 2021 to February 2022",
+                role: "UX designer leading the app and responsive website design from conception to delivery.",
+                goals: [
+                    "Do you feel confident in emergency situations?",
+                    "Do you feel properly trained to handle someone choking?",
+                    "Have you ever had to perform CPR on someone?",
+                    "Do you know how to perform CPR?",
+                    "Would you feel more confident if you knew basic first aid skills in an emergency situation?",
+                ],
+                research: {
+                    method: "There’s a significant amount of data available on the topic of first aid and common deaths around the world, including statistics that go in depth on how first aid skills can help save lives in a large portion of those situations.",
+                    oldVersion: "public/images/projects/aidium-first-aid/old-version.png",
+                },
+                images: [
+                    "public/images/projects/aidium-first-aid/aidium-headerpng.png",
+                    "public/images/projects/aidium-first-aid/wf-prototypepng.png",
+                    "public/images/projects/aidium-first-aid/breakdown-wpng.png",
+                    "public/images/projects/aidium-first-aid/hi-prototypepng.png",
+                    "public/images/projects/aidium-first-aid/aid-compare-1png.png",
+                    "public/images/projects/aidium-first-aid/aid-compare-2png.png",
+                    "public/images/projects/aidium-first-aid/aidium-mockup-finishedpng.png",
+                    "public/images/projects/aidium-first-aid/ipad-propng.png",
+                    "public/images/projects/aidium-first-aid/macbook-propng.png",
+                ],
+            },
+            "chat-application": {
+                title: "Chat Application",
+                category: "Concept",
+                description: "",
+                image: "public/images/projects/chat-application/chat-conceptpng.png",
+                tags: ["Social", "UI"],
+                images: [
+                    "public/images/projects/chat-application/chat-conceptpng.png",
+                ],
+            },
+            "paypal-redesign": {
+                title: "Paypal Redesign Concept",
+                category: "Concept",
+                description: "",
+                image: "public/images/projects/paypal-redesign/paypal-lightjpg.png",
+                tags: ["Fintech", "Dark Mode"],
+                images: [
+                    "public/images/projects/paypal-redesign/paypal-lightjpg.png",
+                    "public/images/projects/paypal-redesign/paypal-darkljpg.png",
+                ],
+            },
+            "nft-concept-site": {
+                title: "NFT Marketplace Concept",
+                category: "Concept",
+                description: "",
+                image: "public/images/projects/nft-concept-site/nftconceptpcpng.png",
+                tags: ["Web3", "UI"],
+                images: [
+                    "public/images/projects/nft-concept-site/nftconceptpcpng.png",
+                ],
+            },
+            "cloud-mining-concept": {
+                title: "Cloud Mining Site Concept",
+                category: "Concept",
+                description: "",
+                image: "public/images/projects/cloud-mining-concept/cloudminingconceptpcpng.png",
+                tags: ["Crypto", "UI"],
+                images: [
+                    "public/images/projects/cloud-mining-concept/cloudminingconceptpcpng.png",
+                ],
+            },
+            "other-digital-art": {
+                title: "",
+                category: "Art",
+                description: "",
+                image: "public/images/projects/other-digital-art/182184413_270294024801019_7294339655731499234_njpg.png",
+                tags: ["Illustration", "3D"],
+                images: [
+                    "public/images/projects/other-digital-art/182184413_270294024801019_7294339655731499234_njpg.png",
+                    "public/images/projects/other-digital-art/118770270_115083333655423_5387360318293387612_njpg.png",
+                    "public/images/projects/other-digital-art/118546910_118854409944982_7352301179530177008_njpg.png",
+                    "public/images/projects/other-digital-art/back-in-blood_3png.png",
+                    "public/images/projects/other-digital-art/demon_4png.png",
+                    "public/images/projects/other-digital-art/270188308_431015418728878_3836141654729403_njpg.png",
+                    "public/images/projects/other-digital-art/118807668_116339053529851_1759855727228261964_njpg.png",
+                ],
+            }
+        };
+
+        // Get project ID from URL
+        function getProjectId() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('id') || params.get('project');
+        }
+
+        // Load and display project
+        function loadProject() {
+            const projectId = getProjectId();
+            const loading = document.getElementById('loading');
+            const projectDetails = document.getElementById('project-details');
+            const error = document.getElementById('error');
+
+            if (!projectId || !projects[projectId]) {
+                loading.classList.add('hidden');
+                error.classList.remove('hidden');
+                return;
+            }
+
+            const project = projects[projectId];
+
+            // Update page title
+            document.title = `${project.title} | Brandon Campbell`;
+
+            // Populate project data
+            document.getElementById('project-category').textContent = project.category;
+            const titleElement = document.getElementById('project-title');
+            titleElement.textContent = project.title;
+            document.getElementById('project-description').textContent = project.description;
+
+            // Add old Overwolf version image to header if it exists
+            const headerImageContainer = document.getElementById('header-image');
+            if (project.research && project.research.oldVersion) {
+                headerImageContainer.classList.remove('hidden');
+                headerImageContainer.innerHTML = `
+                    <div class="glass-card rounded-2xl overflow-hidden">
+                        <img src="${project.research.oldVersion}" alt="Old Overwolf Version" class="w-full h-auto object-cover" onerror="this.style.display='none'">
+                    </div>
+                `;
+            } else {
+                headerImageContainer.classList.add('hidden');
+            }
+
+            // Populate tags
+            const tagsContainer = document.querySelector('#project-tags div');
+            tagsContainer.innerHTML = '';
+            if (project.tags && project.tags.length > 0) {
+                project.tags.forEach(tag => {
+                    const tagElement = document.createElement('span');
+                    tagElement.className = 'px-4 py-2 bg-gradient-to-r from-purple-600/20 to-blue-600/20 border border-purple-500/30 rounded-full text-sm font-semibold text-gray-300';
+                    tagElement.textContent = tag;
+                    tagsContainer.appendChild(tagElement);
+                });
+            } else {
+                document.getElementById('project-tags').classList.add('hidden');
+            }
+
+            // Populate links
+            const linksContainer = document.querySelector('#project-links div');
+            linksContainer.innerHTML = '';
+            if (project.links) {
+                if (project.links.caseStudy) {
+                    const caseStudyLink = document.createElement('a');
+                    caseStudyLink.href = project.links.caseStudy;
+                    caseStudyLink.className = 'inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-bold text-sm uppercase tracking-wider hover:from-blue-500 hover:to-purple-500 transition-all shadow-lg shadow-blue-500/30';
+                    caseStudyLink.textContent = 'View Case Study';
+                    linksContainer.appendChild(caseStudyLink);
+                }
+                if (project.links.repo) {
+                    const repoLink = document.createElement('a');
+                    repoLink.href = project.links.repo;
+                    repoLink.target = '_blank';
+                    repoLink.rel = 'noopener noreferrer';
+                    repoLink.className = 'inline-flex items-center gap-2 border-2 border-gray-600 text-gray-300 px-8 py-4 rounded-full font-bold text-sm uppercase tracking-wider hover:border-gray-400 hover:text-white transition-all';
+                    repoLink.innerHTML = `
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        View Repository
+                    `;
+                    linksContainer.appendChild(repoLink);
+                }
+            }
+            
+            if (linksContainer.children.length === 0) {
+                document.getElementById('project-links').classList.add('hidden');
+            }
+
+            // Render rich content if available
+            const richContent = document.getElementById('rich-content');
+            if (project.timeline || project.role || project.goals || project.research || project.images || project.designSystem) {
+                richContent.classList.remove('hidden');
+                richContent.innerHTML = '';
+
+                // Timeline & Role Section
+                if (project.timeline || project.role) {
+                    const timelineSection = document.createElement('div');
+                    timelineSection.className = 'mb-12 fade-in glass-card rounded-2xl p-8 md:p-12';
+                    let timelineHTML = '<div class="grid md:grid-cols-2 gap-8">';
+                    if (project.timeline) {
+                        timelineHTML += `
+                            <div>
+                                <h3 class="text-xl font-bold text-white mb-3">Project Timeline</h3>
+                                <p class="text-gray-300 text-lg">${project.timeline}</p>
+                            </div>
+                        `;
+                    }
+                    if (project.role) {
+                        timelineHTML += `
+                            <div>
+                                <h3 class="text-xl font-bold text-white mb-3">My Role</h3>
+                                <p class="text-gray-300 text-lg">${project.role}</p>
+                            </div>
+                        `;
+                    }
+                    if (project.outcome) {
+                        timelineHTML += `
+                            <div class="md:col-span-2 mt-4">
+                                <p class="text-gray-300 text-lg"><span class="text-accent-purple font-semibold">Outcome:</span> ${project.outcome}</p>
+                            </div>
+                        `;
+                    }
+                    timelineHTML += '</div>';
+                    timelineSection.innerHTML = timelineHTML;
+                    richContent.appendChild(timelineSection);
+                }
+
+                // Goals Section
+                if (project.goals && project.goals.length > 0) {
+                    const goalsSection = document.createElement('div');
+                    goalsSection.className = 'mb-12 fade-in';
+                    goalsSection.innerHTML = `
+                        <h2 class="text-3xl font-bold text-white mb-6">Goals</h2>
+                        <div class="grid md:grid-cols-3 gap-6">
+                            ${project.goals.map((goal, index) => `
+                                <div class="glass-card rounded-2xl p-6">
+                                    <div class="text-3xl font-black text-accent-purple mb-3">${index + 1}</div>
+                                    <p class="text-gray-300 leading-relaxed">${goal}</p>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+                    richContent.appendChild(goalsSection);
+                }
+
+                // Research Section
+                if (project.research) {
+                    const researchSection = document.createElement('div');
+                    researchSection.className = 'mb-12 fade-in';
+                    let researchHTML = `
+                        <h2 class="text-3xl font-bold text-white mb-6">Data Analysis & User Research</h2>
+                        <div class="glass-card rounded-2xl p-8 md:p-12 mb-8">
+                            <p class="text-gray-300 text-lg leading-relaxed">${project.research.method}</p>
+                        </div>
+                    `;
+                    if (project.research.findings && project.research.findings.length > 0) {
+                        researchHTML += `
+                            <h3 class="text-2xl font-bold text-white mb-4">Findings</h3>
+                            <div class="glass-card rounded-2xl p-8 md:p-12">
+                                <ul class="space-y-4">
+                                    ${project.research.findings.map(finding => `
+                                        <li class="flex items-start gap-4">
+                                            <span class="text-accent-purple mt-1">•</span>
+                                            <p class="text-gray-300 text-lg leading-relaxed">${finding}</p>
+                                        </li>
+                                    `).join('')}
+                                </ul>
+                            </div>
+                        `;
+                    }
+                    researchSection.innerHTML = researchHTML;
+                    richContent.appendChild(researchSection);
+                }
+
+                // Detailed View Images
+                if (project.images && project.images.length > 0) {
+                    const imagesSection = document.createElement('div');
+                    imagesSection.className = 'mb-12 fade-in';
+                    imagesSection.innerHTML = `
+                        <h2 class="text-3xl font-bold text-white mb-6">Detailed View</h2>
+                        <p class="text-gray-400 mb-8 text-lg">The mockups below are a segment of the finished product and the full Figma files can be shown if requested.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            ${project.images.map((img, index) => `
+                                <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer w-[366px] h-[206px]" data-image-index="${index}" data-image-src="${img}">
+                                    <img src="${img}" alt="Tabstats Dashboard" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" onerror="this.style.display='none'">
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+                    richContent.appendChild(imagesSection);
+                    
+                    // Add click handlers to images
+                    const imageCards = imagesSection.querySelectorAll('[data-image-index]');
+                    imageCards.forEach(card => {
+                        card.addEventListener('click', () => {
+                            const index = parseInt(card.getAttribute('data-image-index'));
+                            openLightbox(project.images, index);
+                        });
+                    });
+                }
+
+                // Design System Section
+                if (project.designSystem && project.designSystem.length > 0) {
+                    const designSystemSection = document.createElement('div');
+                    designSystemSection.className = 'mb-12 fade-in';
+                    designSystemSection.innerHTML = `
+                        <h2 class="text-3xl font-bold text-white mb-6">Design System / Components</h2>
+                        <p class="text-gray-400 mb-8 text-lg">The design system was made with future proofing in mind and component sets were made for rapid prototyping during the ideation process.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            ${project.designSystem.map((img, index) => `
+                                <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer w-[366px] h-[206px]" data-image-index="${index}" data-image-src="${img}">
+                                    <img src="${img}" alt="Design System Component" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" onerror="this.style.display='none'">
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+                    richContent.appendChild(designSystemSection);
+                    
+                    // Add click handlers to design system images
+                    const designSystemCards = designSystemSection.querySelectorAll('[data-image-index]');
+                    designSystemCards.forEach(card => {
+                        card.addEventListener('click', () => {
+                            const index = parseInt(card.getAttribute('data-image-index'));
+                            openLightbox(project.designSystem, index);
+                        });
+                    });
+                }
+            }
+
+            // Show project details
+            loading.classList.add('hidden');
+            projectDetails.classList.remove('hidden');
+        }
+
+        // Lightbox functionality
+        let currentImages = [];
+        let currentImageIndex = 0;
+
+        function openLightbox(images, index = 0) {
+            currentImages = images;
+            currentImageIndex = index;
+            const lightbox = document.getElementById('image-lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const currentIndexSpan = document.getElementById('current-index');
+            const totalImagesSpan = document.getElementById('total-images');
+            
+            lightboxImage.src = images[index];
+            lightboxImage.alt = `Image ${index + 1} of ${images.length}`;
+            currentIndexSpan.textContent = index + 1;
+            totalImagesSpan.textContent = images.length;
+            
+            lightbox.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            
+            // Update navigation buttons visibility
+            updateNavigationButtons();
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('image-lightbox');
+            lightbox.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        function showNextImage() {
+            if (currentImageIndex < currentImages.length - 1) {
+                currentImageIndex++;
+                updateLightboxImage();
+            }
+        }
+
+        function showPreviousImage() {
+            if (currentImageIndex > 0) {
+                currentImageIndex--;
+                updateLightboxImage();
+            }
+        }
+
+        function updateLightboxImage() {
+            const lightboxImage = document.getElementById('lightbox-image');
+            const currentIndexSpan = document.getElementById('current-index');
+            
+            lightboxImage.src = currentImages[currentImageIndex];
+            lightboxImage.alt = `Image ${currentImageIndex + 1} of ${currentImages.length}`;
+            currentIndexSpan.textContent = currentImageIndex + 1;
+            
+            updateNavigationButtons();
+        }
+
+        function updateNavigationButtons() {
+            const prevButton = document.getElementById('lightbox-prev');
+            const nextButton = document.getElementById('lightbox-next');
+            
+            prevButton.style.opacity = currentImageIndex === 0 ? '0.3' : '1';
+            prevButton.style.pointerEvents = currentImageIndex === 0 ? 'none' : 'auto';
+            
+            nextButton.style.opacity = currentImageIndex === currentImages.length - 1 ? '0.3' : '1';
+            nextButton.style.pointerEvents = currentImageIndex === currentImages.length - 1 ? 'none' : 'auto';
+        }
+
+        // Lightbox event listeners
+        document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+        document.getElementById('lightbox-prev').addEventListener('click', showPreviousImage);
+        document.getElementById('lightbox-next').addEventListener('click', showNextImage);
+        
+        // Close on background click
+        document.getElementById('image-lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'image-lightbox') {
+                closeLightbox();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            const lightbox = document.getElementById('image-lightbox');
+            if (!lightbox.classList.contains('hidden')) {
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                } else if (e.key === 'ArrowRight') {
+                    showNextImage();
+                } else if (e.key === 'ArrowLeft') {
+                    showPreviousImage();
+                }
+            }
+        });
+
+        // Load project on page load
+        window.addEventListener('DOMContentLoaded', loadProject);
+    
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        // Get saved theme or default to dark
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        html.setAttribute('data-theme', currentTheme);
+
+        // Update text colors based on theme
+        function updateTextColors() {
+            const isLight = html.getAttribute('data-theme') === 'light';
+            const textElements = document.querySelectorAll('.text-white, .text-gray-300, .text-gray-400, .text-gray-500');
+            textElements.forEach(el => {
+                // Skip buttons, tags, and elements that should always have white text
+                const isButton = el.closest('button, .view-button, a.view-button, [class*="button"]');
+                const isTag = el.closest('[class*="tag"], [class*="badge"], [class*="chip"]');
+                const isInButton = el.closest('button') || el.closest('a[class*="button"]');
+                
+                if (isButton || isTag || isInButton) {
+                    // Always keep white text in buttons and tags
+                    if (!el.classList.contains('text-white')) {
+                        el.classList.remove('text-gray-300', 'text-gray-400', 'text-gray-500', 'text-gray-700', 'text-gray-900');
+                        el.classList.add('text-white');
+                    }
+                    return;
+                }
+                
+                if (isLight) {
+                    if (el.classList.contains('text-white')) {
+                        el.classList.remove('text-white');
+                        el.classList.add('text-gray-900');
+                    } else if (el.classList.contains('text-gray-300')) {
+                        el.classList.remove('text-gray-300');
+                        el.classList.add('text-gray-700');
+                    } else if (el.classList.contains('text-gray-400')) {
+                        el.classList.remove('text-gray-400');
+                        el.classList.add('text-gray-600');
+                    } else if (el.classList.contains('text-gray-500')) {
+                        el.classList.remove('text-gray-500');
+                        el.classList.add('text-gray-500');
+                    }
+                } else {
+                    if (el.classList.contains('text-gray-900')) {
+                        el.classList.remove('text-gray-900');
+                        el.classList.add('text-white');
+                    } else if (el.classList.contains('text-gray-700')) {
+                        el.classList.remove('text-gray-700');
+                        el.classList.add('text-gray-300');
+                    } else if (el.classList.contains('text-gray-600')) {
+                        el.classList.remove('text-gray-600');
+                        el.classList.add('text-gray-400');
+                    }
+                }
+            });
+        }
+
+        // Toggle theme
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = html.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                html.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                updateTextColors();
+            });
+        }
+
+        // Initialize text colors on load
+        updateTextColors();
+
+    </script>
+</body>
+</html>

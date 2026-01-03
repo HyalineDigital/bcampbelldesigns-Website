@@ -1,0 +1,217 @@
+{
+  "tabstats-dashboard": {
+    "project_id": "tabstats-dashboard",
+    "content": {
+      "title": "Stats Dashboard & In-Game Companion App",
+      "subtitle": "",
+      "description": "Tabstats is a website and statistics dashboard system founded in 2019. This particular product highlighted below was a downloadable dashboard & in-game companion app that featured a large amount of features to improve and enhance the gameplay experience for “Rainbow Six Siege” players including cheater detection, in-depth stat breakdowns, player profiles and more.",
+      "timeline": "Sept 2022 - Feb 2023",
+      "role": "Lead product designer focused on enhancing the “Rainbow Six Siege” gameplay experience on PC with a secondary focus on consoles.",
+      "outcome": "",
+      "goals": [
+        "The need for more in-depth analytics to help improve game to game, including a more detailed breakdown (in and out of game) of damage taken through the rounds",
+        "Easier profile searching for quickly checking teammate’s ranks/statistics and past game performance",
+        "Cheater detection with notifications, this included if a user is currently in a match with a cheater or has previously played with a newly detected cheater",
+        "More analytical, quick view in-game scoreboard as a highly detailed and informative replacement without having to use a out of game browser"
+      ],
+      "research": {
+        "method": "Step one of user research included sifting through a large amount of player feedback from our previous iteration of our overlay that was heavily limited byOverwolf.",
+        "findings": [],
+        "oldVersion": null
+      }
+    },
+    "images": {
+      "oldVersion": null,
+      "detailed": [
+        "public/images/projects/tabstats-dashboard/tabstats-r6png.png",
+        "public/images/projects/tabstats-dashboard/r6_intropng.png",
+        "public/images/projects/tabstats-dashboard/tabstats-r6png.png",
+        "public/images/projects/tabstats-dashboard/2f7db13c-9291-4567-91b2-906b980104abjpg.png",
+        "public/images/projects/tabstats-dashboard/tabstats-r6png.png",
+        "public/images/projects/tabstats-dashboard/home-noadspng.png",
+        "public/images/projects/tabstats-dashboard/favoritespng.png",
+        "public/images/projects/tabstats-dashboard/matchview-overviewpng.png",
+        "public/images/projects/tabstats-dashboard/norecentsearchespng.png",
+        "public/images/projects/tabstats-dashboard/matchview-timelinepng.png",
+        "public/images/projects/tabstats-dashboard/in-game-advancedscoreboardpng.png",
+        "public/images/projects/tabstats-dashboard/playernotfoundpng.png",
+        "public/images/projects/tabstats-dashboard/in-game-playerstatspng.png",
+        "public/images/projects/tabstats-dashboard/in-game-cheatersdetectedpng.png",
+        "public/images/projects/tabstats-dashboard/mainmenu-matchmakingpng.png",
+        "public/images/projects/tabstats-dashboard/profileswitchpng.png",
+        "public/images/projects/tabstats-dashboard/profileswitch-1png.png",
+        "public/images/projects/tabstats-dashboard/recentsearchespng.png",
+        "public/images/projects/tabstats-dashboard/searchresultspng.png",
+        "public/images/projects/tabstats-dashboard/spectatemode-postroundpng.png",
+        "public/images/projects/tabstats-dashboard/companionapp-3png.png",
+        "public/images/projects/tabstats-dashboard/companionapppng.png",
+        "public/images/projects/tabstats-dashboard/companionapp-1png.png",
+        "public/images/projects/tabstats-dashboard/companionapp-2png.png",
+        "public/images/projects/tabstats-dashboard/home-noadspng.png",
+        "public/images/projects/tabstats-dashboard/favoritespng.png",
+        "public/images/projects/tabstats-dashboard/matchview-overviewpng.png",
+        "public/images/projects/tabstats-dashboard/norecentsearchespng.png",
+        "public/images/projects/tabstats-dashboard/matchview-timelinepng.png",
+        "public/images/projects/tabstats-dashboard/in-game-advancedscoreboardpng.png",
+        "public/images/projects/tabstats-dashboard/playernotfoundpng.png",
+        "public/images/projects/tabstats-dashboard/in-game-playerstatspng.png",
+        "public/images/projects/tabstats-dashboard/in-game-cheatersdetectedpng.png",
+        "public/images/projects/tabstats-dashboard/mainmenu-matchmakingpng.png",
+        "public/images/projects/tabstats-dashboard/profileswitchpng.png",
+        "public/images/projects/tabstats-dashboard/profileswitch-1png.png",
+        "public/images/projects/tabstats-dashboard/recentsearchespng.png",
+        "public/images/projects/tabstats-dashboard/searchresultspng.png",
+        "public/images/projects/tabstats-dashboard/spectatemode-postroundpng.png",
+        "public/images/projects/tabstats-dashboard/companionapp-3png.png",
+        "public/images/projects/tabstats-dashboard/companionapppng.png",
+        "public/images/projects/tabstats-dashboard/companionapp-1png.png",
+        "public/images/projects/tabstats-dashboard/companionapp-2png.png",
+        "public/images/projects/tabstats-dashboard/damagereportpng.png",
+        "public/images/projects/tabstats-dashboard/generalpng.png",
+        "public/images/projects/tabstats-dashboard/matchdetailspng.png",
+        "public/images/projects/tabstats-dashboard/matchviewpng.png",
+        "public/images/projects/tabstats-dashboard/profilepng.png",
+        "public/images/projects/tabstats-dashboard/scoreboardpng.png",
+        "public/images/projects/tabstats-dashboard/searchpng.png",
+        "public/images/projects/tabstats-dashboard/settingspng.png",
+        "public/images/projects/tabstats-dashboard/tableitemspng.png",
+        "public/images/projects/tabstats-dashboard/applicationframepng.png",
+        "public/images/projects/tabstats-dashboard/companionapppng.png",
+        "public/images/projects/tabstats-dashboard/damagereportpng.png",
+        "public/images/projects/tabstats-dashboard/generalpng.png",
+        "public/images/projects/tabstats-dashboard/matchdetailspng.png",
+        "public/images/projects/tabstats-dashboard/matchviewpng.png",
+        "public/images/projects/tabstats-dashboard/profilepng.png",
+        "public/images/projects/tabstats-dashboard/scoreboardpng.png",
+        "public/images/projects/tabstats-dashboard/searchpng.png",
+        "public/images/projects/tabstats-dashboard/settingspng.png",
+        "public/images/projects/tabstats-dashboard/tableitemspng.png",
+        "public/images/projects/tabstats-dashboard/applicationframepng.png",
+        "public/images/projects/tabstats-dashboard/companionapppng.png"
+      ],
+      "designSystem": []
+    }
+  },
+  "valorant-dashboard": {
+    "project_id": "valorant-dashboard",
+    "content": {
+      "title": "Valorant Dashboard Concept",
+      "subtitle": "",
+      "description": "",
+      "timeline": "",
+      "role": "",
+      "outcome": "",
+      "goals": [],
+      "research": {
+        "method": "",
+        "findings": [],
+        "oldVersion": null
+      }
+    },
+    "images": {
+      "oldVersion": null,
+      "detailed": [
+        "public/images/projects/valorant-dashboard/valorant-dashbaordjpg.png"
+      ],
+      "designSystem": []
+    }
+  },
+  "rocket-stream-concept": {
+    "project_id": "rocket-stream-concept",
+    "content": {
+      "title": "Rocket Stream Dashboard Concept",
+      "subtitle": "",
+      "description": "",
+      "timeline": "",
+      "role": "",
+      "outcome": "",
+      "goals": [],
+      "research": {
+        "method": "",
+        "findings": [],
+        "oldVersion": null
+      }
+    },
+    "images": {
+      "oldVersion": null,
+      "detailed": [
+        "public/images/projects/rocket-stream-concept/stream-dashboardjpg.png",
+        "public/images/projects/rocket-stream-concept/stream-learningjpg.png",
+        "public/images/projects/rocket-stream-concept/stream-mobilejpg.png"
+      ],
+      "designSystem": []
+    }
+  },
+  "amazon-luna-concept": {
+    "project_id": "amazon-luna-concept",
+    "content": {
+      "title": "Amazon Luna Homepage Redesign",
+      "subtitle": "",
+      "description": "",
+      "timeline": "",
+      "role": "",
+      "outcome": "",
+      "goals": [],
+      "research": {
+        "method": "",
+        "findings": [],
+        "oldVersion": null
+      }
+    },
+    "images": {
+      "oldVersion": null,
+      "detailed": [
+        "public/images/projects/amazon-luna-concept/amazonlunaconceptpcpng.png"
+      ],
+      "designSystem": []
+    }
+  },
+  "chat-application": {
+    "project_id": "chat-application",
+    "content": {
+      "title": "Chat Application",
+      "subtitle": "",
+      "description": "",
+      "timeline": "",
+      "role": "",
+      "outcome": "",
+      "goals": [],
+      "research": {
+        "method": "",
+        "findings": [],
+        "oldVersion": null
+      }
+    },
+    "images": {
+      "oldVersion": null,
+      "detailed": [
+        "public/images/projects/chat-application/chat-conceptpng.png"
+      ],
+      "designSystem": []
+    }
+  },
+  "nft-concept-site": {
+    "project_id": "nft-concept-site",
+    "content": {
+      "title": "NFT Marketplace Concept",
+      "subtitle": "",
+      "description": "",
+      "timeline": "",
+      "role": "",
+      "outcome": "",
+      "goals": [],
+      "research": {
+        "method": "",
+        "findings": [],
+        "oldVersion": null
+      }
+    },
+    "images": {
+      "oldVersion": null,
+      "detailed": [
+        "public/images/projects/nft-concept-site/nftconceptpcpng.png"
+      ],
+      "designSystem": []
+    }
+  }
+}

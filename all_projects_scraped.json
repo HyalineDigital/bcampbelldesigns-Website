@@ -1,0 +1,790 @@
+{
+  "caesars-palace-online-casino": {
+    "project_id": "caesars-palace-online-casino",
+    "content": {
+      "title": "Caesars Palace Online Casino",
+      "subtitle": "",
+      "description": "Caesars Palace Online Casino is a world-class, endlessly rewarding gaming experience delivered from Las Vegas to wherever you play.",
+      "timeline": "June 2024 to Sep 2025",
+      "role": "Worked closely with compliance and cross-functional teams to design and launch multiple high-impact features across sportsbook and casino. Led the creation of theReward Center, Credit Shop, and loyalty milestone systems, as well as engagement features likeCaesars Rewards tier gated leaderboards as well as sponsored leaderboards. All projects were user experience-driven features with thousands of players relying on seamless registration, rewards, and gameplay integrations daily.",
+      "outcome": "",
+      "goals": [],
+      "research": {
+        "method": "",
+        "findings": [],
+        "oldVersion": null
+      }
+    },
+    "images": {
+      "oldVersion": null,
+      "detailed": [
+        "public/images/projects/caesars-palace-online-casino/cpo-headerpng.png",
+        "public/images/projects/caesars-palace-online-casino/image_3png.png",
+        "public/images/projects/caesars-palace-online-casino/image75png.png",
+        "public/images/projects/caesars-palace-online-casino/image76png.png",
+        "public/images/projects/caesars-palace-online-casino/image77png.png",
+        "public/images/projects/caesars-palace-online-casino/image78png.png",
+        "public/images/projects/caesars-palace-online-casino/lockpng.png"
+      ],
+      "designSystem": []
+    }
+  },
+  "icyveins": {
+    "project_id": "icyveins",
+    "content": {
+      "title": "Icy Veins",
+      "subtitle": "",
+      "description": "Icy Veins is an online gaming website that offers guides, resources, and tools for various Blizzard Entertainment titles. It features class guides written by a team of over 100 writers for World of Warcraft, reviewed by experienced players and theorycrafters, as well as guides for Final Fantasy XIV, Diablo IV, Heroes of the Storm, and WoW Classic.",
+      "timeline": "Apr 2024 to Sep 2025",
+      "role": "Product & User Experience Design for the entire brand from product conception to development support across a 20+ projects and a full site overhaul.",
+      "outcome": "",
+      "goals": [],
+      "research": {
+        "method": "",
+        "findings": [],
+        "oldVersion": null
+      }
+    },
+    "images": {
+      "oldVersion": null,
+      "detailed": [
+        "public/images/projects/icyveins/icy-veins-headerpng.png",
+        "public/images/projects/icyveins/iv-websitepng.png",
+        "public/images/projects/icyveins/citadelpng.png",
+        "public/images/projects/icyveins/stylespng.png",
+        "public/images/projects/icyveins/generalpng.png",
+        "public/images/projects/icyveins/guide-componentspng.png",
+        "public/images/projects/icyveins/lockpng.png"
+      ],
+      "designSystem": []
+    }
+  },
+  "the-national-forest-foundation": {
+    "project_id": "the-national-forest-foundation",
+    "content": {
+      "title": "The National Forest Foundation Mobile App",
+      "subtitle": "",
+      "description": "The National Forest Foundation works on behalf of the American public to inspire personal and meaningful connections to America’s National Forests. NFF focuses on driving donations and gathering communities together to help with the preservation of the Nation’s Forests.",
+      "timeline": "December 2021 to April 2022",
+      "role": "UX/UI designer designing an app for The National Forest Foundation from conception to delivery.",
+      "outcome": "",
+      "goals": [],
+      "research": {
+        "method": "User Interviews",
+        "findings": [],
+        "oldVersion": null
+      }
+    },
+    "images": {
+      "oldVersion": "public/images/projects/the-national-forest-foundation/old-version.png",
+      "detailed": [
+        "public/images/projects/the-national-forest-foundation/ux-design-processpng.png",
+        "public/images/projects/the-national-forest-foundation/geran-de-klerk-qzgn45hsen0-unsplashjpg.png",
+        "public/images/projects/the-national-forest-foundation/ap21230228939305_wide-202bcd71c1916f589849f96e3aab7429898aca54-s1100-c50jpg.png",
+        "public/images/projects/the-national-forest-foundation/christian-joudrey-mwrr1xj95hg-unsplashjpg.png",
+        "public/images/projects/the-national-forest-foundation/marita-kavelashvili-ugnrxk1129g-unsplashjpg.png",
+        "public/images/projects/the-national-forest-foundation/nora-personapng.png",
+        "public/images/projects/the-national-forest-foundation/pine-watt-2hzmz15wgik-unsplashjpg.png",
+        "public/images/projects/the-national-forest-foundation/user-journey-jazminejpg.png",
+        "public/images/projects/the-national-forest-foundation/wireframespng.png",
+        "public/images/projects/the-national-forest-foundation/wireframes-prototypespng.png",
+        "public/images/projects/the-national-forest-foundation/annie-spratt-qyaka7w5umy-unsplashjpg.png",
+        "public/images/projects/the-national-forest-foundation/screens-compare2png.png",
+        "public/images/projects/the-national-forest-foundation/screens-comparepng.png",
+        "public/images/projects/the-national-forest-foundation/hi-fi-prototypepng.png",
+        "public/images/projects/the-national-forest-foundation/lukasz-szmigiel-2shvy8lf6l0-unsplashjpg.png",
+        "public/images/projects/the-national-forest-foundation/mockup-finishedpng.png",
+        "public/images/projects/the-national-forest-foundation/zhang-kaiyv-fmyibz2jdhu-unsplashjpg.png",
+        "public/images/projects/the-national-forest-foundation/matthew-smith-rfflri94rs8-unsplashjpg.png"
+      ],
+      "designSystem": []
+    }
+  },
+  "tabstats-dashboard": {
+    "project_id": "tabstats-dashboard",
+    "content": {
+      "title": "Stats Dashboard & In-Game Companion App",
+      "subtitle": "",
+      "description": "Tabstats is a website and statistics dashboard system founded in 2019. This particular product highlighted below was a downloadable dashboard & in-game companion app that featured a large amount of features to improve and enhance the gameplay experience for “Rainbow Six Siege” players including cheater detection, in-depth stat breakdowns, player profiles and more.",
+      "timeline": "Sept 2022 - Feb 2023",
+      "role": "Lead product designer focused on enhancing the “Rainbow Six Siege” gameplay experience on PC with a secondary focus on consoles.",
+      "outcome": "",
+      "goals": [
+        "The need for more in-depth analytics to help improve game to game, including a more detailed breakdown (in and out of game) of damage taken through the rounds",
+        "Easier profile searching for quickly checking teammate’s ranks/statistics and past game performance",
+        "Cheater detection with notifications, this included if a user is currently in a match with a cheater or has previously played with a newly detected cheater",
+        "More analytical, quick view in-game scoreboard as a highly detailed and informative replacement without having to use a out of game browser"
+      ],
+      "research": {
+        "method": "Step one of user research included sifting through a large amount of player feedback from our previous iteration of our overlay that was heavily limited byOverwolf.",
+        "findings": [],
+        "oldVersion": null
+      }
+    },
+    "images": {
+      "oldVersion": "public/images/projects/tabstats-dashboard/old-version.png",
+      "detailed": [
+        "public/images/projects/tabstats-dashboard/tabstats-r6png.png",
+        "public/images/projects/tabstats-dashboard/2f7db13c-9291-4567-91b2-906b980104abjpg.png",
+        "public/images/projects/tabstats-dashboard/home-noadspng.png",
+        "public/images/projects/tabstats-dashboard/favoritespng.png",
+        "public/images/projects/tabstats-dashboard/matchview-overviewpng.png",
+        "public/images/projects/tabstats-dashboard/norecentsearchespng.png",
+        "public/images/projects/tabstats-dashboard/matchview-timelinepng.png",
+        "public/images/projects/tabstats-dashboard/in-game-advancedscoreboardpng.png",
+        "public/images/projects/tabstats-dashboard/playernotfoundpng.png",
+        "public/images/projects/tabstats-dashboard/in-game-playerstatspng.png",
+        "public/images/projects/tabstats-dashboard/in-game-cheatersdetectedpng.png",
+        "public/images/projects/tabstats-dashboard/mainmenu-matchmakingpng.png",
+        "public/images/projects/tabstats-dashboard/profileswitchpng.png",
+        "public/images/projects/tabstats-dashboard/profileswitch-1png.png",
+        "public/images/projects/tabstats-dashboard/recentsearchespng.png",
+        "public/images/projects/tabstats-dashboard/searchresultspng.png",
+        "public/images/projects/tabstats-dashboard/spectatemode-postroundpng.png",
+        "public/images/projects/tabstats-dashboard/companionapp-3png.png",
+        "public/images/projects/tabstats-dashboard/companionapppng.png",
+        "public/images/projects/tabstats-dashboard/companionapp-1png.png",
+        "public/images/projects/tabstats-dashboard/companionapp-2png.png",
+        "public/images/projects/tabstats-dashboard/damagereportpng.png",
+        "public/images/projects/tabstats-dashboard/generalpng.png",
+        "public/images/projects/tabstats-dashboard/matchdetailspng.png",
+        "public/images/projects/tabstats-dashboard/matchviewpng.png",
+        "public/images/projects/tabstats-dashboard/profilepng.png",
+        "public/images/projects/tabstats-dashboard/scoreboardpng.png",
+        "public/images/projects/tabstats-dashboard/searchpng.png",
+        "public/images/projects/tabstats-dashboard/settingspng.png",
+        "public/images/projects/tabstats-dashboard/tableitemspng.png",
+        "public/images/projects/tabstats-dashboard/applicationframepng.png"
+      ],
+      "designSystem": []
+    }
+  },
+  "tabstats-design-system": {
+    "project_id": "tabstats-design-system",
+    "content": {
+      "title": "Website UI/UX Design",
+      "subtitle": "",
+      "description": "Tabstats is a website and dashboard system founded in 2019. This product was focused around a large scale website created around an API integration with “Ubisoft Connect” and the video game “Rainbow Six Siege”. The website portion was made to integrate with adownloaded dashboard applicationused to track player data, giving deep insights to their gameplay and how they could improve.",
+      "timeline": "July 2022 - Feb 2023",
+      "role": "Worked closely with Ubisoft & Battleye to acquire assets, implement new changes/updates and more. As well as leading the creation of a dashboard system used to enhance gameplay for users. This was an extremely user experience-dependent product with a large number of users depending on the website & dashboard daily.This project was seen as a leader for cheater detection and the go to statistics/leaderboard website.",
+      "outcome": "",
+      "goals": [],
+      "research": {
+        "method": "As always, user research and feedback was a driving force behind decisions on the product. Feedback was collected from multiple channels including feedback through our website, discord and reddit communities.A majority of additional features added to the product were due to discovery through countless hours of the QA team surfacing user issues and needs, passing them off to myself and another designer which gave us a solid starting point to conduct user interviews.Multiple rounds of user interviews were conducted every other month and before a major release to ensure the product was always meeting the needs of users.",
+        "findings": [],
+        "oldVersion": null
+      }
+    },
+    "images": {
+      "oldVersion": "public/images/projects/tabstats-design-system/old-version.png",
+      "detailed": [
+        "public/images/projects/tabstats-design-system/gnhd9nzetuxyjpg.png",
+        "public/images/projects/tabstats-design-system/sidebaritemspng.png",
+        "public/images/projects/tabstats-design-system/colourspng.png",
+        "public/images/projects/tabstats-design-system/typographypng.png",
+        "public/images/projects/tabstats-design-system/graphitemspng.png",
+        "public/images/projects/tabstats-design-system/sidebarpng.png",
+        "public/images/projects/tabstats-design-system/graphspng.png",
+        "public/images/projects/tabstats-design-system/widgetitemspng.png",
+        "public/images/projects/tabstats-design-system/sidebarcontentonmobilepng.png",
+        "public/images/projects/tabstats-design-system/bannerspng.png",
+        "public/images/projects/tabstats-design-system/widgetspng.png",
+        "public/images/projects/tabstats-design-system/sitemapjpg.png",
+        "public/images/projects/tabstats-design-system/queued-withpng.png",
+        "public/images/projects/tabstats-design-system/r6-matchespng.png",
+        "public/images/projects/tabstats-design-system/advancedpng.png",
+        "public/images/projects/tabstats-design-system/sessionspng.png",
+        "public/images/projects/tabstats-design-system/leaderboardspng.png",
+        "public/images/projects/tabstats-design-system/project_map_3png.png",
+        "public/images/projects/tabstats-design-system/project_map_4png.png",
+        "public/images/projects/tabstats-design-system/project_map_5png.png",
+        "public/images/projects/tabstats-design-system/project_map_6png.png",
+        "public/images/projects/tabstats-design-system/project_map_7png.png",
+        "public/images/projects/tabstats-design-system/project_map_8png.png",
+        "public/images/projects/tabstats-design-system/project_map_1png.png",
+        "public/images/projects/tabstats-design-system/project_map_2png.png",
+        "public/images/projects/tabstats-design-system/mockup-finished_tabstaspng.png"
+      ],
+      "designSystem": []
+    }
+  },
+  "addicting-games-mobile": {
+    "project_id": "addicting-games-mobile",
+    "content": {
+      "title": "Mobile Application Design",
+      "subtitle": "",
+      "description": "In the current state, the Addicting Games website served as our only limited mobile solution, albeit not providing a native experience. With over 1 million monthly active users, the current mobile solution was not satisfactory and led to a lot of unwanted experiences.The ideal state envisioned a mobile solution that enhances discoverability, ensuring user engagement and fostering a high retention rate. Addicting Games possess a massive library of 1000+ games; however, users encountered difficulty in finding games aligning with their preferences or those similar to their favorites.",
+      "timeline": "Jul 2023 - Feb 2024",
+      "role": "Led the full product design of a native mobile application for iOS and Android. Over 35 screens designed with a design system and full documenation.",
+      "outcome": "",
+      "goals": [],
+      "research": {
+        "method": "With the addictinggames.com website having over 1 million monthly active users, there was a large amount of data to access and users to gather data from.",
+        "findings": [],
+        "oldVersion": null
+      }
+    },
+    "images": {
+      "oldVersion": "public/images/projects/addicting-games-mobile/old-version.png",
+      "detailed": [
+        "public/images/projects/addicting-games-mobile/ag_bgpng.png",
+        "public/images/projects/addicting-games-mobile/chalkboardjpg.png",
+        "public/images/projects/addicting-games-mobile/style_ag_app-1png.png",
+        "public/images/projects/addicting-games-mobile/components_ag_app-1png.png",
+        "public/images/projects/addicting-games-mobile/mobile_application_map1png.png",
+        "public/images/projects/addicting-games-mobile/mockup-finished_agpng.png"
+      ],
+      "designSystem": []
+    }
+  },
+  "steam-mobile-app-redesign": {
+    "project_id": "steam-mobile-app-redesign",
+    "content": {
+      "title": "Steam Mobile Redesign Concept",
+      "subtitle": "",
+      "description": "Steam is a video game digital distribution service and storefront by Valve. It was launched as a standalone software client in September 2003 as a way for Valve to provide automatic updates for their games, and expanded to distributing and offering third-party game publishers' titles.",
+      "timeline": "October 2021 to February 2022",
+      "role": "Conducting interviews, paper and digital wireframing, low and high-fidelity prototyping, conducting usability studies, accounting for accessibility, and iterating on designs.",
+      "outcome": "",
+      "goals": [
+        "Doesn’t feel native",
+        "Clunky feel overall"
+      ],
+      "research": {
+        "method": "With COVID making in-person user interviews near impossible, I had the idea to test the ability to conduct the interviews on my Meta Quest 2. This research was done in a specific way so I suggest checking outmy full breakdown on this method on medium. To give a brief synopsis, VRchat was utilized as well as a world called “No Time Two Talk” where you’re matched with people based on a few checkboxes you selected to mark your interests. The world then matches you with people who chose similar categories. This made finding participants for my study much easier. People were surprisingly open to answering questions and having the ability to not only hear the inflection in their voice but also see their body movements like hand gestures made it much easier to determine how strongly a person felt about a particular question. After two quick pre-qualifier questions, I ended up conducting a total of 30 interviews.",
+        "findings": [],
+        "oldVersion": null
+      }
+    },
+    "images": {
+      "oldVersion": "public/images/projects/steam-mobile-app-redesign/old-version.png",
+      "detailed": [
+        "public/images/projects/steam-mobile-app-redesign/steam-headerjpg.png",
+        "public/images/projects/steam-mobile-app-redesign/review-1png.png",
+        "public/images/projects/steam-mobile-app-redesign/review-6png.png",
+        "public/images/projects/steam-mobile-app-redesign/review-2png.png",
+        "public/images/projects/steam-mobile-app-redesign/review-3png.png",
+        "public/images/projects/steam-mobile-app-redesign/review-4png.png",
+        "public/images/projects/steam-mobile-app-redesign/review-5jpg.png",
+        "public/images/projects/steam-mobile-app-redesign/quest2lowerpng.png",
+        "public/images/projects/steam-mobile-app-redesign/meta-chart2jpg.png",
+        "public/images/projects/steam-mobile-app-redesign/meta-chart3jpg.png",
+        "public/images/projects/steam-mobile-app-redesign/iapng.png",
+        "public/images/projects/steam-mobile-app-redesign/launchpng.png",
+        "public/images/projects/steam-mobile-app-redesign/chatpng.png",
+        "public/images/projects/steam-mobile-app-redesign/loginpng.png",
+        "public/images/projects/steam-mobile-app-redesign/paymentpng.png",
+        "public/images/projects/steam-mobile-app-redesign/profilepng.png",
+        "public/images/projects/steam-mobile-app-redesign/gamepagepng.png",
+        "public/images/projects/steam-mobile-app-redesign/registerpng.png",
+        "public/images/projects/steam-mobile-app-redesign/steamguardpng.png",
+        "public/images/projects/steam-mobile-app-redesign/storepng.png",
+        "public/images/projects/steam-mobile-app-redesign/thankyoupng.png",
+        "public/images/projects/steam-mobile-app-redesign/wishlistpng.png",
+        "public/images/projects/steam-mobile-app-redesign/cartpagepng.png",
+        "public/images/projects/steam-mobile-app-redesign/friendslistpng.png",
+        "public/images/projects/steam-mobile-app-redesign/librarypng.png",
+        "public/images/projects/steam-mobile-app-redesign/screens-compare1-1png.png",
+        "public/images/projects/steam-mobile-app-redesign/screens-compare1png.png",
+        "public/images/projects/steam-mobile-app-redesign/screens-compare2-2png.png",
+        "public/images/projects/steam-mobile-app-redesign/screens-compare2png.png",
+        "public/images/projects/steam-mobile-app-redesign/hi-fi-prototypepng.png",
+        "public/images/projects/steam-mobile-app-redesign/game-pagepng.png",
+        "public/images/projects/steam-mobile-app-redesign/friendspng.png",
+        "public/images/projects/steam-mobile-app-redesign/purchasepng.png",
+        "public/images/projects/steam-mobile-app-redesign/thank-youpng.png",
+        "public/images/projects/steam-mobile-app-redesign/verifypng.png"
+      ],
+      "designSystem": []
+    }
+  },
+  "overlayed": {
+    "project_id": "overlayed",
+    "content": {
+      "title": "In-Game Overlay & Dashboard",
+      "subtitle": "",
+      "description": "Passion project built with previous members from the Tabstats team after it was acquired. This product was built from the ground up for the video game “Escape From Tarkov” for in and out-of-game use, alleviating redundant tasks and improving overall accessibility for new and veteran players.This project expands upon my work previously done for Tabstats as we were expanding into Tarkov previously. Project details are limited due to the project being potentially integrated with Battleye Anti-Cheat and Battlestate Games.",
+      "timeline": "Feb 2023 - Nov 2023",
+      "role": "Lead product designer focused on enhancing the “Escape From Tarkov” gameplay experience.",
+      "outcome": "",
+      "goals": [],
+      "research": {
+        "method": "",
+        "findings": [],
+        "oldVersion": null
+      }
+    },
+    "images": {
+      "oldVersion": null,
+      "detailed": [
+        "public/images/projects/overlayed/escape_from_tarkov_wallpaper_2560jpg.png",
+        "public/images/projects/overlayed/overlayed_picpng.png",
+        "public/images/projects/overlayed/notifications-ingame-toprightpng.png",
+        "public/images/projects/overlayed/homepagepng.png",
+        "public/images/projects/overlayed/keyspng.png",
+        "public/images/projects/overlayed/mapspng.png",
+        "public/images/projects/overlayed/weapontypepng.png",
+        "public/images/projects/overlayed/taskspng.png",
+        "public/images/projects/overlayed/insureditemspng.png",
+        "public/images/projects/overlayed/playerstatspng.png",
+        "public/images/projects/overlayed/ammocomparisonclosedtabspng.png",
+        "public/images/projects/overlayed/ammocomparisonopentabspng.png",
+        "public/images/projects/overlayed/extractspng.png",
+        "public/images/projects/overlayed/fleamarketpng.png",
+        "public/images/projects/overlayed/hideoutpng.png",
+        "public/images/projects/overlayed/hideout-1png.png",
+        "public/images/projects/overlayed/fleamarket-ingamepng.png",
+        "public/images/projects/overlayed/companionappelementspng.png",
+        "public/images/projects/overlayed/generaluseelementspng.png",
+        "public/images/projects/overlayed/in-gameelementspng.png",
+        "public/images/projects/overlayed/structureelementspng.png",
+        "public/images/projects/overlayed/taskelementspng.png"
+      ],
+      "designSystem": []
+    }
+  },
+  "mathgames": {
+    "project_id": "mathgames",
+    "content": {
+      "title": "Product: Gamified Learning",
+      "subtitle": "",
+      "description": "Teachers and parents have reached out saying their students/children are logging in just to play the games they like with no real direction on the platform. This was further reinforced through research via Google Analytics page session duration, page views and other data. Shortly after data analysis was completed, one on one teacher interviews were conducted to find the correct direction.",
+      "timeline": "Oct 2023 - Mar 2024",
+      "role": "Lead product designer for the gamification of student learning for grades K-12",
+      "outcome": "",
+      "goals": [],
+      "research": {
+        "method": "A clear need for a more guided approach for the platform was the correct approach. Students need to feel self-driven in or out of a classroom setting but have fun doing it with the games they know and love on MathGames.",
+        "findings": [],
+        "oldVersion": null
+      }
+    },
+    "images": {
+      "oldVersion": "public/images/projects/mathgames/old-version.png",
+      "detailed": [
+        "public/images/projects/mathgames/81ky7xbcgwljpg.png",
+        "public/images/projects/mathgames/math-games_objectspng.png",
+        "public/images/projects/mathgames/mappng.png",
+        "public/images/projects/mathgames/gamepng.png",
+        "public/images/projects/mathgames/shoppng.png"
+      ],
+      "designSystem": []
+    }
+  },
+  "addicting-games-dev-portal": {
+    "project_id": "addicting-games-dev-portal",
+    "content": {
+      "title": "Product Design: Developer Portal",
+      "subtitle": "",
+      "description": "This project stemmed from the feedback of developers and a lack of quality submissions that led to long QA times for submitted games to the Addicting Games website. Additionally the finalized product was to be used for further monetization with other game platforms within our network.",
+      "timeline": "Jul 2023 - Oct 2023",
+      "role": "Led the full product design of a new onboarding method to facilitate developer’s game management and new developer onboarding.",
+      "outcome": "",
+      "goals": [],
+      "research": {
+        "method": "Developers currently working with Addicting Games and new developers have reached out with requests on how to add new games, submit updates or remove games entirely.",
+        "findings": [],
+        "oldVersion": null
+      }
+    },
+    "images": {
+      "oldVersion": "public/images/projects/addicting-games-dev-portal/old-version.png",
+      "detailed": [
+        "public/images/projects/addicting-games-dev-portal/ag_bgpng.png",
+        "public/images/projects/addicting-games-dev-portal/chalkboardjpg.png",
+        "public/images/projects/addicting-games-dev-portal/developer_style_guide1png.png",
+        "public/images/projects/addicting-games-dev-portal/developer_ag_components1png.png",
+        "public/images/projects/addicting-games-dev-portal/assetuploadpng.png",
+        "public/images/projects/addicting-games-dev-portal/congratulationspng.png",
+        "public/images/projects/addicting-games-dev-portal/deletegamemodalpng.png",
+        "public/images/projects/addicting-games-dev-portal/developerprofilepng.png",
+        "public/images/projects/addicting-games-dev-portal/editgameprofilepng.png",
+        "public/images/projects/addicting-games-dev-portal/editgameprofile-1png.png",
+        "public/images/projects/addicting-games-dev-portal/editimagepng.png",
+        "public/images/projects/addicting-games-dev-portal/faqpng.png",
+        "public/images/projects/addicting-games-dev-portal/finalcheck-livepreviewpng.png",
+        "public/images/projects/addicting-games-dev-portal/gameeditspng.png",
+        "public/images/projects/addicting-games-dev-portal/gameinformationpng.png",
+        "public/images/projects/addicting-games-dev-portal/imageuploadmodalpng.png",
+        "public/images/projects/addicting-games-dev-portal/mygamespng.png",
+        "public/images/projects/addicting-games-dev-portal/qatoolpng.png",
+        "public/images/projects/addicting-games-dev-portal/quailtyguidelinecheckpng.png",
+        "public/images/projects/addicting-games-dev-portal/referadeveloperpng.png",
+        "public/images/projects/addicting-games-dev-portal/submitforreviewpng.png",
+        "public/images/projects/addicting-games-dev-portal/supportpng.png",
+        "public/images/projects/addicting-games-dev-portal/uploadcompletepng.png",
+        "public/images/projects/addicting-games-dev-portal/uploadgamepng.png",
+        "public/images/projects/addicting-games-dev-portal/uploadimagemodalpng.png",
+        "public/images/projects/addicting-games-dev-portal/uploadinprogresspng.png",
+        "public/images/projects/addicting-games-dev-portal/addictinggamesassetspng.png",
+        "public/images/projects/addicting-games-dev-portal/mockup-finished_agdevpng.png"
+      ],
+      "designSystem": []
+    }
+  },
+  "lcs-web-app-2022": {
+    "project_id": "lcs-web-app-2022",
+    "content": {
+      "title": "LCS Web App",
+      "subtitle": "",
+      "description": "",
+      "timeline": "",
+      "role": "",
+      "outcome": "",
+      "goals": [],
+      "research": {
+        "method": "",
+        "findings": [],
+        "oldVersion": null
+      }
+    },
+    "images": {
+      "oldVersion": null,
+      "detailed": [
+        "public/images/projects/lcs-web-app-2022/lcsredesignjpg.png"
+      ],
+      "designSystem": []
+    }
+  },
+  "valorant-dashboard": {
+    "project_id": "valorant-dashboard",
+    "content": {
+      "title": "Valorant Dashboard Concept",
+      "subtitle": "",
+      "description": "",
+      "timeline": "",
+      "role": "",
+      "outcome": "",
+      "goals": [],
+      "research": {
+        "method": "",
+        "findings": [],
+        "oldVersion": null
+      }
+    },
+    "images": {
+      "oldVersion": null,
+      "detailed": [
+        "public/images/projects/valorant-dashboard/valorant-dashbaordjpg.png"
+      ],
+      "designSystem": []
+    }
+  },
+  "enthusiast-gaming": {
+    "project_id": "enthusiast-gaming",
+    "content": {
+      "title": "Ad Graphic Creation",
+      "subtitle": "",
+      "description": "",
+      "timeline": "",
+      "role": "",
+      "outcome": "",
+      "goals": [],
+      "research": {
+        "method": "",
+        "findings": [],
+        "oldVersion": null
+      }
+    },
+    "images": {
+      "oldVersion": null,
+      "detailed": [
+        "public/images/projects/enthusiast-gaming/christopher-farrugia-2yqtqbqzdro-unsplashjpg.png",
+        "public/images/projects/enthusiast-gaming/tng_playerasset_week8_9x16-arizonapng.png",
+        "public/images/projects/enthusiast-gaming/tng_teamannouncements__week8_16x9png.png",
+        "public/images/projects/enthusiast-gaming/tng_teamannouncements_week8_9x16png.png",
+        "public/images/projects/enthusiast-gaming/tng_week8_lineup_9x16png.png",
+        "public/images/projects/enthusiast-gaming/tng_week8_lineup_headshots_16x9png.png",
+        "public/images/projects/enthusiast-gaming/tng-week8-showmatchpng.png",
+        "public/images/projects/enthusiast-gaming/tng-week8-showmatch_verticalpng.png",
+        "public/images/projects/enthusiast-gaming/usmc_ads_1000jpg.png",
+        "public/images/projects/enthusiast-gaming/usmc_ads_1064jpg.png",
+        "public/images/projects/enthusiast-gaming/usmc_ads_1070jpg.png",
+        "public/images/projects/enthusiast-gaming/usmc_ads_1100jpg.png",
+        "public/images/projects/enthusiast-gaming/expandedstate_1225x390png.png",
+        "public/images/projects/enthusiast-gaming/ff_eg_1064jpg.png",
+        "public/images/projects/enthusiast-gaming/ff_eg_1070jpg.png",
+        "public/images/projects/enthusiast-gaming/ff_eg_1200jpg.png"
+      ],
+      "designSystem": []
+    }
+  },
+  "rocket-stream-concept": {
+    "project_id": "rocket-stream-concept",
+    "content": {
+      "title": "Rocket Stream Dashboard Concept",
+      "subtitle": "",
+      "description": "",
+      "timeline": "",
+      "role": "",
+      "outcome": "",
+      "goals": [],
+      "research": {
+        "method": "",
+        "findings": [],
+        "oldVersion": null
+      }
+    },
+    "images": {
+      "oldVersion": null,
+      "detailed": [
+        "public/images/projects/rocket-stream-concept/stream-dashboardjpg.png",
+        "public/images/projects/rocket-stream-concept/stream-learningjpg.png",
+        "public/images/projects/rocket-stream-concept/stream-mobilejpg.png"
+      ],
+      "designSystem": []
+    }
+  },
+  "ableton-learning-platform": {
+    "project_id": "ableton-learning-platform",
+    "content": {
+      "title": "Ableton Learning Platform Concept",
+      "subtitle": "",
+      "description": "Ableton AGis a German music software company that produces and distributes the production and performance program Ableton Live and a collection of related instruments and sample libraries, as well as their own hardware controller Ableton Push.",
+      "timeline": "October 2021 to Feburary 2022",
+      "role": "",
+      "outcome": "",
+      "goals": [],
+      "research": {
+        "method": "Typically among polls and surveys conducted within producer groups, Ableton ends up being the most popular DAW mentioned and voted on.",
+        "findings": [],
+        "oldVersion": null
+      }
+    },
+    "images": {
+      "oldVersion": "public/images/projects/ableton-learning-platform/old-version.png",
+      "detailed": [
+        "public/images/projects/ableton-learning-platform/pexels-tstudio-7173392jpg.png",
+        "public/images/projects/ableton-learning-platform/pexels-expect-best-351265jpg.png",
+        "public/images/projects/ableton-learning-platform/abletonlearningpng.png",
+        "public/images/projects/ableton-learning-platform/wireframepng.png",
+        "public/images/projects/ableton-learning-platform/pexels-everson-mayer-1481309jpg.png",
+        "public/images/projects/ableton-learning-platform/screens-compare2jpg.png",
+        "public/images/projects/ableton-learning-platform/ableton-mobilespng.png",
+        "public/images/projects/ableton-learning-platform/producerjpg.png"
+      ],
+      "designSystem": []
+    }
+  },
+  "amazon-luna-concept": {
+    "project_id": "amazon-luna-concept",
+    "content": {
+      "title": "Amazon Luna Homepage Redesign",
+      "subtitle": "",
+      "description": "",
+      "timeline": "",
+      "role": "",
+      "outcome": "",
+      "goals": [],
+      "research": {
+        "method": "",
+        "findings": [],
+        "oldVersion": null
+      }
+    },
+    "images": {
+      "oldVersion": null,
+      "detailed": [
+        "public/images/projects/amazon-luna-concept/amazonlunaconceptpcpng.png"
+      ],
+      "designSystem": []
+    }
+  },
+  "hertz-car-rental": {
+    "project_id": "hertz-car-rental",
+    "content": {
+      "title": "Hertz Car Rental - Vehicle Price Comparison",
+      "subtitle": "Feature Concept",
+      "description": "",
+      "timeline": "",
+      "role": "The ultimate goal is to lower website bounce rates and increase conversions.",
+      "outcome": "",
+      "goals": [
+        "The ultimate goal is to lower website bounce rates and increase conversions.",
+        "Map out the current online rental process and identify potential drop-off areas.",
+        "Produce lo-fi design wireframes while incorporating the optimizations found during the research phase. Utilize lo-fi wireframes as talking points for user interviews.",
+        "Produce hi-fi design mockups to allow the highest level of visual prototyping and production."
+      ],
+      "research": {
+        "method": "Produce hi-fi design mockups to allow the highest level of visual prototyping and production.",
+        "findings": [],
+        "oldVersion": null
+      }
+    },
+    "images": {
+      "oldVersion": null,
+      "detailed": [
+        "public/images/projects/hertz-car-rental/jake-blucker-tmzcrbkm99y-unsplash1jpg.png",
+        "public/images/projects/hertz-car-rental/high-fivehiclechoicepng.png",
+        "public/images/projects/hertz-car-rental/hertzflowchartpng.png",
+        "public/images/projects/hertz-car-rental/low-fivehiclechoicepng.png"
+      ],
+      "designSystem": []
+    }
+  },
+  "aidium-first-aid": {
+    "project_id": "aidium-first-aid",
+    "content": {
+      "title": "Aidium First Aid Training Responsive Application",
+      "subtitle": "",
+      "description": "Aidium is a responsive website, mobile, and tablet app that helps users learn first-aid.",
+      "timeline": "December 2021 to February 2022",
+      "role": "UX designer leading the app and responsive website design from conception to delivery.",
+      "outcome": "",
+      "goals": [
+        "Do you feel confident in emergency situations?",
+        "Do you feel properly trained to handle someone choking?",
+        "Have you ever had to perform CPR on someone?",
+        "Do you know how to perform CPR?",
+        "Would you feel more confident if you knew basic first aid skills in an emergency situation?"
+      ],
+      "research": {
+        "method": "There’s a significant amount of data available on the topic of first aid and common deaths around the world, including statistics that go in depth on how first aid skills can help save lives in a large portion of those situations.",
+        "findings": [],
+        "oldVersion": null
+      }
+    },
+    "images": {
+      "oldVersion": "public/images/projects/aidium-first-aid/old-version.png",
+      "detailed": [
+        "public/images/projects/aidium-first-aid/aidium-headerpng.png",
+        "public/images/projects/aidium-first-aid/wf-prototypepng.png",
+        "public/images/projects/aidium-first-aid/breakdown-wpng.png",
+        "public/images/projects/aidium-first-aid/hi-prototypepng.png",
+        "public/images/projects/aidium-first-aid/aid-compare-1png.png",
+        "public/images/projects/aidium-first-aid/aid-compare-2png.png",
+        "public/images/projects/aidium-first-aid/aidium-mockup-finishedpng.png",
+        "public/images/projects/aidium-first-aid/ipad-propng.png",
+        "public/images/projects/aidium-first-aid/macbook-propng.png"
+      ],
+      "designSystem": []
+    }
+  },
+  "chat-application": {
+    "project_id": "chat-application",
+    "content": {
+      "title": "Chat Application",
+      "subtitle": "",
+      "description": "",
+      "timeline": "",
+      "role": "",
+      "outcome": "",
+      "goals": [],
+      "research": {
+        "method": "",
+        "findings": [],
+        "oldVersion": null
+      }
+    },
+    "images": {
+      "oldVersion": null,
+      "detailed": [
+        "public/images/projects/chat-application/chat-conceptpng.png"
+      ],
+      "designSystem": []
+    }
+  },
+  "paypal-redesign": {
+    "project_id": "paypal-redesign",
+    "content": {
+      "title": "Paypal Redesign Concept",
+      "subtitle": "",
+      "description": "",
+      "timeline": "",
+      "role": "",
+      "outcome": "",
+      "goals": [],
+      "research": {
+        "method": "",
+        "findings": [],
+        "oldVersion": null
+      }
+    },
+    "images": {
+      "oldVersion": null,
+      "detailed": [
+        "public/images/projects/paypal-redesign/paypal-lightjpg.png",
+        "public/images/projects/paypal-redesign/paypal-darkljpg.png"
+      ],
+      "designSystem": []
+    }
+  },
+  "nft-concept-site": {
+    "project_id": "nft-concept-site",
+    "content": {
+      "title": "NFT Marketplace Concept",
+      "subtitle": "",
+      "description": "",
+      "timeline": "",
+      "role": "",
+      "outcome": "",
+      "goals": [],
+      "research": {
+        "method": "",
+        "findings": [],
+        "oldVersion": null
+      }
+    },
+    "images": {
+      "oldVersion": null,
+      "detailed": [
+        "public/images/projects/nft-concept-site/nftconceptpcpng.png"
+      ],
+      "designSystem": []
+    }
+  },
+  "cloud-mining-concept": {
+    "project_id": "cloud-mining-concept",
+    "content": {
+      "title": "Cloud Mining Site Concept",
+      "subtitle": "",
+      "description": "",
+      "timeline": "",
+      "role": "",
+      "outcome": "",
+      "goals": [],
+      "research": {
+        "method": "",
+        "findings": [],
+        "oldVersion": null
+      }
+    },
+    "images": {
+      "oldVersion": null,
+      "detailed": [
+        "public/images/projects/cloud-mining-concept/cloudminingconceptpcpng.png"
+      ],
+      "designSystem": []
+    }
+  },
+  "other-digital-art": {
+    "project_id": "other-digital-art",
+    "content": {
+      "title": "",
+      "subtitle": "",
+      "description": "",
+      "timeline": "",
+      "role": "",
+      "outcome": "",
+      "goals": [],
+      "research": {
+        "method": "",
+        "findings": [],
+        "oldVersion": null
+      }
+    },
+    "images": {
+      "oldVersion": null,
+      "detailed": [
+        "public/images/projects/other-digital-art/182184413_270294024801019_7294339655731499234_njpg.png",
+        "public/images/projects/other-digital-art/118770270_115083333655423_5387360318293387612_njpg.png",
+        "public/images/projects/other-digital-art/118546910_118854409944982_7352301179530177008_njpg.png",
+        "public/images/projects/other-digital-art/back-in-blood_3png.png",
+        "public/images/projects/other-digital-art/demon_4png.png",
+        "public/images/projects/other-digital-art/270188308_431015418728878_3836141654729403_njpg.png",
+        "public/images/projects/other-digital-art/118807668_116339053529851_1759855727228261964_njpg.png"
+      ],
+      "designSystem": []
+    }
+  }
+}
