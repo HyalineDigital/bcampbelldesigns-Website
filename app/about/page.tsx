@@ -8,7 +8,7 @@ import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 export default function AboutPage() {
   return (
-    <section className="pt-32 pb-12 px-4 md:px-8 lg:px-12 relative min-h-screen">
+    <section className="pt-32 pb-12 px-4 md:px-8 lg:px-12 relative min-h-screen" style={{ '--border-color': 'rgba(255, 255, 255, 0.3)' } as React.CSSProperties}>
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <ScrollAnimation direction="up" delay={0.1}>
