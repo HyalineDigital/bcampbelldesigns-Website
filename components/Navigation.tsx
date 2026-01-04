@@ -21,7 +21,7 @@ export default function Navigation() {
   const navItems = [
     { name: "Work", link: "/#work" },
     { name: "About", link: "/about" },
-    { name: "Contact", link: "/#contact" },
+    { name: "Contact", link: "/contact" },
   ];
 
   return (
