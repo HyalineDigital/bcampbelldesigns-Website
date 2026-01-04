@@ -8,7 +8,7 @@ import ShaderBackground from "@/components/ShaderBackground";
 import ScrollingSkills from "@/components/ScrollingSkills";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import ScrollAnimation from "@/components/ScrollAnimation";
-import { Mail } from "lucide-react";
+import { Mail, FileText } from "lucide-react";
 import { FlipWords } from "@/components/ui/flip-words";
 
 export default function Home() {
@@ -322,10 +322,14 @@ export default function Home() {
             </div>
           </ScrollAnimation>
           <ScrollAnimation direction="up" delay={0.2}>
-            <div className="flex justify-center items-center">
-              <a
-                href="mailto:Brandon@bcampbelldesigns.com"
-                className="relative inline-flex items-center gap-4 text-white text-base font-medium px-5 py-2.5 rounded-full border border-gray-300/10 bg-[#FFFFFF]/5 hover:bg-[#FFFFFF]/5 hover:border-2 transition-all"
+            <div className="flex justify-center items-center gap-4 flex-wrap">
+              <button
+                onClick={() => {
+                  const parts = ['brandon', '@', 'bcampbelldesigns', '.', 'com'];
+                  const email = parts.join('');
+                  window.location.href = `mailto:${email}`;
+                }}
+                className="relative inline-flex items-center gap-4 text-white text-base font-medium px-5 py-2.5 rounded-full border border-gray-300/10 bg-[#FFFFFF]/5 hover:bg-[#FFFFFF]/5 hover:border-2 transition-all cursor-pointer"
               >
                 <GlowingEffect
                   disabled={false}
@@ -337,6 +341,23 @@ export default function Home() {
                 />
                 <Mail className="w-5 h-5 relative z-10" />
                 <span className="relative z-10">Email Me</span>
+              </button>
+              <a
+                href="/Brandon-Campbell-UX-Product-Designer-2026.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative inline-flex items-center gap-4 text-white text-base font-medium px-5 py-2.5 rounded-full border border-gray-300/10 bg-[#FFFFFF]/5 hover:bg-[#FFFFFF]/5 hover:border-2 transition-all"
+              >
+                <GlowingEffect
+                  disabled={false}
+                  proximity={50}
+                  spread={30}
+                  blur={0}
+                  borderWidth={3}
+                  movementDuration={1.5}
+                />
+                <FileText className="w-5 h-5 relative z-10" />
+                <span className="relative z-10">View Resume</span>
               </a>
             </div>
           </ScrollAnimation>

@@ -43,7 +43,7 @@ export default function Navigation() {
         />
         <div className="relative z-[100] flex items-center gap-2 md:gap-4 flex-shrink-0 justify-end ml-4 md:ml-8 lg:ml-12">
           <a
-            href="/resume.pdf"
+            href="/Brandon-Campbell-UX-Product-Designer-2026.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="relative inline-flex items-center text-white text-xs md:text-sm font-medium px-3 md:px-4 py-2 rounded-full border border-gray-300/10 bg-[#FFFFFF]/5 hover:bg-[#FFFFFF]/15 hover:border-2 transition-all whitespace-nowrap"
@@ -108,7 +108,7 @@ export default function Navigation() {
             </Link>
           ))}
           <a
-            href="/resume.pdf"
+            href="/Brandon-Campbell-UX-Product-Designer-2026.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="relative inline-flex items-center justify-center text-white text-sm font-medium px-4 py-2.5 rounded-full border border-gray-300/10 bg-[#FFFFFF]/5 hover:bg-[#FFFFFF]/15 hover:border-2 transition-all w-full sm:w-auto"
