@@ -160,7 +160,7 @@ export default function ProjectPage({
                     <div className="flex flex-col md:hidden gap-2 mb-4">
                       {[
                         "Transitioning from Web to Native Desktop",
-                        "Data-Driven Research & &quot;The Scoreboard 2.0&quot;",
+                        "Data-Driven Research & The Scoreboard 2.0",
                         "Integrity Through Design (Cheater Detection)",
                       ].map((title, index) => (
                         <button
@@ -184,7 +184,7 @@ export default function ProjectPage({
                     <div className="hidden md:flex flex-wrap gap-0 mb-0 border-b border-gray-700/50">
                       {[
                         "Transitioning from Web to Native Desktop",
-                        "Data-Driven Research & &quot;The Scoreboard 2.0&quot;",
+                        "Data-Driven Research & The Scoreboard 2.0",
                         "Integrity Through Design (Cheater Detection)",
                       ].map((title, index) => (
                         <button
@@ -235,6 +235,17 @@ export default function ProjectPage({
                                 I focused on a modular UI that could be easily expanded to accommodate the game's frequent seasonal updates and evolving meta
                               </p>
                             </div>
+                            <div 
+                              className="relative w-full aspect-video rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity mt-6"
+                              onClick={() => openLightbox(["/images/projects/tabstats-dashboard/searchresultspng.png"], 0)}
+                            >
+                              <Image
+                                src="/images/projects/tabstats-dashboard/searchresultspng.png"
+                                alt="Search Results"
+                                fill
+                                className="object-contain"
+                              />
+                            </div>
                           </div>
                         </motion.div>
                       )}
@@ -263,6 +274,17 @@ export default function ProjectPage({
                                 Designed a highly detailed, quick-view in-game scoreboard. This acted as a data-heavy replacement for the standard game UI, allowing players to check teammate ranks and past performance without ever tabbing out to a browser.
                               </p>
                             </div>
+                            <div 
+                              className="relative w-full aspect-video rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity mt-6"
+                              onClick={() => openLightbox(["/images/projects/tabstats-dashboard/in-game-advancedscoreboardpng.png"], 0)}
+                            >
+                              <Image
+                                src="/images/projects/tabstats-dashboard/in-game-advancedscoreboardpng.png"
+                                alt="In-Game Advanced Scoreboard"
+                                fill
+                                className="object-contain"
+                              />
+                            </div>
                           </div>
                         </motion.div>
                       )}
@@ -290,6 +312,17 @@ export default function ProjectPage({
                               <p className="text-gray-300 text-lg font-light leading-relaxed">
                                 This system turned Tabstats into an essential &quot;anti-cheat&quot; companion, driving high daily active usage and establishing deep user trust within the competitive community.
                               </p>
+                            </div>
+                            <div 
+                              className="relative w-full aspect-video rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity mt-6"
+                              onClick={() => openLightbox(["/images/projects/tabstats-dashboard/companionapp-3png.png"], 0)}
+                            >
+                              <Image
+                                src="/images/projects/tabstats-dashboard/companionapp-3png.png"
+                                alt="Companion App"
+                                fill
+                                className="object-contain"
+                              />
                             </div>
                           </div>
                         </motion.div>
@@ -436,7 +469,7 @@ export default function ProjectPage({
           )}
 
           {/* Additional Images */}
-          {displayImages.length > 0 && project.id !== "icyveins" && (
+          {displayImages.length > 0 && project.id !== "icyveins" && project.id !== "tabstats-dashboard" && (
             <div className="mb-12">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {displayImages.map((image, index) => {
