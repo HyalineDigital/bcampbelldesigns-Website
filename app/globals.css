@@ -389,5 +389,11 @@
       hyphens: auto;
     }
   }
+
+  /* GlowingEffect support - ensure mask properties work in production */
+  .glow::after {
+    -webkit-mask-composite: intersect;
+    mask-composite: intersect;
+  }
 }
 
