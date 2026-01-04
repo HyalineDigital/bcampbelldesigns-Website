@@ -3,11 +3,40 @@
 import { Mail, FileText } from "lucide-react";
 import ScrollAnimation from "@/components/ScrollAnimation";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
+import ShaderBackground from "@/components/ShaderBackground";
 
 export default function ContactPage() {
   return (
-    <section className="pt-32 pb-12 px-4 md:px-8 lg:px-12 relative min-h-screen" style={{ '--border-color': 'rgba(255, 255, 255, 0.15)' } as React.CSSProperties}>
-      <div className="max-w-4xl mx-auto">
+    <section className="h-screen flex relative" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
+      {/* Background Shader - Full width, behind borders */}
+      <div 
+        className="absolute top-0 h-full z-0"
+        style={{
+          left: '0',
+          right: '0',
+          width: '100vw',
+          marginLeft: 'calc((100% - 100vw) / 2)',
+          marginRight: 'calc((100% - 100vw) / 2)'
+        }}
+      >
+        {/* Video Background */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ zIndex: 0 }}
+        >
+          <source src="/images/sarcastic_remix.webm" type="video/webm" />
+        </video>
+        <ShaderBackground />
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/20" style={{ zIndex: 1 }}></div>
+      </div>
+      
+      {/* Content Container - Centered */}
+      <div className="max-w-4xl mx-auto w-full px-4 md:px-8 lg:px-12 relative flex-1 flex items-center justify-center z-20">
         <ScrollAnimation direction="up" delay={0.1}>
           <div className="glass-card rounded-2xl p-8 md:p-12 text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
