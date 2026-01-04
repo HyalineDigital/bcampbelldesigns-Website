@@ -22,6 +22,36 @@ export default function AboutPage() {
 
         {/* Main Content */}
         <div className="space-y-8">
+          {/* Photos */}
+          <ScrollAnimation direction="up" delay={0.15}>
+            <div className="flex gap-4 md:gap-6 justify-center mb-8 flex-wrap">
+              <div className="relative w-[150px] h-[150px] md:w-[200px] md:h-[200px] rounded-2xl overflow-hidden glass-card">
+                <Image
+                  src="/images/about/01fd1c5f-8f9f-4e64-b084-f64d7fc3c8fe+%281%29.jpg"
+                  alt="About me"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative w-[150px] h-[150px] md:w-[200px] md:h-[200px] rounded-2xl overflow-hidden glass-card">
+                <Image
+                  src="/images/about/52880687_580982229046485_7256658438447431680_n.jpg"
+                  alt="About me"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative w-[150px] h-[150px] md:w-[200px] md:h-[200px] rounded-2xl overflow-hidden glass-card">
+                <Image
+                  src="/images/about/70420256_700047023806671_5600968934049185792_n.jpg"
+                  alt="About me"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </ScrollAnimation>
+
           {/* Introduction */}
           <ScrollAnimation direction="up" delay={0.2}>
             <div className="glass-card rounded-2xl p-8 md:p-12">
