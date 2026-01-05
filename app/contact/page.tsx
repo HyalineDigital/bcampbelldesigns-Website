@@ -38,7 +38,7 @@ export default function ContactPage() {
       {/* Content Container - Centered */}
       <div className="max-w-4xl mx-auto w-full px-4 md:px-8 lg:px-12 relative flex-1 flex items-center justify-center z-20">
         <ScrollAnimation direction="up" delay={0.1}>
-          <div className="glass-card rounded-2xl p-8 md:p-12 text-center">
+          <div className="glass-card rounded-2xl p-8 md:p-12 text-center" style={{ borderColor: 'rgba(255, 255, 255, 0.25)' }}>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
               Let&apos;s <span className="text-white">Connect</span>
             </h2>
