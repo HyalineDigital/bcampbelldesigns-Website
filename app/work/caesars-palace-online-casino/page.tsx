@@ -246,7 +246,7 @@ export default function CaesarsPalaceOnlineCasinoPage() {
                           <div>
                             <h4 className="text-lg md:text-xl font-bold text-white mb-3">Business Impact</h4>
                             <p className="text-gray-300 text-lg font-light leading-relaxed">
-                              Drastically reduced CS ticket volume and increased user engagement with the loyalty ecosystem.
+                              Reduced customer support tickets by nearly 60% and increased engagement with the loyalty ecosystem.
                             </p>
                           </div>
                         </div>
@@ -332,7 +332,7 @@ export default function CaesarsPalaceOnlineCasinoPage() {
                           <div>
                             <h4 className="text-lg md:text-xl font-bold text-white mb-3">Innovation</h4>
                             <p className="text-gray-300 text-lg font-light leading-relaxed">
-                              Reworked the leaderboard system to support Sponsored Takeovers.
+                              Completed a visual overhaul of the existing leaderboards while introducing loyalty tier exclusive leaderboards and opening the opportunity for sponsored leaderboard takeovers.
                             </p>
                           </div>
                           <div>
