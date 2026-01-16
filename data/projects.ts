@@ -519,14 +519,6 @@ export const projects: Project[] = [
     description: "",
     image: "/images/portfolio/valorant-dashboard.jpg",
     tags: ["Gaming", "UI"],
-    highlights: [
-      {
-        title: "Project Overview",
-        sections: {
-          "The Project": "Valorant Dashboard Concept design.",
-        },
-      },
-    ],
     images: [
       "/images/projects/valorant-dashboard/valorant-dashbaordjpg.jpg",
     ],

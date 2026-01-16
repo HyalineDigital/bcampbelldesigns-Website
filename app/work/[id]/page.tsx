@@ -515,7 +515,7 @@ export default function ProjectPage({
           {/* Additional Images */}
           {displayImages.length > 0 && project.id !== "icyveins" && project.id !== "tabstats-dashboard" && (
             <div className="mb-12">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className={project.id === "valorant-dashboard" ? "grid grid-cols-1 gap-6" : "grid grid-cols-1 md:grid-cols-2 gap-6"}>
                 {displayImages.map((image, index) => {
                   const imageIndexInAll = headerImage ? index + 1 : index;
                   return (
