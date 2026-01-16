@@ -72,7 +72,7 @@ export default function ProjectPage({
           </ScrollAnimation>
 
           {/* Header Image */}
-          {headerImage && !["valorant-dashboard", "lcs-web-app-2022", "amazon-luna-concept", "cloud-mining-concept", "nft-concept-site", "paypal-redesign", "chat-application"].includes(project.id) && (
+          {headerImage && !["valorant-dashboard", "lcs-web-app-2022", "amazon-luna-concept", "cloud-mining-concept", "nft-concept-site", "paypal-redesign", "chat-application", "rocket-stream-concept"].includes(project.id) && (
             <ScrollAnimation direction="up" delay={0.15}>
               <div 
                 className="mb-8 w-full cursor-pointer hover:opacity-90 transition-opacity"
@@ -515,7 +515,7 @@ export default function ProjectPage({
           {/* Additional Images */}
           {displayImages.length > 0 && project.id !== "icyveins" && project.id !== "tabstats-dashboard" && (
             <div className="mb-12">
-              <div className={["valorant-dashboard", "lcs-web-app-2022", "amazon-luna-concept", "cloud-mining-concept", "nft-concept-site", "paypal-redesign", "chat-application"].includes(project.id) ? "grid grid-cols-1 gap-6" : "grid grid-cols-1 md:grid-cols-2 gap-6"}>
+              <div className={["valorant-dashboard", "lcs-web-app-2022", "amazon-luna-concept", "cloud-mining-concept", "nft-concept-site", "paypal-redesign", "chat-application", "rocket-stream-concept"].includes(project.id) ? "grid grid-cols-1 gap-6" : "grid grid-cols-1 md:grid-cols-2 gap-6"}>
                 {displayImages.map((image, index) => {
                   const imageIndexInAll = headerImage ? index + 1 : index;
                   return (

@@ -558,14 +558,6 @@ export const projects: Project[] = [
     description: "",
     image: "/images/portfolio/rocket-stream-concept.jpg",
     tags: ["Streaming", "UI"],
-    highlights: [
-      {
-        title: "Project Overview",
-        sections: {
-          "The Project": "Rocket Stream Dashboard Concept design for streaming platforms.",
-        },
-      },
-    ],
     images: [
       "/images/projects/rocket-stream-concept/stream-dashboardjpg.jpg",
       "/images/projects/rocket-stream-concept/stream-learningjpg.jpg",
