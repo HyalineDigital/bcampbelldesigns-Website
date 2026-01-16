@@ -744,23 +744,6 @@ export const projects: Project[] = [
     ],
     featured: false,
   },
-  {
-    id: "other-digital-art",
-    title: "Other Digital Art",
-    category: "Art",
-    description: "Digital art and illustrations including 3D work.",
-    image: "/images/portfolio/other-digital-art.jpg",
-    tags: ["Illustration", "3D"],
-    highlights: [
-      {
-        title: "Project Overview",
-        sections: {
-          "The Project": "Digital art and illustrations including 3D work.",
-        },
-      },
-    ],
-    featured: false,
-  },
 ];
 
 export const categories = Array.from(
