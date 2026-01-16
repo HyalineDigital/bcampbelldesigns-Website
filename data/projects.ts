@@ -499,6 +499,7 @@ export const projects: Project[] = [
     description: "",
     image: "/images/portfolio/lcs-web-app-2022.jpg",
     tags: ["League of Legends", "Web"],
+    timeline: "2022",
     images: [
       "/images/projects/lcs-web-app-2022/lcsredesignjpg.jpg",
     ],
@@ -511,6 +512,7 @@ export const projects: Project[] = [
     description: "",
     image: "/images/portfolio/valorant-dashboard.jpg",
     tags: ["Gaming", "UI"],
+    timeline: "2022",
     images: [
       "/images/projects/valorant-dashboard/valorant-dashbaordjpg.jpg",
     ],
@@ -558,6 +560,7 @@ export const projects: Project[] = [
     description: "",
     image: "/images/portfolio/rocket-stream-concept.jpg",
     tags: ["Streaming", "UI"],
+    timeline: "2022",
     images: [
       "/images/projects/rocket-stream-concept/stream-dashboardjpg.jpg",
       "/images/projects/rocket-stream-concept/stream-learningjpg.jpg",
@@ -605,6 +608,7 @@ export const projects: Project[] = [
     description: "",
     image: "/images/portfolio/amazon-luna-concept.png",
     tags: ["Cloud Gaming", "UI"],
+    timeline: "2022",
     images: [
       "/images/projects/amazon-luna-concept/amazonlunaconceptpcpng.png",
     ],
@@ -694,14 +698,7 @@ export const projects: Project[] = [
     description: "",
     image: "/images/portfolio/chat-application.png",
     tags: ["Social", "UI"],
-    highlights: [
-      {
-        title: "Project Overview",
-        sections: {
-          "The Project": "Chat Application concept design.",
-        },
-      },
-    ],
+    timeline: "2022",
     images: [
       "/images/projects/chat-application/chat-conceptpng.png",
     ],
@@ -714,6 +711,7 @@ export const projects: Project[] = [
     description: "",
     image: "/images/portfolio/paypal-redesign.jpg",
     tags: ["Fintech", "Dark Mode"],
+    timeline: "2022",
     images: [
       "/images/projects/paypal-redesign/paypal-darkljpg.jpg",
       "/images/projects/paypal-redesign/paypal-lightjpg.jpg",
@@ -727,6 +725,7 @@ export const projects: Project[] = [
     description: "",
     image: "/images/portfolio/nft-concept-site.jpg",
     tags: ["Web3", "UI"],
+    timeline: "2022",
     images: [
       "/images/projects/nft-concept-site/nftconceptpcpng.png",
     ],
@@ -739,6 +738,7 @@ export const projects: Project[] = [
     description: "",
     image: "/images/portfolio/cloud-mining-concept.png",
     tags: ["Crypto", "UI"],
+    timeline: "2022",
     images: [
       "/images/projects/cloud-mining-concept/cloudminingconceptpcpng.png",
     ],
