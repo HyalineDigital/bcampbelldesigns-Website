@@ -224,6 +224,27 @@ export default function Home() {
             </div>
           </ScrollAnimation>
           <ProjectGrid featuredOnly={true} />
+          <ScrollAnimation direction="up" delay={0.3}>
+            <div className="text-center mt-12 md:mt-16">
+              <Link
+                href="/projects"
+                className="relative inline-flex items-center gap-3 text-white text-sm md:text-base font-medium px-6 md:px-8 py-3 md:py-3.5 rounded-full border border-gray-300/10 bg-[#FFFFFF]/5 hover:bg-[#FFFFFF]/15 hover:border-2 transition-all"
+              >
+                <GlowingEffect
+                  disabled={false}
+                  proximity={50}
+                  spread={30}
+                  blur={0}
+                  borderWidth={3}
+                  movementDuration={1.5}
+                />
+                <span className="relative z-10">View All Projects</span>
+                <svg className="w-5 h-5 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
+          </ScrollAnimation>
         </div>
       </section>
 
