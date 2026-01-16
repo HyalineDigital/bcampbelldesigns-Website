@@ -227,7 +227,7 @@ export const projects: Project[] = [
       oldVersion: "/images/projects/tabstats-design-system/old-version.png",
     },
     images: [
-      "/images/projects/tabstats-design-system/gnhd9nzetuxyjpg.png",
+      "/images/projects/tabstats-design-system/gnhd9nzetuxyjpg.jpg",
       "/images/projects/tabstats-design-system/sidebaritemspng.png",
       "/images/projects/tabstats-design-system/colourspng.png",
       "/images/projects/tabstats-design-system/typographypng.png",
@@ -238,7 +238,7 @@ export const projects: Project[] = [
       "/images/projects/tabstats-design-system/sidebarcontentonmobilepng.png",
       "/images/projects/tabstats-design-system/bannerspng.png",
       "/images/projects/tabstats-design-system/widgetspng.png",
-      "/images/projects/tabstats-design-system/sitemapjpg.png",
+      "/images/projects/tabstats-design-system/sitemapjpg.jpg",
       "/images/projects/tabstats-design-system/queued-withpng.png",
       "/images/projects/tabstats-design-system/r6-matchespng.png",
       "/images/projects/tabstats-design-system/advancedpng.png",
@@ -429,7 +429,7 @@ export const projects: Project[] = [
       oldVersion: "/images/projects/mathgames/old-version.png",
     },
     images: [
-      "/images/projects/mathgames/81ky7xbcgwljpg.png",
+      "/images/projects/mathgames/81ky7xbcgwljpg.jpg",
       "/images/projects/mathgames/math-games_objectspng.png",
       "/images/projects/mathgames/mappng.png",
       "/images/projects/mathgames/gamepng.png",
@@ -508,7 +508,7 @@ export const projects: Project[] = [
       },
     ],
     images: [
-      "/images/projects/lcs-web-app-2022/lcsredesignjpg.png",
+      "/images/projects/lcs-web-app-2022/lcsredesignjpg.jpg",
     ],
     featured: false,
   },
@@ -528,7 +528,7 @@ export const projects: Project[] = [
       },
     ],
     images: [
-      "/images/projects/valorant-dashboard/valorant-dashbaordjpg.png",
+      "/images/projects/valorant-dashboard/valorant-dashbaordjpg.jpg",
     ],
     featured: false,
   },
@@ -583,9 +583,9 @@ export const projects: Project[] = [
       },
     ],
     images: [
-      "/images/projects/rocket-stream-concept/stream-dashboardjpg.png",
-      "/images/projects/rocket-stream-concept/stream-learningjpg.png",
-      "/images/projects/rocket-stream-concept/stream-mobilejpg.png",
+      "/images/projects/rocket-stream-concept/stream-dashboardjpg.jpg",
+      "/images/projects/rocket-stream-concept/stream-learningjpg.jpg",
+      "/images/projects/rocket-stream-concept/stream-mobilejpg.jpg",
     ],
     featured: false,
   },
@@ -669,7 +669,7 @@ export const projects: Project[] = [
       method: "Produce hi-fi design mockups to allow the highest level of visual prototyping and production.",
     },
     images: [
-      "/images/projects/hertz-car-rental/jake-blucker-tmzcrbkm99y-unsplash1jpg.png",
+      "/images/projects/hertz-car-rental/jake-blucker-tmzcrbkm99y-unsplash1jpg.jpg",
       "/images/projects/hertz-car-rental/high-fivehiclechoicepng.png",
       "/images/projects/hertz-car-rental/hertzflowchartpng.png",
       "/images/projects/hertz-car-rental/low-fivehiclechoicepng.png",
@@ -755,8 +755,8 @@ export const projects: Project[] = [
       },
     ],
     images: [
-      "/images/projects/paypal-redesign/paypal-darkljpg.png",
-      "/images/projects/paypal-redesign/paypal-lightjpg.png",
+      "/images/projects/paypal-redesign/paypal-darkljpg.jpg",
+      "/images/projects/paypal-redesign/paypal-lightjpg.jpg",
     ],
     featured: false,
   },
