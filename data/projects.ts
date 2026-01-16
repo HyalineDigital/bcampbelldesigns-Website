@@ -34,7 +34,7 @@ export interface Project {
   highlights?: ProjectHighlight[]; // Project highlights in the numbered format
 }
 
-export const projects: Project[] = [
+const projectsRaw: Project[] = [
   {
     id: "caesars-palace-online-casino",
     title: "Caesars Palace Online Casino",
@@ -91,54 +91,6 @@ export const projects: Project[] = [
       "Operational Efficiency: Standardized a visual language for 50+ complex infographics and ability sequences, reducing the production time for guide writers while setting a new industry \"Gold Standard\" for gaming theorycrafting visualization.",
       "Product Innovation: Conceptualized and shipped interactive Gear Builders and Talent Tree tools, simplifying complex in-game mathematics for millions of players and increasing interaction rates on core guide pages.",
     ],
-  },
-  {
-    id: "the-national-forest-foundation",
-    title: "The National Forest Foundation",
-    category: "Case Study",
-    description: "The National Forest Foundation works on behalf of the American public to inspire personal and meaningful connections to America's National Forests. NFF focuses on driving donations and gathering communities together to help with the preservation of the Nation's Forests.",
-    image: "/images/portfolio/the-national-forest-foundation.png",
-    tags: ["Non-Profit", "Web"],
-    links: {
-      live: "https://www.nationalforests.org/",
-    },
-    timeline: "December 2021 to April 2022",
-    role: "UX/UI designer designing an app for The National Forest Foundation from conception to delivery.",
-    stats: ["60% increase in donations", "45% improved user engagement"],
-    highlights: [
-      {
-        title: "Research & Process",
-        sections: {
-          "The Method": "User Interviews",
-        },
-        image: "/images/projects/the-national-forest-foundation/old-version.png",
-      },
-    ],
-    research: {
-      method: "User Interviews",
-      oldVersion: "/images/projects/the-national-forest-foundation/old-version.png",
-    },
-    images: [
-      "/images/projects/the-national-forest-foundation/ux-design-processpng.png",
-      "/images/projects/the-national-forest-foundation/geran-de-klerk-qzgn45hsen0-unsplashjpg.jpg",
-      "/images/projects/the-national-forest-foundation/ap21230228939305_wide-202bcd71c1916f589849f96e3aab7429898aca54-s1100-c50jpg.jpg",
-      "/images/projects/the-national-forest-foundation/christian-joudrey-mwrr1xj95hg-unsplashjpg.jpg",
-      "/images/projects/the-national-forest-foundation/marita-kavelashvili-ugnrxk1129g-unsplashjpg.jpg",
-      "/images/projects/the-national-forest-foundation/nora-personapng.png",
-      "/images/projects/the-national-forest-foundation/pine-watt-2hzmz15wgik-unsplashjpg.jpg",
-      "/images/projects/the-national-forest-foundation/user-journey-jazminejpg.jpg",
-      "/images/projects/the-national-forest-foundation/wireframespng.png",
-      "/images/projects/the-national-forest-foundation/wireframes-prototypespng.png",
-      "/images/projects/the-national-forest-foundation/annie-spratt-qyaka7w5umy-unsplashjpg.jpg",
-      "/images/projects/the-national-forest-foundation/screens-compare2png.png",
-      "/images/projects/the-national-forest-foundation/screens-comparepng.png",
-      "/images/projects/the-national-forest-foundation/hi-fi-prototypepng.png",
-      "/images/projects/the-national-forest-foundation/lukasz-szmigiel-2shvy8lf6l0-unsplashjpg.jpg",
-      "/images/projects/the-national-forest-foundation/mockup-finishedpng.png",
-      "/images/projects/the-national-forest-foundation/zhang-kaiyv-fmyibz2jdhu-unsplashjpg.jpg",
-      "/images/projects/the-national-forest-foundation/matthew-smith-rfflri94rs8-unsplashjpg.jpg",
-    ],
-    featured: false,
   },
   {
     id: "tabstats-dashboard",
@@ -203,58 +155,6 @@ export const projects: Project[] = [
       "User Growth: Strategic feature placement and improved mobile/desktop accessibility led to a significant increase in daily active users (DAU).",
       "Enhanced Retention: By integrating user feedback directly into the 1.0 release, we created a \"sticky\" ecosystem where players relied on Tabstats for every competitive session.",
     ],
-  },
-  {
-    id: "tabstats-design-system",
-    title: "Website UI/UX Design",
-    category: "UI/UX & Product Design",
-    description: "Tabstats is a website and dashboard system founded in 2019. This product was focused around a large scale website created around an API integration with \"Ubisoft Connect\" and the video game \"Rainbow Six Siege\". The website portion was made to integrate with a downloaded dashboard application used to track player data, giving deep insights to their gameplay and how they could improve.",
-    image: "/images/portfolio/tabstats-design-system.png",
-    tags: ["Design System", "Branding"],
-    timeline: "July 2022 - Feb 2023",
-    role: "Worked closely with Ubisoft & Battleye to acquire assets, implement new changes/updates and more. As well as leading the creation of a dashboard system used to enhance gameplay for users. This was an extremely user experience-dependent product with a large number of users depending on the website & dashboard daily. This project was seen as a leader for cheater detection and the go to statistics/leaderboard website.",
-    highlights: [
-      {
-        title: "Research & Process",
-        sections: {
-          "The Method": "As always, user research and feedback was a driving force behind decisions on the product. Feedback was collected from multiple channels including feedback through our website, discord and reddit communities. A majority of additional features added to the product were due to discovery through countless hours of the QA team surfacing user issues and needs, passing them off to myself and another designer which gave us a solid starting point to conduct user interviews. Multiple rounds of user interviews were conducted every other month and before a major release to ensure the product was always meeting the needs of users.",
-        },
-        image: "/images/projects/tabstats-design-system/old-version.png",
-      },
-    ],
-    research: {
-      method: "As always, user research and feedback was a driving force behind decisions on the product. Feedback was collected from multiple channels including feedback through our website, discord and reddit communities. A majority of additional features added to the product were due to discovery through countless hours of the QA team surfacing user issues and needs, passing them off to myself and another designer which gave us a solid starting point to conduct user interviews. Multiple rounds of user interviews were conducted every other month and before a major release to ensure the product was always meeting the needs of users.",
-      oldVersion: "/images/projects/tabstats-design-system/old-version.png",
-    },
-    images: [
-      "/images/projects/tabstats-design-system/gnhd9nzetuxyjpg.jpg",
-      "/images/projects/tabstats-design-system/sidebaritemspng.png",
-      "/images/projects/tabstats-design-system/colourspng.png",
-      "/images/projects/tabstats-design-system/typographypng.png",
-      "/images/projects/tabstats-design-system/graphitemspng.png",
-      "/images/projects/tabstats-design-system/sidebarpng.png",
-      "/images/projects/tabstats-design-system/graphspng.png",
-      "/images/projects/tabstats-design-system/widgetitemspng.png",
-      "/images/projects/tabstats-design-system/sidebarcontentonmobilepng.png",
-      "/images/projects/tabstats-design-system/bannerspng.png",
-      "/images/projects/tabstats-design-system/widgetspng.png",
-      "/images/projects/tabstats-design-system/sitemapjpg.jpg",
-      "/images/projects/tabstats-design-system/queued-withpng.png",
-      "/images/projects/tabstats-design-system/r6-matchespng.png",
-      "/images/projects/tabstats-design-system/advancedpng.png",
-      "/images/projects/tabstats-design-system/sessionspng.png",
-      "/images/projects/tabstats-design-system/leaderboardspng.png",
-      "/images/projects/tabstats-design-system/project_map_3png.png",
-      "/images/projects/tabstats-design-system/project_map_4png.png",
-      "/images/projects/tabstats-design-system/project_map_5png.png",
-      "/images/projects/tabstats-design-system/project_map_6png.png",
-      "/images/projects/tabstats-design-system/project_map_7png.png",
-      "/images/projects/tabstats-design-system/project_map_8png.png",
-      "/images/projects/tabstats-design-system/project_map_1png.png",
-      "/images/projects/tabstats-design-system/project_map_2png.png",
-      "/images/projects/tabstats-design-system/mockup-finished_tabstaspng.png",
-    ],
-    featured: false,
   },
   {
     id: "addicting-games-mobile",
@@ -438,61 +338,6 @@ export const projects: Project[] = [
     featured: false,
   },
   {
-    id: "addicting-games-dev-portal",
-    title: "Product Design: Developer Portal",
-    category: "Product: Developer Portal",
-    description: "This project stemmed from the feedback of developers and a lack of quality submissions that led to long QA times for submitted games to the Addicting Games website. Additionally the finalized product was to be used for further monetization with other game platforms within our network.",
-    image: "/images/portfolio/addicting-games-dev-portal.png",
-    tags: ["B2B", "Web"],
-    timeline: "Jul 2023 - Oct 2023",
-    role: "Led the full product design of a new onboarding method to facilitate developer's game management and new developer onboarding.",
-    highlights: [
-      {
-        title: "Research & Process",
-        sections: {
-          "The Challenge": "This project stemmed from the feedback of developers and a lack of quality submissions that led to long QA times for submitted games to the Addicting Games website.",
-          "The Method": "Developers currently working with Addicting Games and new developers have reached out with requests on how to add new games, submit updates or remove games entirely.",
-        },
-        image: "/images/projects/addicting-games-dev-portal/old-version.png",
-      },
-    ],
-    research: {
-      method: "Developers currently working with Addicting Games and new developers have reached out with requests on how to add new games, submit updates or remove games entirely.",
-      oldVersion: "/images/projects/addicting-games-dev-portal/old-version.png",
-    },
-    images: [
-      "/images/projects/addicting-games-dev-portal/ag_bgpng.png",
-      "/images/projects/addicting-games-dev-portal/chalkboardjpg.png",
-      "/images/projects/addicting-games-dev-portal/developer_style_guide1png.png",
-      "/images/projects/addicting-games-dev-portal/developer_ag_components1png.png",
-      "/images/projects/addicting-games-dev-portal/assetuploadpng.png",
-      "/images/projects/addicting-games-dev-portal/congratulationspng.png",
-      "/images/projects/addicting-games-dev-portal/deletegamemodalpng.png",
-      "/images/projects/addicting-games-dev-portal/developerprofilepng.png",
-      "/images/projects/addicting-games-dev-portal/editgameprofilepng.png",
-      "/images/projects/addicting-games-dev-portal/editgameprofile-1png.png",
-      "/images/projects/addicting-games-dev-portal/editimagepng.png",
-      "/images/projects/addicting-games-dev-portal/faqpng.png",
-      "/images/projects/addicting-games-dev-portal/finalcheck-livepreviewpng.png",
-      "/images/projects/addicting-games-dev-portal/gameeditspng.png",
-      "/images/projects/addicting-games-dev-portal/gameinformationpng.png",
-      "/images/projects/addicting-games-dev-portal/imageuploadmodalpng.png",
-      "/images/projects/addicting-games-dev-portal/mygamespng.png",
-      "/images/projects/addicting-games-dev-portal/qatoolpng.png",
-      "/images/projects/addicting-games-dev-portal/quailtyguidelinecheckpng.png",
-      "/images/projects/addicting-games-dev-portal/referadeveloperpng.png",
-      "/images/projects/addicting-games-dev-portal/submitforreviewpng.png",
-      "/images/projects/addicting-games-dev-portal/supportpng.png",
-      "/images/projects/addicting-games-dev-portal/uploadcompletepng.png",
-      "/images/projects/addicting-games-dev-portal/uploadgamepng.png",
-      "/images/projects/addicting-games-dev-portal/uploadimagemodalpng.png",
-      "/images/projects/addicting-games-dev-portal/uploadinprogresspng.png",
-      "/images/projects/addicting-games-dev-portal/addictinggamesassetspng.png",
-      "/images/projects/addicting-games-dev-portal/mockup-finished_agdevpng.png",
-    ],
-    featured: false,
-  },
-  {
     id: "lcs-web-app-2022",
     title: "LCS Web App",
     category: "Esports",
@@ -534,7 +379,7 @@ export const projects: Project[] = [
       },
     ],
     images: [
-      "/images/projects/enthusiast-gaming/christopher-farrugia-2yqtqbqzdro-unsplashjpg.png",
+      "/images/projects/enthusiast-gaming/christopher-farrugia-2yqtqbqzdro-unsplashjpg.jpg",
       "/images/projects/enthusiast-gaming/tng_playerasset_week8_9x16-arizonapng.png",
       "/images/projects/enthusiast-gaming/tng_teamannouncements__week8_16x9png.png",
       "/images/projects/enthusiast-gaming/tng_teamannouncements_week8_9x16png.png",
@@ -542,14 +387,14 @@ export const projects: Project[] = [
       "/images/projects/enthusiast-gaming/tng_week8_lineup_headshots_16x9png.png",
       "/images/projects/enthusiast-gaming/tng-week8-showmatchpng.png",
       "/images/projects/enthusiast-gaming/tng-week8-showmatch_verticalpng.png",
-      "/images/projects/enthusiast-gaming/usmc_ads_1000jpg.png",
-      "/images/projects/enthusiast-gaming/usmc_ads_1064jpg.png",
-      "/images/projects/enthusiast-gaming/usmc_ads_1070jpg.png",
-      "/images/projects/enthusiast-gaming/usmc_ads_1100jpg.png",
+      "/images/projects/enthusiast-gaming/usmc_ads_1000jpg.jpg",
+      "/images/projects/enthusiast-gaming/usmc_ads_1064jpg.jpg",
+      "/images/projects/enthusiast-gaming/usmc_ads_1070jpg.jpg",
+      "/images/projects/enthusiast-gaming/usmc_ads_1100jpg.jpg",
       "/images/projects/enthusiast-gaming/expandedstate_1225x390png.png",
-      "/images/projects/enthusiast-gaming/ff_eg_1064jpg.png",
-      "/images/projects/enthusiast-gaming/ff_eg_1070jpg.png",
-      "/images/projects/enthusiast-gaming/ff_eg_1200jpg.png",
+      "/images/projects/enthusiast-gaming/ff_eg_1064jpg.jpg",
+      "/images/projects/enthusiast-gaming/ff_eg_1070jpg.jpg",
+      "/images/projects/enthusiast-gaming/ff_eg_1200jpg.jpg",
     ],
     featured: false,
   },
@@ -746,6 +591,31 @@ export const projects: Project[] = [
   },
 ];
 
+// Helper function to extract the latest year from a timeline string
+function getLatestYear(timeline?: string): number {
+  if (!timeline) return 0;
+  const years = timeline.match(/\b(20\d{2})\b/g);
+  if (!years || years.length === 0) return 0;
+  return Math.max(...years.map((y) => parseInt(y)));
+}
+
+// Sort projects by date (most recent first)
+const projects = [...projectsRaw].sort((a, b) => {
+  const yearA = getLatestYear(a.timeline);
+  const yearB = getLatestYear(b.timeline);
+  if (yearB !== yearA) return yearB - yearA; // Descending by year
+  
+  // If same year, projects without timeline go to the end
+  if (yearA === 0) return 1;
+  if (yearB === 0) return -1;
+  
+  // For same year, maintain relative order (can be improved with month parsing)
+  return 0;
+});
+
 export const categories = Array.from(
   new Set(projects.map((project) => project.category))
 );
+
+// Export sorted projects
+export { projects };
