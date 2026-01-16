@@ -499,14 +499,6 @@ export const projects: Project[] = [
     description: "",
     image: "/images/portfolio/lcs-web-app-2022.jpg",
     tags: ["League of Legends", "Web"],
-    highlights: [
-      {
-        title: "Project Overview",
-        sections: {
-          "The Project": "LCS Web App design for League of Legends esports.",
-        },
-      },
-    ],
     images: [
       "/images/projects/lcs-web-app-2022/lcsredesignjpg.jpg",
     ],
@@ -621,14 +613,6 @@ export const projects: Project[] = [
     description: "",
     image: "/images/portfolio/amazon-luna-concept.png",
     tags: ["Cloud Gaming", "UI"],
-    highlights: [
-      {
-        title: "Project Overview",
-        sections: {
-          "The Project": "Amazon Luna Homepage Redesign concept for cloud gaming platform.",
-        },
-      },
-    ],
     images: [
       "/images/projects/amazon-luna-concept/amazonlunaconceptpcpng.png",
     ],
@@ -738,14 +722,6 @@ export const projects: Project[] = [
     description: "",
     image: "/images/portfolio/paypal-redesign.jpg",
     tags: ["Fintech", "Dark Mode"],
-    highlights: [
-      {
-        title: "Project Overview",
-        sections: {
-          "The Project": "PayPal Redesign Concept with dark mode support.",
-        },
-      },
-    ],
     images: [
       "/images/projects/paypal-redesign/paypal-darkljpg.jpg",
       "/images/projects/paypal-redesign/paypal-lightjpg.jpg",
@@ -759,14 +735,6 @@ export const projects: Project[] = [
     description: "",
     image: "/images/portfolio/nft-concept-site.jpg",
     tags: ["Web3", "UI"],
-    highlights: [
-      {
-        title: "Project Overview",
-        sections: {
-          "The Project": "NFT Concept Site design for Web3 platform.",
-        },
-      },
-    ],
     images: [
       "/images/projects/nft-concept-site/nftconceptpcpng.png",
     ],
@@ -779,14 +747,6 @@ export const projects: Project[] = [
     description: "",
     image: "/images/portfolio/cloud-mining-concept.png",
     tags: ["Crypto", "UI"],
-    highlights: [
-      {
-        title: "Project Overview",
-        sections: {
-          "The Project": "Cloud Mining Concept design for cryptocurrency platform.",
-        },
-      },
-    ],
     images: [
       "/images/projects/cloud-mining-concept/cloudminingconceptpcpng.png",
     ],
