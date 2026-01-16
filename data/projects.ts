@@ -1,3 +1,12 @@
+export interface ProjectHighlight {
+  title: string;
+  subtitle?: string;
+  sections?: {
+    [key: string]: string; // e.g., "User Pain Point", "The Solution", "Business Impact", "The Challenge", "The Result", etc.
+  };
+  image?: string;
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -22,6 +31,7 @@ export interface Project {
   };
   stats?: string[]; // Project stats/metrics for homepage cards (e.g., "50% improved conversions")
   keyResults?: string[]; // Key results for detail page (separate from homepage stats)
+  highlights?: ProjectHighlight[]; // Project highlights in the numbered format
 }
 
 export const projects: Project[] = [
@@ -95,6 +105,15 @@ export const projects: Project[] = [
     timeline: "December 2021 to April 2022",
     role: "UX/UI designer designing an app for The National Forest Foundation from conception to delivery.",
     stats: ["60% increase in donations", "45% improved user engagement"],
+    highlights: [
+      {
+        title: "Research & Process",
+        sections: {
+          "The Method": "User Interviews",
+        },
+        image: "/images/projects/the-national-forest-foundation/old-version.png",
+      },
+    ],
     research: {
       method: "User Interviews",
       oldVersion: "/images/projects/the-national-forest-foundation/old-version.png",
@@ -194,6 +213,15 @@ export const projects: Project[] = [
     tags: ["Design System", "Branding"],
     timeline: "July 2022 - Feb 2023",
     role: "Worked closely with Ubisoft & Battleye to acquire assets, implement new changes/updates and more. As well as leading the creation of a dashboard system used to enhance gameplay for users. This was an extremely user experience-dependent product with a large number of users depending on the website & dashboard daily. This project was seen as a leader for cheater detection and the go to statistics/leaderboard website.",
+    highlights: [
+      {
+        title: "Research & Process",
+        sections: {
+          "The Method": "As always, user research and feedback was a driving force behind decisions on the product. Feedback was collected from multiple channels including feedback through our website, discord and reddit communities. A majority of additional features added to the product were due to discovery through countless hours of the QA team surfacing user issues and needs, passing them off to myself and another designer which gave us a solid starting point to conduct user interviews. Multiple rounds of user interviews were conducted every other month and before a major release to ensure the product was always meeting the needs of users.",
+        },
+        image: "/images/projects/tabstats-design-system/old-version.png",
+      },
+    ],
     research: {
       method: "As always, user research and feedback was a driving force behind decisions on the product. Feedback was collected from multiple channels including feedback through our website, discord and reddit communities. A majority of additional features added to the product were due to discovery through countless hours of the QA team surfacing user issues and needs, passing them off to myself and another designer which gave us a solid starting point to conduct user interviews. Multiple rounds of user interviews were conducted every other month and before a major release to ensure the product was always meeting the needs of users.",
       oldVersion: "/images/projects/tabstats-design-system/old-version.png",
@@ -237,6 +265,16 @@ export const projects: Project[] = [
     tags: ["Gaming", "App"],
     timeline: "Jul 2023 - Feb 2024",
     role: "Led the full product design of a native mobile application for iOS and Android. Over 35 screens designed with a design system and full documentation.",
+    highlights: [
+      {
+        title: "Research & Process",
+        sections: {
+          "The Challenge": "The Addicting Games website served as our only limited mobile solution, not providing a native experience. With over 1 million monthly active users, the current mobile solution was not satisfactory.",
+          "The Method": "With the addictinggames.com website having over 1 million monthly active users, there was a large amount of data to access and users to gather data from.",
+        },
+        image: "/images/projects/addicting-games-mobile/old-version.png",
+      },
+    ],
     research: {
       method: "With the addictinggames.com website having over 1 million monthly active users, there was a large amount of data to access and users to gather data from.",
       oldVersion: "/images/projects/addicting-games-mobile/old-version.png",
@@ -260,6 +298,22 @@ export const projects: Project[] = [
     tags: ["Concept", "Mobile"],
     timeline: "October 2021 to February 2022",
     role: "Conducting interviews, paper and digital wireframing, low and high-fidelity prototyping, conducting usability studies, accounting for accessibility, and iterating on designs.",
+    highlights: [
+      {
+        title: "Project Goals",
+        sections: {
+          "The Challenge": "The existing Steam mobile app didn't feel native and had a clunky overall feel, creating a suboptimal user experience for mobile gamers.",
+        },
+      },
+      {
+        title: "Research & Process",
+        subtitle: "Research & Process",
+        sections: {
+          "The Method": "With COVID making in-person user interviews near impossible, I had the idea to test the ability to conduct the interviews on my Meta Quest 2. This research was done in a specific way so I suggest checking out my full breakdown on this method on medium. To give a brief synopsis, VRchat was utilized as well as a world called \"No Time Two Talk\" where you're matched with people based on a few checkboxes you selected to mark your interests. The world then matches you with people who chose similar categories. This made finding participants for my study much easier. People were surprisingly open to answering questions and having the ability to not only hear the inflection in their voice but also see their body movements like hand gestures made it much easier to determine how strongly a person felt about a particular question. After two quick pre-qualifier questions, I ended up conducting a total of 30 interviews.",
+        },
+        image: "/images/projects/steam-mobile-app-redesign/old-version.png",
+      },
+    ],
     goals: [
       "Doesn't feel native",
       "Clunky feel overall",
@@ -316,6 +370,14 @@ export const projects: Project[] = [
     tags: ["Streaming", "UI"],
     timeline: "Feb 2023 - Nov 2023",
     role: "Lead product designer focused on enhancing the \"Escape From Tarkov\" gameplay experience.",
+    highlights: [
+      {
+        title: "Project Overview",
+        sections: {
+          "The Challenge": "Passion project built with previous members from the Tabstats team after it was acquired. This product was built from the ground up for the video game \"Escape From Tarkov\" for in and out-of-game use, alleviating redundant tasks and improving overall accessibility for new and veteran players.",
+        },
+      },
+    ],
     images: [
       "/images/projects/overlayed/escape_from_tarkov_wallpaper_2560jpg.png",
       "/images/projects/overlayed/overlayed_picpng.png",
@@ -351,6 +413,16 @@ export const projects: Project[] = [
     tags: ["EdTech", "Web"],
     timeline: "Oct 2023 - Mar 2024",
     role: "Lead product designer for the gamification of student learning for grades K-12",
+    highlights: [
+      {
+        title: "Research & Process",
+        sections: {
+          "The Challenge": "Teachers and parents have reached out saying their students/children are logging in just to play the games they like with no real direction on the platform.",
+          "The Method": "A clear need for a more guided approach for the platform was the correct approach. Students need to feel self-driven in or out of a classroom setting but have fun doing it with the games they know and love on MathGames.",
+        },
+        image: "/images/projects/mathgames/old-version.png",
+      },
+    ],
     research: {
       method: "A clear need for a more guided approach for the platform was the correct approach. Students need to feel self-driven in or out of a classroom setting but have fun doing it with the games they know and love on MathGames.",
       oldVersion: "/images/projects/mathgames/old-version.png",
@@ -373,6 +445,16 @@ export const projects: Project[] = [
     tags: ["B2B", "Web"],
     timeline: "Jul 2023 - Oct 2023",
     role: "Led the full product design of a new onboarding method to facilitate developer's game management and new developer onboarding.",
+    highlights: [
+      {
+        title: "Research & Process",
+        sections: {
+          "The Challenge": "This project stemmed from the feedback of developers and a lack of quality submissions that led to long QA times for submitted games to the Addicting Games website.",
+          "The Method": "Developers currently working with Addicting Games and new developers have reached out with requests on how to add new games, submit updates or remove games entirely.",
+        },
+        image: "/images/projects/addicting-games-dev-portal/old-version.png",
+      },
+    ],
     research: {
       method: "Developers currently working with Addicting Games and new developers have reached out with requests on how to add new games, submit updates or remove games entirely.",
       oldVersion: "/images/projects/addicting-games-dev-portal/old-version.png",
@@ -416,6 +498,14 @@ export const projects: Project[] = [
     description: "",
     image: "/images/portfolio/lcs-web-app-2022.jpg",
     tags: ["League of Legends", "Web"],
+    highlights: [
+      {
+        title: "Project Overview",
+        sections: {
+          "The Project": "LCS Web App design for League of Legends esports.",
+        },
+      },
+    ],
     images: [
       "/images/projects/lcs-web-app-2022/lcsredesignjpg.png",
     ],
@@ -428,6 +518,14 @@ export const projects: Project[] = [
     description: "",
     image: "/images/portfolio/valorant-dashboard.jpg",
     tags: ["Gaming", "UI"],
+    highlights: [
+      {
+        title: "Project Overview",
+        sections: {
+          "The Project": "Valorant Dashboard Concept design.",
+        },
+      },
+    ],
     images: [
       "/images/projects/valorant-dashboard/valorant-dashbaordjpg.png",
     ],
@@ -440,6 +538,14 @@ export const projects: Project[] = [
     description: "",
     image: "/images/portfolio/enthusiast-gaming.png",
     tags: ["Marketing", "Graphic Design"],
+    highlights: [
+      {
+        title: "Project Overview",
+        sections: {
+          "The Project": "Ad graphic creation for Enthusiast Gaming marketing campaigns.",
+        },
+      },
+    ],
     images: [
       "/images/projects/enthusiast-gaming/christopher-farrugia-2yqtqbqzdro-unsplashjpg.png",
       "/images/projects/enthusiast-gaming/tng_playerasset_week8_9x16-arizonapng.png",
@@ -467,6 +573,14 @@ export const projects: Project[] = [
     description: "",
     image: "/images/portfolio/rocket-stream-concept.jpg",
     tags: ["Streaming", "UI"],
+    highlights: [
+      {
+        title: "Project Overview",
+        sections: {
+          "The Project": "Rocket Stream Dashboard Concept design for streaming platforms.",
+        },
+      },
+    ],
     images: [
       "/images/projects/rocket-stream-concept/stream-dashboardjpg.png",
       "/images/projects/rocket-stream-concept/stream-learningjpg.png",
@@ -482,6 +596,15 @@ export const projects: Project[] = [
     image: "/images/portfolio/ableton-learning-platform.jpg",
     tags: ["Audio", "Education"],
     timeline: "October 2021 to February 2022",
+    highlights: [
+      {
+        title: "Research & Process",
+        sections: {
+          "The Method": "Typically among polls and surveys conducted within producer groups, Ableton ends up being the most popular DAW mentioned and voted on.",
+        },
+        image: "/images/projects/ableton-learning-platform/old-version.png",
+      },
+    ],
     research: {
       method: "Typically among polls and surveys conducted within producer groups, Ableton ends up being the most popular DAW mentioned and voted on.",
       oldVersion: "/images/projects/ableton-learning-platform/old-version.png",
@@ -505,6 +628,14 @@ export const projects: Project[] = [
     description: "",
     image: "/images/portfolio/amazon-luna-concept.png",
     tags: ["Cloud Gaming", "UI"],
+    highlights: [
+      {
+        title: "Project Overview",
+        sections: {
+          "The Project": "Amazon Luna Homepage Redesign concept for cloud gaming platform.",
+        },
+      },
+    ],
     images: [
       "/images/projects/amazon-luna-concept/amazonlunaconceptpcpng.png",
     ],
@@ -518,6 +649,15 @@ export const projects: Project[] = [
     image: "/images/portfolio/hertz-car-rental.jpg",
     tags: ["Travel", "UI"],
     role: "The ultimate goal is to lower website bounce rates and increase conversions.",
+    highlights: [
+      {
+        title: "Project Goals",
+        sections: {
+          "The Goal": "The ultimate goal is to lower website bounce rates and increase conversions.",
+          "The Process": "Map out the current online rental process and identify potential drop-off areas. Produce lo-fi design wireframes while incorporating the optimizations found during the research phase. Utilize lo-fi wireframes as talking points for user interviews. Produce hi-fi design mockups to allow the highest level of visual prototyping and production.",
+        },
+      },
+    ],
     goals: [
       "The ultimate goal is to lower website bounce rates and increase conversions.",
       "Map out the current online rental process and identify potential drop-off areas.",
@@ -544,6 +684,16 @@ export const projects: Project[] = [
     tags: ["Health", "Mobile"],
     timeline: "December 2021 to February 2022",
     role: "UX designer leading the app and responsive website design from conception to delivery.",
+    highlights: [
+      {
+        title: "Research & Process",
+        sections: {
+          "The Challenge": "Aidium is a responsive website, mobile, and tablet app that helps users learn first-aid.",
+          "The Method": "There's a significant amount of data available on the topic of first aid and common deaths around the world, including statistics that go in depth on how first aid skills can help save lives in a large portion of those situations.",
+        },
+        image: "/images/projects/aidium-first-aid/old-version.png",
+      },
+    ],
     goals: [
       "Do you feel confident in emergency situations?",
       "Do you feel properly trained to handle someone choking?",
@@ -575,6 +725,14 @@ export const projects: Project[] = [
     description: "",
     image: "/images/portfolio/chat-application.png",
     tags: ["Social", "UI"],
+    highlights: [
+      {
+        title: "Project Overview",
+        sections: {
+          "The Project": "Chat Application concept design.",
+        },
+      },
+    ],
     images: [
       "/images/projects/chat-application/chat-conceptpng.png",
     ],
@@ -587,6 +745,14 @@ export const projects: Project[] = [
     description: "",
     image: "/images/portfolio/paypal-redesign.jpg",
     tags: ["Fintech", "Dark Mode"],
+    highlights: [
+      {
+        title: "Project Overview",
+        sections: {
+          "The Project": "PayPal Redesign Concept with dark mode support.",
+        },
+      },
+    ],
     images: [
       "/images/projects/paypal-redesign/paypal-darkljpg.png",
       "/images/projects/paypal-redesign/paypal-lightjpg.png",
@@ -600,6 +766,14 @@ export const projects: Project[] = [
     description: "",
     image: "/images/portfolio/nft-concept-site.jpg",
     tags: ["Web3", "UI"],
+    highlights: [
+      {
+        title: "Project Overview",
+        sections: {
+          "The Project": "NFT Concept Site design for Web3 platform.",
+        },
+      },
+    ],
     images: [
       "/images/projects/nft-concept-site/nftconceptpcpng.png",
     ],
@@ -612,6 +786,14 @@ export const projects: Project[] = [
     description: "",
     image: "/images/portfolio/cloud-mining-concept.png",
     tags: ["Crypto", "UI"],
+    highlights: [
+      {
+        title: "Project Overview",
+        sections: {
+          "The Project": "Cloud Mining Concept design for cryptocurrency platform.",
+        },
+      },
+    ],
     images: [
       "/images/projects/cloud-mining-concept/cloudminingconceptpcpng.png",
     ],
@@ -624,6 +806,14 @@ export const projects: Project[] = [
     description: "Digital art and illustrations including 3D work.",
     image: "/images/portfolio/other-digital-art.jpg",
     tags: ["Illustration", "3D"],
+    highlights: [
+      {
+        title: "Project Overview",
+        sections: {
+          "The Project": "Digital art and illustrations including 3D work.",
+        },
+      },
+    ],
     featured: false,
   },
 ];

@@ -147,13 +147,57 @@ export default function ProjectPage({
           )}
 
           {/* Project Highlights */}
-          {(project.goals || project.research) && (
+          {(project.highlights || project.goals || project.research) && (
             <ScrollAnimation direction="up" delay={0.4}>
               <div className="mb-10">
                 <h2 className="text-2xl md:text-3xl font-black text-white mb-12">Project Highlights</h2>
                 
-                {/* Tab System for tabstats-dashboard */}
-                {project.id === "tabstats-dashboard" ? (
+                {/* Highlights format (for projects with highlights array) */}
+                {project.highlights && project.highlights.length > 0 ? (
+                  <div className="space-y-12">
+                    {project.highlights.map((highlight, index) => (
+                      <div key={index} className="border border-gray-700/50 rounded-[10px] bg-[#FFFFFF]/5 p-6 md:p-8">
+                        <div className="flex items-start gap-4 mb-6">
+                          <span className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center text-white font-black text-sm flex-shrink-0">
+                            {index + 1}
+                          </span>
+                          <div className="flex-1">
+                            {highlight.subtitle && (
+                              <h3 className="text-xl md:text-2xl font-black text-white mb-2">{highlight.subtitle}</h3>
+                            )}
+                            {highlight.title && (
+                              <h4 className="text-lg md:text-xl font-semibold text-gray-300">{highlight.title}</h4>
+                            )}
+                          </div>
+                        </div>
+                        {highlight.sections && (
+                          <div className="space-y-6">
+                            {Object.entries(highlight.sections).map(([sectionTitle, sectionContent]) => (
+                              <div key={sectionTitle}>
+                                <h4 className="text-lg md:text-xl font-bold text-white mb-3">{sectionTitle}</h4>
+                                <p className="text-gray-300 text-lg font-light leading-relaxed">{sectionContent}</p>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                        {highlight.image && (
+                          <div 
+                            className="relative w-full aspect-video rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity mt-6"
+                            onClick={() => openLightbox([highlight.image!], 0)}
+                          >
+                            <Image
+                              src={highlight.image}
+                              alt={highlight.subtitle || highlight.title || `Highlight ${index + 1}`}
+                              fill
+                              className="object-contain"
+                            />
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                ) : project.id === "tabstats-dashboard" ? (
+                  /* Tab System for tabstats-dashboard */
                   <>
                     {/* Tab Navigation */}
                     {/* Mobile: Vertical stacked tabs */}
@@ -330,7 +374,7 @@ export default function ProjectPage({
                     </div>
                   </>
                 ) : (
-                  /* Default layout for other projects */
+                  /* Default layout for other projects (fallback for projects without highlights) */
                   <div className="space-y-8">
                     {/* Goals */}
                     {project.goals && project.goals.length > 0 && (
