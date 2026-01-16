@@ -176,6 +176,19 @@ export default function ProjectPage({
                               <div key={sectionTitle}>
                                 <h4 className="text-lg md:text-xl font-bold text-white mb-3">{sectionTitle}</h4>
                                 <p className="text-gray-300 text-lg font-light leading-relaxed">{sectionContent}</p>
+                                {project.id === "ableton-learning-platform" && sectionTitle === "The Method" && (
+                                  <div 
+                                    className="relative w-full aspect-video rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity mt-6"
+                                    onClick={() => openLightbox(["/images/projects/ableton-learning-platform/screens-compare2jpg.jpg"], 0)}
+                                  >
+                                    <Image
+                                      src="/images/projects/ableton-learning-platform/screens-compare2jpg.jpg"
+                                      alt="Screens Comparison"
+                                      fill
+                                      className="object-contain"
+                                    />
+                                  </div>
+                                )}
                               </div>
                             ))}
                           </div>
