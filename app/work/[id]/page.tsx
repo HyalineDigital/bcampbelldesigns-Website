@@ -173,7 +173,7 @@ export default function ProjectPage({
                           </div>
                           {/* Special layout for addicting-games-mobile Research & Process */}
                           {project.id === "addicting-games-mobile" && highlight.title === "Research & Process" ? (
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                            <div className="grid grid-cols-1 md:grid-cols-[1.25fr_1fr] gap-3 md:gap-4">
                               {/* Image on the left */}
                               {highlight.image && (
                                 <div 
