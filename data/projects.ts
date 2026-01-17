@@ -158,10 +158,11 @@ const projectsRaw: Project[] = [
   },
   {
     id: "addicting-games-mobile",
-    title: "Mobile Application Design",
+    title: "Addicting Games Mobile App",
     category: "Mobile Application",
     description: "In the current state, the Addicting Games website served as our only limited mobile solution, albeit not providing a native experience. With over 1 million monthly active users, the current mobile solution was not satisfactory and led to a lot of unwanted experiences. The ideal state envisioned a mobile solution that enhances discoverability, ensuring user engagement and fostering a high retention rate. Addicting Games possess a massive library of 1000+ games; however, users encountered difficulty in finding games aligning with their preferences or those similar to their favorites.",
     image: "/images/projects/addicting-games-mobile/ag-project-header.png",
+    homepageImage: "/images/projects/addicting-games-mobile/ag-card-cover.png",
     tags: ["Gaming", "App"],
     timeline: "Jul 2023 - Feb 2024",
     role: "Led the full product design of a native mobile application for iOS and Android. Over 35 screens designed with a design system and full documentation.",
