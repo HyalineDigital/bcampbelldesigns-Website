@@ -156,53 +156,103 @@ export default function ProjectPage({
                 {project.highlights && project.highlights.length > 0 ? (
                   <div className="space-y-12">
                     {project.highlights.map((highlight, index) => (
-                      <div key={index} className="border border-gray-700/50 rounded-[10px] bg-[#FFFFFF]/5 p-6 md:p-8">
-                        <div className="flex items-start gap-4 mb-6">
-                          <span className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center text-white font-black text-sm flex-shrink-0">
-                            {index + 1}
-                          </span>
-                          <div className="flex-1">
-                            {highlight.subtitle && (
-                              <h3 className="text-xl md:text-2xl font-black text-white mb-2">{highlight.subtitle}</h3>
-                            )}
-                            {highlight.title && (
-                              <h4 className="text-lg md:text-xl font-semibold text-gray-300">{highlight.title}</h4>
-                            )}
+                      <div key={index}>
+                        <div className="border border-gray-700/50 rounded-[10px] bg-[#FFFFFF]/5 p-6 md:p-8">
+                          <div className="flex items-start gap-4 mb-6">
+                            <span className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center text-white font-black text-sm flex-shrink-0">
+                              {index + 1}
+                            </span>
+                            <div className="flex-1">
+                              {highlight.subtitle && (
+                                <h3 className="text-xl md:text-2xl font-black text-white mb-2">{highlight.subtitle}</h3>
+                              )}
+                              {highlight.title && (
+                                <h4 className="text-lg md:text-xl font-semibold text-gray-300">{highlight.title}</h4>
+                              )}
+                            </div>
                           </div>
+                          {/* Special layout for addicting-games-mobile Research & Process */}
+                          {project.id === "addicting-games-mobile" && highlight.title === "Research & Process" ? (
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                              {/* Image on the left */}
+                              {highlight.image && (
+                                <div 
+                                  className="relative w-full aspect-video rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity"
+                                  onClick={() => openLightbox([highlight.image!], 0)}
+                                >
+                                  <Image
+                                    src={highlight.image}
+                                    alt={highlight.subtitle || highlight.title || `Highlight ${index + 1}`}
+                                    fill
+                                    className="object-contain"
+                                  />
+                                </div>
+                              )}
+                              {/* Text on the right */}
+                              {highlight.sections && (
+                                <div className="space-y-6">
+                                  {Object.entries(highlight.sections).map(([sectionTitle, sectionContent]) => (
+                                    <div key={sectionTitle}>
+                                      <h4 className="text-lg md:text-xl font-bold text-white mb-3">{sectionTitle}</h4>
+                                      <p className="text-gray-300 text-lg font-light leading-relaxed">{sectionContent}</p>
+                                    </div>
+                                  ))}
+                                </div>
+                              )}
+                            </div>
+                          ) : (
+                            <>
+                              {highlight.sections && (
+                                <div className="space-y-6">
+                                  {Object.entries(highlight.sections).map(([sectionTitle, sectionContent]) => (
+                                    <div key={sectionTitle}>
+                                      <h4 className="text-lg md:text-xl font-bold text-white mb-3">{sectionTitle}</h4>
+                                      <p className="text-gray-300 text-lg font-light leading-relaxed">{sectionContent}</p>
+                                      {project.id === "ableton-learning-platform" && sectionTitle === "The Method" && (
+                                        <div 
+                                          className="relative w-full aspect-video rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity mt-6"
+                                          onClick={() => openLightbox(["/images/projects/ableton-learning-platform/screens-compare2jpg.jpg"], 0)}
+                                        >
+                                          <Image
+                                            src="/images/projects/ableton-learning-platform/screens-compare2jpg.jpg"
+                                            alt="Screens Comparison"
+                                            fill
+                                            className="object-contain"
+                                          />
+                                        </div>
+                                      )}
+                                    </div>
+                                  ))}
+                                </div>
+                              )}
+                              {highlight.image && (
+                                <div 
+                                  className="relative w-full aspect-video rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity mt-6"
+                                  onClick={() => openLightbox([highlight.image!], 0)}
+                                >
+                                  <Image
+                                    src={highlight.image}
+                                    alt={highlight.subtitle || highlight.title || `Highlight ${index + 1}`}
+                                    fill
+                                    className="object-contain"
+                                  />
+                                </div>
+                              )}
+                            </>
+                          )}
                         </div>
-                        {highlight.sections && (
-                          <div className="space-y-6">
-                            {Object.entries(highlight.sections).map(([sectionTitle, sectionContent]) => (
-                              <div key={sectionTitle}>
-                                <h4 className="text-lg md:text-xl font-bold text-white mb-3">{sectionTitle}</h4>
-                                <p className="text-gray-300 text-lg font-light leading-relaxed">{sectionContent}</p>
-                                {project.id === "ableton-learning-platform" && sectionTitle === "The Method" && (
-                                  <div 
-                                    className="relative w-full aspect-video rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity mt-6"
-                                    onClick={() => openLightbox(["/images/projects/ableton-learning-platform/screens-compare2jpg.jpg"], 0)}
-                                  >
-                                    <Image
-                                      src="/images/projects/ableton-learning-platform/screens-compare2jpg.jpg"
-                                      alt="Screens Comparison"
-                                      fill
-                                      className="object-contain"
-                                    />
-                                  </div>
-                                )}
-                              </div>
-                            ))}
-                          </div>
-                        )}
-                        {highlight.image && (
+                        {/* Full-width mockup image below Research & Process for addicting-games-mobile */}
+                        {project.id === "addicting-games-mobile" && highlight.title === "Research & Process" && (
                           <div 
-                            className="relative w-full aspect-video rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity mt-6"
-                            onClick={() => openLightbox([highlight.image!], 0)}
+                            className="relative w-full rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity mt-6"
+                            onClick={() => openLightbox(["/images/projects/addicting-games-mobile/mockup-finished_agpng.png"], 0)}
                           >
                             <Image
-                              src={highlight.image}
-                              alt={highlight.subtitle || highlight.title || `Highlight ${index + 1}`}
-                              fill
-                              className="object-contain"
+                              src="/images/projects/addicting-games-mobile/mockup-finished_agpng.png"
+                              alt="Mockup Finished"
+                              width={1920}
+                              height={1080}
+                              className="w-full h-auto"
                             />
                           </div>
                         )}
