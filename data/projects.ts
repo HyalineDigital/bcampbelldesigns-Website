@@ -548,6 +548,23 @@ function getLatestYear(timeline?: string): number {
 
 // Sort projects by date (most recent first)
 const projects = [...projectsRaw].sort((a, b) => {
+  // Fixed order: caesars-palace-online-casino first, icyveins second, tabstats-dashboard third
+  if (a.id === "caesars-palace-online-casino") return -1;
+  if (b.id === "caesars-palace-online-casino") return 1;
+  if (a.id === "icyveins") return -1;
+  if (b.id === "icyveins") return 1;
+  if (a.id === "tabstats-dashboard") {
+    // Check if b is caesars or icyveins (should be handled above, but double check)
+    if (b.id === "caesars-palace-online-casino" || b.id === "icyveins") return 1;
+    return -1; // tabstats-dashboard should be third, so it comes before all others
+  }
+  if (b.id === "tabstats-dashboard") {
+    // Check if a is caesars or icyveins (should be handled above, but double check)
+    if (a.id === "caesars-palace-online-casino" || a.id === "icyveins") return -1;
+    return 1; // tabstats-dashboard should be third, so others come after it
+  }
+  
+  // For all other projects, sort by date
   const yearA = getLatestYear(a.timeline);
   const yearB = getLatestYear(b.timeline);
   if (yearB !== yearA) return yearB - yearA; // Descending by year
