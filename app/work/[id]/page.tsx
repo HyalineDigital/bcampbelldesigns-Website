@@ -10,7 +10,7 @@ import ScrollAnimation from "@/components/ScrollAnimation";
 import { motion } from "framer-motion";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import ImageLightbox from "@/components/ImageLightbox";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function ProjectPage({
   params,
@@ -29,8 +29,13 @@ export default function ProjectPage({
   // Filter out header image from images array to avoid duplication
   const displayImages = project.images?.filter(img => img !== headerImage) || [];
   
-  // Tab state (for tabstats-dashboard)
+  // Tab state (for tabstats-dashboard and addicting-games-mobile)
   const [activeTab, setActiveTab] = useState(0);
+  
+  // Reset tab when project changes
+  useEffect(() => {
+    setActiveTab(0);
+  }, [id]);
   
   // Lightbox state
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -175,6 +180,34 @@ export default function ProjectPage({
                           {project.id === "addicting-games-mobile" && highlight.title === "Research & Process" ? (
                             <div className="grid grid-cols-1 md:grid-cols-[1.25fr_1fr] gap-3 md:gap-4">
                               {/* Image on the left */}
+                              {highlight.image && (
+                                <div 
+                                  className="relative w-full aspect-video rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity"
+                                  onClick={() => openLightbox([highlight.image!], 0)}
+                                >
+                                  <Image
+                                    src={highlight.image}
+                                    alt={highlight.subtitle || highlight.title || `Highlight ${index + 1}`}
+                                    fill
+                                    className="object-contain"
+                                  />
+                                </div>
+                              )}
+                              {/* Text on the right */}
+                              {highlight.sections && (
+                                <div className="space-y-6">
+                                  {Object.entries(highlight.sections).map(([sectionTitle, sectionContent]) => (
+                                    <div key={sectionTitle}>
+                                      <h4 className="text-lg md:text-xl font-bold text-white mb-3">{sectionTitle}</h4>
+                                      <p className="text-gray-300 text-lg font-light leading-relaxed">{sectionContent}</p>
+                                    </div>
+                                  ))}
+                                </div>
+                              )}
+                            </div>
+                          ) : project.id === "mathgames" && highlight.title === "Research & Process" ? (
+                            <div className="grid grid-cols-1 md:grid-cols-[1.5625fr_1fr] gap-3 md:gap-4">
+                              {/* Image on the left - 25% larger */}
                               {highlight.image && (
                                 <div 
                                   className="relative w-full aspect-video rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity"
@@ -430,6 +463,151 @@ export default function ProjectPage({
                                 fill
                                 className="object-contain"
                               />
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </div>
+                  </>
+                ) : project.id === "addicting-games-mobile" ? (
+                  /* Tab System for addicting-games-mobile */
+                  <>
+                    {/* Tab Navigation */}
+                    {/* Mobile: Vertical stacked tabs */}
+                    <div className="flex flex-col md:hidden gap-2 mb-4">
+                      {[
+                        "Project Overview & Goals",
+                        "User Research + Data Analysis",
+                        "Solution",
+                      ].map((title, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setActiveTab(index)}
+                          className={`relative w-full flex items-center gap-3 text-sm font-medium px-4 py-3 rounded-lg transition-all border ${
+                            activeTab === index
+                              ? "text-white bg-[#FFFFFF]/10 border-gray-300/20"
+                              : "text-gray-400 border-gray-700/50 hover:text-white hover:bg-[#FFFFFF]/5"
+                          }`}
+                        >
+                          <span className="w-6 h-6 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center text-white font-black text-xs flex-shrink-0">
+                            {index + 1}
+                          </span>
+                          <span className="text-left flex-1">{title}</span>
+                        </button>
+                      ))}
+                    </div>
+                    
+                    {/* Desktop: Horizontal tabs */}
+                    <div className="hidden md:flex flex-wrap gap-0 mb-0 border-b border-gray-700/50">
+                      {[
+                        "Project Overview & Goals",
+                        "User Research + Data Analysis",
+                        "Solution",
+                      ].map((title, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setActiveTab(index)}
+                          className={`relative inline-flex items-center gap-2 text-base font-medium px-6 py-3 rounded-t-[10px] transition-all border-t border-l border-r ${
+                            index === 0 ? "rounded-tl-[10px]" : ""
+                          } ${
+                            activeTab === index
+                              ? "text-white bg-[#FFFFFF]/10 border-gray-300/20 border-b-0 -mb-px"
+                              : "text-gray-400 border-transparent hover:text-white hover:bg-[#FFFFFF]/5"
+                          }`}
+                        >
+                          <span className="flex items-center gap-2">
+                            <span className="w-6 h-6 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center text-white font-black text-xs">
+                              {index + 1}
+                            </span>
+                            {title}
+                          </span>
+                        </button>
+                      ))}
+                    </div>
+
+                    {/* Tab Content */}
+                    <div className="min-h-[400px] border border-gray-700/50 md:border-t-0 rounded-lg md:rounded-b-[10px] bg-[#FFFFFF]/5 p-4 md:p-6">
+                      {activeTab === 0 && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <div className="space-y-6">
+                            <div>
+                              <h4 className="text-lg md:text-xl font-bold text-white mb-3">Project Overview</h4>
+                              <p className="text-gray-300 text-lg font-light leading-relaxed mb-4">
+                                In the current state, the Addicting Games website served as our only limited mobile solution, albeit not providing a native experience. With over 1 million monthly active users, the current mobile solution was not satisfactory and led to a lot of unwanted experiences.
+                              </p>
+                              <p className="text-gray-300 text-lg font-light leading-relaxed">
+                                The ideal state envisioned a mobile solution that enhances discoverability, ensuring user engagement and fostering a high retention rate. Addicting Games possess a massive library of 1000+ games; however, users encountered difficulty in finding games aligning with their preferences or those similar to their favorites.
+                              </p>
+                            </div>
+                            <div>
+                              <h4 className="text-lg md:text-xl font-bold text-white mb-3">My Role</h4>
+                              <p className="text-gray-300 text-lg font-light leading-relaxed">
+                                {project.role}
+                              </p>
+                            </div>
+                            {project.goals && project.goals.length > 0 && (
+                              <div>
+                                <h4 className="text-lg md:text-xl font-bold text-white mb-3">Goals</h4>
+                                <ul className="space-y-3">
+                                  {project.goals.map((goal, index) => (
+                                    <li key={index} className="flex items-start gap-3">
+                                      <span className="text-white mt-1 text-xl">•</span>
+                                      <span className="text-gray-300 text-lg font-light leading-relaxed">{goal}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            )}
+                          </div>
+                        </motion.div>
+                      )}
+                      {activeTab === 1 && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <div className="space-y-6">
+                            <div>
+                              <h4 className="text-lg md:text-xl font-bold text-white mb-3">User Research + Data Analysis</h4>
+                              <p className="text-gray-300 text-lg font-light leading-relaxed">
+                                {project.research?.method}
+                              </p>
+                            </div>
+                            {project.research?.oldVersion && (
+                              <div 
+                                className="relative w-full aspect-video rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity mt-6"
+                                onClick={() => openLightbox([project.research.oldVersion!], 0)}
+                              >
+                                <Image
+                                  src={project.research.oldVersion}
+                                  alt="Previous version"
+                                  fill
+                                  className="object-contain"
+                                />
+                              </div>
+                            )}
+                          </div>
+                        </motion.div>
+                      )}
+                      {activeTab === 2 && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <div className="space-y-6">
+                            <div>
+                              <h4 className="text-lg md:text-xl font-bold text-white mb-3">Solution</h4>
+                              {project.keyResults && project.keyResults.length > 0 && (
+                                <p className="text-gray-300 text-lg font-light leading-relaxed">
+                                  {project.keyResults[0]}
+                                </p>
+                              )}
                             </div>
                           </div>
                         </motion.div>
