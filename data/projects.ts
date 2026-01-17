@@ -32,6 +32,7 @@ export interface Project {
   stats?: string[]; // Project stats/metrics for homepage cards (e.g., "50% improved conversions")
   keyResults?: string[]; // Key results for detail page (separate from homepage stats)
   keyFeatures?: string[]; // Key features broken down into individual items
+  storytellingGamification?: { storytelling: string; scaffoldedLearning: string };
   highlights?: ProjectHighlight[]; // Project highlights in the numbered format
 }
 
@@ -200,7 +201,6 @@ const projectsRaw: Project[] = [
       "*The company was sold and the app is currently not on the app store as of Apr 20th 2024 due to it not being maintained and the app falling out of the app stores guidelines, this is supposed to be reuploaded later in 2024",
     ],
     images: [
-      "/images/projects/addicting-games-mobile/chalkboardjpg.png",
       "/images/projects/addicting-games-mobile/style_ag_app-1png.png",
       "/images/projects/addicting-games-mobile/components_ag_app-1png.png",
       "/images/projects/addicting-games-mobile/mobile_application_map1png.png",
@@ -327,11 +327,32 @@ const projectsRaw: Project[] = [
     id: "mathgames",
     title: "Product: Gamified Learning",
     category: "Product: Gamified Learning",
-    description: "Teachers and parents have reached out saying their students/children are logging in just to play the games they like with no real direction on the platform. This was further reinforced through research via Google Analytics page session duration, page views and other data. Shortly after data analysis was completed, one on one teacher interviews were conducted to find the correct direction.",
+    description: "Teachers and parents have reached out saying their students/children are logging in just to play the games they like with no real direction on the platform. This was further reinforced through research via Google Analytics page session duration, page views and other data. Shortly after data analysis was completed, one on one teacher interviews were conducted to find the correct direction. A clear need for a more guided approach for the platform was the correct approach. Students need to feel self-driven in or out of a classroom setting but have fun doing it with the games they know and love on MathGames.",
     image: "/images/portfolio/mathgames.png",
     tags: ["EdTech", "Web"],
     timeline: "Oct 2023 - Mar 2024",
     role: "Lead product designer for the gamification of student learning for grades K-12",
+    goals: [
+      "Utilize Current Assets - Leverage the current collection of games that are already on Mathgames in a new and creative way",
+      "Guide Students - Create a way to keep students on track and feeling rewarded to keep learning",
+      "Timeframe Considerations - Keep overall development and product design time low while adding the most value for a quick launch",
+      "Drive Subscriptions - Create incentive for new schools / teachers and parents to sign up for the platform",
+      "Storytelling & Gamification - Use storytelling and scaffolded learning strategies to deliver content effectively",
+    ],
+    storytellingGamification: {
+      storytelling: "The brain processes stories more effectively than it does a string of facts. For this reason, storytelling is a fantastic way of delivering new information to students. Gameification greatly benefits from using this strategy, as games can often include elements such as background, characters, plot twists, and more.",
+      scaffoldedLearning: "Scaffolding is breaking up the learning into chunks and providing a tool, or structure, with each chunk. By breaking the game boards down into multiple levels of subject matter and difficulty, we can adopt this model into the board to help the student and teacher better pinpoint potential trouble areas they may need further help with.",
+    },
+    keyFeatures: [
+      "Multiple boards will be created by using premade 64px by 64px assets, all placed in a flexible grid system to ease development time and allow the creation of multiple boards to be generated quickly",
+      "15 assessment checkpoints will be the default per game board, each grade or standard will have a different set amount and can be manually adjusted by the teacher as well on an individual student level",
+      "Each space on the board must be completed before moving forward, this makes it so the student can't jump around to activities they find easy and are more focused on a set path, not only on the map but in the curriculum as well",
+      "Board spaces require a certain percentage of correct answers to receive stars and move on to the next section of the map",
+      "Student rewards and positive reinforcement will be accomplished by awarding the student with stars from each objective spot that can be spent in the game shop to buy new skins/avatars to be used on the game board",
+    ],
+    keyResults: [
+      "The implementation of this solution showed higher retention of students and an increase of teachers being onboarded throughout multiple school districts in the USA",
+    ],
     highlights: [
       {
         title: "Research & Process",
