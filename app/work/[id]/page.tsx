@@ -138,21 +138,53 @@ export default function ProjectPage({
           </ScrollAnimation>
 
           {/* Overview */}
-          {(project.description || project.role) && (
+          {(project.description || project.role || (project.id === "overlayed" && (project.overviewParagraphs?.length || project.goals?.length))) && (
             <ScrollAnimation direction="up" delay={0.3}>
               <div className="mb-10">
-                <div>
-                  <h2 className="text-2xl md:text-3xl font-black text-white mb-6">Overview</h2>
+                <h2 className="text-2xl md:text-3xl font-black text-white mb-6">Overview</h2>
+                {project.id === "overlayed" && (project.overviewParagraphs?.length || project.role || project.goals?.length) ? (
+                  <div className="space-y-6">
+                    {project.overviewParagraphs && project.overviewParagraphs.length > 0 && (
+                      <div>
+                        <h4 className="text-lg md:text-xl font-bold text-white mb-3">Project Overview</h4>
+                        {project.overviewParagraphs.map((p, i) => (
+                          <p key={i} className="text-gray-300 text-lg md:text-xl font-light leading-relaxed mb-4 last:mb-0">
+                            {p}
+                          </p>
+                        ))}
+                      </div>
+                    )}
+                    {project.role && (
+                      <div>
+                        <h4 className="text-lg md:text-xl font-bold text-white mb-3">My role</h4>
+                        <p className="text-gray-300 text-lg md:text-xl font-light leading-relaxed">{project.role}</p>
+                      </div>
+                    )}
+                    {project.goals && project.goals.length > 0 && (
+                      <div>
+                        <h4 className="text-lg md:text-xl font-bold text-white mb-3">Goals</h4>
+                        <ul className="space-y-3">
+                          {project.goals.map((goal, i) => (
+                            <li key={i} className="flex items-start gap-3">
+                              <span className="text-white mt-1 text-xl">•</span>
+                              <span className="text-gray-300 text-lg font-light leading-relaxed">{goal}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                ) : (
                   <p className="text-gray-300 text-lg md:text-xl font-light leading-relaxed">
                     {project.description || project.role}
                   </p>
-                </div>
+                )}
               </div>
             </ScrollAnimation>
           )}
 
           {/* Project Highlights */}
-          {(project.highlights || project.goals || project.research) && (
+          {(project.highlights || project.goals || project.research) && project.id !== "overlayed" && (
             <ScrollAnimation direction="up" delay={0.4}>
               <div className="mb-10">
                 <h2 className="text-2xl md:text-3xl font-black text-white mb-12">Project Highlights</h2>
@@ -1303,30 +1335,72 @@ export default function ProjectPage({
           {/* Additional Images */}
           {displayImages.length > 0 && project.id !== "icyveins" && project.id !== "tabstats-dashboard" && (
             <div className="mb-12">
-              <div className={["valorant-dashboard", "lcs-web-app-2022", "amazon-luna-concept", "cloud-mining-concept", "nft-concept-site", "paypal-redesign", "chat-application", "rocket-stream-concept"].includes(project.id) ? "grid grid-cols-1 gap-6" : "grid grid-cols-1 md:grid-cols-2 gap-6"}>
-                {displayImages.map((image, index) => {
-                  const imageIndexInAll = headerImage ? index + 1 : index;
-                  return (
-                    <ScrollAnimation
-                      key={index}
-                      direction="up"
-                      delay={0.8 + index * 0.1}
+              {project.id === "overlayed" && displayImages.length > 0 ? (
+                <>
+                  <ScrollAnimation direction="up" delay={0.8}>
+                    <div
+                      className="relative w-full aspect-video rounded-2xl overflow-hidden cursor-pointer hover:opacity-90 transition-opacity mb-6"
+                      onClick={() => openLightbox(allImages, headerImage ? 1 : 0)}
                     >
-                      <div 
-                        className="relative w-full aspect-video rounded-2xl overflow-hidden cursor-pointer hover:opacity-90 transition-opacity"
-                        onClick={() => openLightbox(allImages, imageIndexInAll)}
+                      <Image
+                        src={displayImages[0]}
+                        alt={`${project.title} - Image 1`}
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                  </ScrollAnimation>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {displayImages.slice(1).map((image, index) => {
+                      const imageIndexInAll = headerImage ? index + 2 : index + 1;
+                      return (
+                        <ScrollAnimation
+                          key={index}
+                          direction="up"
+                          delay={0.8 + (index + 1) * 0.1}
+                        >
+                          <div
+                            className="relative w-full aspect-video rounded-2xl overflow-hidden cursor-pointer hover:opacity-90 transition-opacity"
+                            onClick={() => openLightbox(allImages, imageIndexInAll)}
+                          >
+                            <Image
+                              src={image}
+                              alt={`${project.title} - Image ${index + 2}`}
+                              fill
+                              className="object-contain"
+                            />
+                          </div>
+                        </ScrollAnimation>
+                      );
+                    })}
+                  </div>
+                </>
+              ) : (
+                <div className={["valorant-dashboard", "lcs-web-app-2022", "amazon-luna-concept", "cloud-mining-concept", "nft-concept-site", "paypal-redesign", "chat-application", "rocket-stream-concept"].includes(project.id) ? "grid grid-cols-1 gap-6" : "grid grid-cols-1 md:grid-cols-2 gap-6"}>
+                  {displayImages.map((image, index) => {
+                    const imageIndexInAll = headerImage ? index + 1 : index;
+                    return (
+                      <ScrollAnimation
+                        key={index}
+                        direction="up"
+                        delay={0.8 + index * 0.1}
                       >
-                        <Image
-                          src={image}
-                          alt={`${project.title} - Image ${index + 1}`}
-                          fill
-                          className="object-contain"
-                        />
-                      </div>
-                    </ScrollAnimation>
-                  );
-                })}
-              </div>
+                        <div
+                          className="relative w-full aspect-video rounded-2xl overflow-hidden cursor-pointer hover:opacity-90 transition-opacity"
+                          onClick={() => openLightbox(allImages, imageIndexInAll)}
+                        >
+                          <Image
+                            src={image}
+                            alt={`${project.title} - Image ${index + 1}`}
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
+                      </ScrollAnimation>
+                    );
+                  })}
+                </div>
+              )}
             </div>
           )}
 

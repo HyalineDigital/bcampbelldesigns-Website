@@ -33,6 +33,7 @@ export interface Project {
   keyResults?: string[]; // Key results for detail page (separate from homepage stats)
   keyFeatures?: string[]; // Key features broken down into individual items
   storytellingGamification?: { storytelling: string; scaffoldedLearning: string };
+  overviewParagraphs?: string[]; // Project overview as separate paragraphs (e.g. for overlayed)
   highlights?: ProjectHighlight[]; // Project highlights in the numbered format
 }
 
@@ -289,19 +290,19 @@ const projectsRaw: Project[] = [
     tags: ["Streaming", "UI"],
     timeline: "Feb 2023 - Nov 2023",
     role: "Lead product designer focused on enhancing the \"Escape From Tarkov\" gameplay experience.",
-    highlights: [
-      {
-        title: "Project Overview",
-        sections: {
-          "The Challenge": "Passion project built with previous members from the Tabstats team after it was acquired. This product was built from the ground up for the video game \"Escape From Tarkov\" for in and out-of-game use, alleviating redundant tasks and improving overall accessibility for new and veteran players.",
-        },
-      },
+    overviewParagraphs: [
+      "Passion project built with previous members from the Tabstats team after it was acquired. This product was built from the ground up for the video game \"Escape From Tarkov\" for in and out-of-game use, alleviating redundant tasks and improving overall accessibility for new and veteran players.",
+      "This project expands upon my work previously done for Tabstats as we were expanding into Tarkov previously. Project details are limited due to the project being potentially integrated with Battleye Anti-Cheat and Battlestate Games.",
     ],
+    goals: [
+      "Lightweight Application - Create a lightweight and feature-rich application that doesn't impede gameplay but helps newcomers and veteran players alike",
+      "Gameplay Improvements - Help uncover previously unknown gameplay statistics and help players improve by giving them deep insight into their gameplay",
+      "Future Proof - Ensure the application can be easily expanded upon with new features as well as accommodate changes the Tarkov team pushed",
+    ],
+    highlights: [],
     images: [
-      "/images/projects/overlayed/escape_from_tarkov_wallpaper_2560jpg.png",
-      "/images/projects/overlayed/overlayed_picpng.png",
-      "/images/projects/overlayed/notifications-ingame-toprightpng.png",
       "/images/projects/overlayed/homepagepng.png",
+      "/images/projects/overlayed/notifications-ingame-toprightpng.png",
       "/images/projects/overlayed/keyspng.png",
       "/images/projects/overlayed/mapspng.png",
       "/images/projects/overlayed/weapontypepng.png",
@@ -325,7 +326,7 @@ const projectsRaw: Project[] = [
   },
   {
     id: "mathgames",
-    title: "Product: Gamified Learning",
+    title: "Math Games Gamified Learning",
     category: "Product: Gamified Learning",
     description: "Teachers and parents have reached out saying their students/children are logging in just to play the games they like with no real direction on the platform. This was further reinforced through research via Google Analytics page session duration, page views and other data. Shortly after data analysis was completed, one on one teacher interviews were conducted to find the correct direction. A clear need for a more guided approach for the platform was the correct approach. Students need to feel self-driven in or out of a classroom setting but have fun doing it with the games they know and love on MathGames.",
     image: "/images/portfolio/mathgames.png",
