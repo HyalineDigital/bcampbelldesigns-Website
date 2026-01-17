@@ -21,6 +21,7 @@ export interface Project {
     repo?: string;
   };
   featured?: boolean; // For homepage grid
+  hidden?: boolean; // Hide project from display (for temporary hiding)
   tags?: string[]; // Project tags
   timeline?: string; // Project timeline
   role?: string; // Role/contribution description
@@ -34,6 +35,25 @@ export interface Project {
   keyFeatures?: string[]; // Key features broken down into individual items
   storytellingGamification?: { storytelling: string; scaffoldedLearning: string };
   overviewParagraphs?: string[]; // Project overview as separate paragraphs (e.g. for overlayed)
+  problemStatement?: { paragraph1: string; paragraph2: string };
+  solution?: string;
+  userResearchOverview?: string;
+  painPoints?: string[];
+  designProcess?: {
+    informationArchitecture?: string;
+    digitalWireframes?: string;
+    lowFidelityPrototype?: string;
+    mockups?: string;
+    highFidelityPrototype?: string;
+  };
+  usabilityFindings?: {
+    round1?: string[];
+    round2?: string[];
+  };
+  takeaways?: {
+    impact?: string;
+    nextSteps?: string[];
+  };
   highlights?: ProjectHighlight[]; // Project highlights in the numbered format
 }
 
@@ -212,6 +232,7 @@ const projectsRaw: Project[] = [
     id: "steam-mobile-app-redesign",
     title: "Steam Mobile Redesign Concept",
     category: "Case Study",
+    hidden: true,
     description: "Steam is a video game digital distribution service and storefront by Valve. It was launched as a standalone software client in September 2003 as a way for Valve to provide automatic updates for their games, and expanded to distributing and offering third-party game publishers' titles.",
     image: "/images/portfolio/steam-mobile-app-redesign.jpg",
     tags: ["Concept", "Mobile"],
@@ -451,27 +472,53 @@ const projectsRaw: Project[] = [
     image: "/images/portfolio/ableton-learning-platform.jpg",
     tags: ["Audio", "Education"],
     timeline: "October 2021 to February 2022",
-    highlights: [
-      {
-        title: "Research & Process",
-        sections: {
-          "The Method": "Typically among polls and surveys conducted within producer groups, Ableton ends up being the most popular DAW mentioned and voted on.",
-        },
-        image: "/images/projects/ableton-learning-platform/old-version.png",
-      },
+    problemStatement: {
+      paragraph1: "Ableton is one of the most used DAW's (Digital Audio Workstation) for music producers of all skill levels. Ableton currently has in-person certified training as well as masterclass trainers that can help a new user pick up Ableton but this is formal training and not practical or accessible for everyone who wants to learn Ableton.",
+      paragraph2: "Currently, there is no independent learning platform specifically for music production on Ableton that can accommodate all types of learning in the user's free time. All certified training currently requires in-person lessons and not all schedules can match up with these classes.",
+    },
+    solution: "Create a dedicated program and mobile app that allow users to have a practical and accessible way to access lessons from certified Ableton masterclass trainers across any device on their own time.",
+    userResearchOverview: "Typically among polls and surveys conducted within producer groups, Ableton ends up being the most popular DAW mentioned and voted on. 71% of Ableton Live users are considered amateur. (https://github.com/smadgerano/DAW-Usage-2020) As a producer myself, I know that a lot of producer Discord communities exist and are a great place to easily find potential users for interviews. I went through and narrowed my research to three Discord communities, reached out to the admins, and confirmed that I was able to conduct the interviews. I then posted in the general channel asking if any users would like to participate. I received a lot of replies pretty quickly saying that they were open to helping out. I ended up narrowing my research group down to 28 amateur and mid-level producers who I scheduled out over a week. I asked them the following questions: How long have you been producing music? How long have you been using Ableton? How do you learn new production techniques? Do you always feel confident in the information you're getting from tutorials? Have you ever been mentored by another producer? Have you ever paid for production lessons?",
+    painPoints: [
+      "Time Constraints - For most, producing is a hobby, self taught and is done in their free time. In-person learning is not practical or considered \"normal\" within producer circles",
+      "Finding Valid Information - Currently, it's very difficult to find information that is not contradicting and many participants noted that they don't feel confident in random online tutorials",
+      "Finding Mentors - Many participants answered that they had paid for mentoring at one point however, finding reliable mentors online is very difficult. Many particpants cited being scammed or not feeling like they were being taught new/helpful information",
     ],
+    designProcess: {
+      informationArchitecture: "Upon review of the data collected, potential pages and user flow were outlined to help understand what pages need to be wireframed.",
+      digitalWireframes: "With industry research and user interviews conducted, I began to produce wireframes for a learning platform that could potentially help alleviate the pain points identified.",
+      lowFidelityPrototype: "Using the completed set of digital wireframes, I created a low-fidelity prototype. I built out a portion of the primary user flow, so I could use the prototype in a usability study. The participants for this test were the same group that was interviewed and 12 more for an even 40.",
+      mockups: "After the first round of user testing, the high-fidelity mockup was made. Filters were edited to focus more on a visual format, allowing users to visually filter lessons quickly when looking at search results or course content. The ability to download lessons files was added to the lesson section so that users can download related files/projects quickly. More visual indicators were added to the navigation sidebar, like the highlighting of the icon to show what section of the site the user is on. The ability to favorite lessons was added below the video player with the ability to also filter for favorites in the main search section. Upcoming time and lesson part breakdown was added to the course content section to show upcoming lessons in the course.",
+      highFidelityPrototype: "A high-fidelity prototype was created for both PC and mobile to do a second round of usability testing. 20 of the previous participants were asked to conduct this usability test along with 20 new participants. Users were tasked with going through the explore page, course lessons, and search/filters.",
+    },
+    usabilityFindings: {
+      round1: [
+        "Filters with colors and identifiers",
+        "Ability to download lesson files directly on the lesson",
+        "Ability to favorite lessons to quickly view them",
+      ],
+      round2: [
+        "Users wanted the ability to customize their lesson home screen",
+        "Added ability to search directly in the lesson view",
+      ],
+    },
+    takeaways: {
+      impact: "The Ableton learning platform focuses on being the main platform for users to find lessons and learn Ableton in their free time. With a go-to learning platform, users will be able to feel confident in the information they're receiving and won't have to feel worried they may potentially get scammed by people offering mentoring. The potential to turn this into a new revenue stream for Ableton and its certified instructors is very possible. Ableton could even bundle in a free 30-day trial to help users see the potential of the platform and help them learn after they purchase Ableton.",
+      nextSteps: [
+        "Reach out to educators and master class course instructors to get insights on the functionality from the educators perspective",
+        "Allow further customization in the app with the ability to move around courses in the course view",
+        "Implement more grouping methods as the app expands with more lessons",
+        "Conduct further research to see where users may be dropping off in the user flow and what causes them to not continue subscriptions",
+      ],
+    },
+    highlights: [],
     research: {
       method: "Typically among polls and surveys conducted within producer groups, Ableton ends up being the most popular DAW mentioned and voted on.",
       oldVersion: "/images/projects/ableton-learning-platform/old-version.png",
     },
     images: [
-      "/images/projects/ableton-learning-platform/pexels-tstudio-7173392jpg.jpg",
-      "/images/projects/ableton-learning-platform/pexels-expect-best-351265jpg.jpg",
       "/images/projects/ableton-learning-platform/abletonlearningpng.png",
       "/images/projects/ableton-learning-platform/wireframepng.png",
-      "/images/projects/ableton-learning-platform/pexels-everson-mayer-1481309jpg.jpg",
       "/images/projects/ableton-learning-platform/ableton-mobilespng.png",
-      "/images/projects/ableton-learning-platform/producerjpg.jpg",
     ],
     featured: false,
   },
@@ -492,6 +539,7 @@ const projectsRaw: Project[] = [
     id: "hertz-car-rental",
     title: "Hertz Car Rental - Vehicle Price Comparison",
     category: "Concept",
+    hidden: true,
     description: "",
     image: "/images/portfolio/hertz-car-rental.jpg",
     tags: ["Travel", "UI"],
@@ -585,8 +633,8 @@ function getLatestYear(timeline?: string): number {
   return Math.max(...years.map((y) => parseInt(y)));
 }
 
-// Sort projects by date (most recent first)
-const projects = [...projectsRaw].sort((a, b) => {
+// Sort projects by date (most recent first) and filter out hidden projects
+const projects = [...projectsRaw].filter(p => !p.hidden).sort((a, b) => {
   // Fixed order: caesars-palace-online-casino first, icyveins second, tabstats-dashboard third
   if (a.id === "caesars-palace-online-casino") return -1;
   if (b.id === "caesars-palace-online-casino") return 1;

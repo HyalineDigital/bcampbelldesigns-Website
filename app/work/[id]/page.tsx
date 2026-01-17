@@ -29,7 +29,7 @@ export default function ProjectPage({
   // Filter out header image from images array to avoid duplication
   const displayImages = project.images?.filter(img => img !== headerImage) || [];
   
-  // Tab state (for tabstats-dashboard, addicting-games-mobile and mathgames)
+  // Tab state (for tabstats-dashboard, addicting-games-mobile, mathgames and ableton-learning-platform)
   const [activeTab, setActiveTab] = useState(0);
   
   // Reset tab when project changes
@@ -732,6 +732,185 @@ export default function ProjectPage({
                                 </div>
                               )}
                             </div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </div>
+                  </>
+                ) : project.id === "ableton-learning-platform" ? (
+                  <>
+                    <div className="flex flex-col md:hidden gap-2 mb-4">
+                      {["Project Overview & Solution", "User Research & Findings", "Design Process & Takeaways"].map((title, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setActiveTab(index)}
+                          className={`relative w-full flex items-center gap-3 text-sm font-medium px-4 py-3 rounded-lg transition-all border ${
+                            activeTab === index
+                              ? "text-white bg-[#FFFFFF]/10 border-gray-300/20"
+                              : "text-gray-400 border-gray-700/50 hover:text-white hover:bg-[#FFFFFF]/5"
+                          }`}
+                        >
+                          <span className="w-6 h-6 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center text-white font-black text-xs flex-shrink-0">
+                            {index + 1}
+                          </span>
+                          <span className="text-left flex-1">{title}</span>
+                        </button>
+                      ))}
+                    </div>
+                    <div className="hidden md:flex flex-wrap gap-0 mb-0 border-b border-gray-700/50">
+                      {["Project Overview & Solution", "User Research & Findings", "Design Process & Takeaways"].map((title, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setActiveTab(index)}
+                          className={`relative inline-flex items-center gap-2 text-base font-medium px-6 py-3 rounded-t-[10px] transition-all border-t border-l border-r ${
+                            index === 0 ? "rounded-tl-[10px]" : ""
+                          } ${
+                            activeTab === index
+                              ? "text-white bg-[#FFFFFF]/10 border-gray-300/20 border-b-0 -mb-px"
+                              : "text-gray-400 border-transparent hover:text-white hover:bg-[#FFFFFF]/5"
+                          }`}
+                        >
+                          <span className="flex items-center gap-2">
+                            <span className="w-6 h-6 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center text-white font-black text-xs">
+                              {index + 1}
+                            </span>
+                            {title}
+                          </span>
+                        </button>
+                      ))}
+                    </div>
+                    <div className="min-h-[400px] border border-gray-700/50 md:border-t-0 rounded-lg md:rounded-b-[10px] bg-[#FFFFFF]/5 p-4 md:p-6">
+                      {activeTab === 0 && (
+                        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
+                          <div className="space-y-6">
+                            <div>
+                              <h4 className="text-lg md:text-xl font-bold text-white mb-3">Project Overview</h4>
+                              <p className="text-gray-300 text-lg font-light leading-relaxed">{project.description}</p>
+                            </div>
+                            {project.problemStatement && (
+                              <div>
+                                <h4 className="text-lg md:text-xl font-bold text-white mb-3">Problem Statement</h4>
+                                <p className="text-gray-300 text-lg font-light leading-relaxed mb-4">{project.problemStatement.paragraph1}</p>
+                                <p className="text-gray-300 text-lg font-light leading-relaxed">{project.problemStatement.paragraph2}</p>
+                              </div>
+                            )}
+                            {project.solution && (
+                              <div>
+                                <h4 className="text-lg md:text-xl font-bold text-white mb-3">Solution</h4>
+                                <p className="text-gray-300 text-lg font-light leading-relaxed">{project.solution}</p>
+                              </div>
+                            )}
+                          </div>
+                        </motion.div>
+                      )}
+                      {activeTab === 1 && (
+                        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
+                          <div className="space-y-6">
+                            {project.userResearchOverview && (
+                              <div>
+                                <h4 className="text-lg md:text-xl font-bold text-white mb-3">User Research: Overview</h4>
+                                <p className="text-gray-300 text-lg font-light leading-relaxed">{project.userResearchOverview}</p>
+                              </div>
+                            )}
+                            {project.painPoints && project.painPoints.length > 0 && (
+                              <div>
+                                <h4 className="text-lg md:text-xl font-bold text-white mb-3">Identifying Pain Points</h4>
+                                <ul className="space-y-3">
+                                  {project.painPoints.map((point, index) => (
+                                    <li key={index} className="flex items-start gap-3">
+                                      <span className="text-white mt-1 text-xl">•</span>
+                                      <span className="text-gray-300 text-lg font-light leading-relaxed">{point}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            )}
+                          </div>
+                        </motion.div>
+                      )}
+                      {activeTab === 2 && (
+                        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
+                          <div className="space-y-6">
+                            {project.designProcess?.informationArchitecture && (
+                              <div>
+                                <h4 className="text-lg md:text-xl font-bold text-white mb-3">Information Architecture</h4>
+                                <p className="text-gray-300 text-lg font-light leading-relaxed">{project.designProcess.informationArchitecture}</p>
+                              </div>
+                            )}
+                            {project.designProcess?.digitalWireframes && (
+                              <div>
+                                <h4 className="text-lg md:text-xl font-bold text-white mb-3">Digital Wireframes</h4>
+                                <p className="text-gray-300 text-lg font-light leading-relaxed">{project.designProcess.digitalWireframes}</p>
+                              </div>
+                            )}
+                            {project.designProcess?.lowFidelityPrototype && (
+                              <div>
+                                <h4 className="text-lg md:text-xl font-bold text-white mb-3">Low-fidelity prototype</h4>
+                                <p className="text-gray-300 text-lg font-light leading-relaxed">{project.designProcess.lowFidelityPrototype}</p>
+                              </div>
+                            )}
+                            {project.usabilityFindings?.round1 && project.usabilityFindings.round1.length > 0 && (
+                              <div>
+                                <h4 className="text-lg md:text-xl font-bold text-white mb-3">Usability Testing Findings - Round 1</h4>
+                                <ul className="space-y-3">
+                                  {project.usabilityFindings.round1.map((finding, index) => (
+                                    <li key={index} className="flex items-start gap-3">
+                                      <span className="text-white mt-1 text-xl">•</span>
+                                      <span className="text-gray-300 text-lg font-light leading-relaxed">{finding}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            )}
+                            {project.designProcess?.mockups && (
+                              <div>
+                                <h4 className="text-lg md:text-xl font-bold text-white mb-3">Mockups</h4>
+                                <p className="text-gray-300 text-lg font-light leading-relaxed">{project.designProcess.mockups}</p>
+                              </div>
+                            )}
+                            {project.designProcess?.highFidelityPrototype && (
+                              <div>
+                                <h4 className="text-lg md:text-xl font-bold text-white mb-3">High-fidelity Prototype</h4>
+                                <p className="text-gray-300 text-lg font-light leading-relaxed">{project.designProcess.highFidelityPrototype}</p>
+                              </div>
+                            )}
+                            {project.usabilityFindings?.round2 && project.usabilityFindings.round2.length > 0 && (
+                              <div>
+                                <h4 className="text-lg md:text-xl font-bold text-white mb-3">Usability Testing Findings - Round 2</h4>
+                                <ul className="space-y-3">
+                                  {project.usabilityFindings.round2.map((finding, index) => (
+                                    <li key={index} className="flex items-start gap-3">
+                                      <span className="text-white mt-1 text-xl">•</span>
+                                      <span className="text-gray-300 text-lg font-light leading-relaxed">{finding}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            )}
+                            {project.takeaways && (
+                              <div className="mt-6 pt-6 border-t border-gray-700/50">
+                                <h4 className="text-lg md:text-xl font-bold text-white mb-3">Takeaways</h4>
+                                {project.takeaways.impact && (
+                                  <div className="mb-4">
+                                    <h5 className="text-base md:text-lg font-semibold text-white mb-2">Impact & Revenue Opportunities</h5>
+                                    <p className="text-gray-300 text-lg font-light leading-relaxed">{project.takeaways.impact}</p>
+                                  </div>
+                                )}
+                                {project.takeaways.nextSteps && project.takeaways.nextSteps.length > 0 && (
+                                  <div>
+                                    <h5 className="text-base md:text-lg font-semibold text-white mb-2">Next Steps</h5>
+                                    <ul className="space-y-2">
+                                      {project.takeaways.nextSteps.map((step, index) => (
+                                        <li key={index} className="flex items-start gap-3">
+                                          <span className="text-white mt-1 text-xl">•</span>
+                                          <span className="text-gray-300 text-lg font-light leading-relaxed">{step}</span>
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  </div>
+                                )}
+                              </div>
+                            )}
                           </div>
                         </motion.div>
                       )}
