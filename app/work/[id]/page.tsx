@@ -157,8 +157,411 @@ export default function ProjectPage({
               <div className="mb-10">
                 <h2 className="text-2xl md:text-3xl font-black text-white mb-12">Project Highlights</h2>
                 
-                {/* Highlights format (for projects with highlights array) */}
-                {project.highlights && project.highlights.length > 0 ? (
+                {/* Check for tab systems first */}
+                {project.id === "addicting-games-mobile" ? (
+                  /* Tab System for addicting-games-mobile */
+                  <>
+                    {/* Tab Navigation */}
+                    {/* Mobile: Vertical stacked tabs */}
+                    <div className="flex flex-col md:hidden gap-2 mb-4">
+                      {[
+                        "Project Overview & Goals",
+                        "User Research + Data Analysis",
+                        "Solution",
+                      ].map((title, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setActiveTab(index)}
+                          className={`relative w-full flex items-center gap-3 text-sm font-medium px-4 py-3 rounded-lg transition-all border ${
+                            activeTab === index
+                              ? "text-white bg-[#FFFFFF]/10 border-gray-300/20"
+                              : "text-gray-400 border-gray-700/50 hover:text-white hover:bg-[#FFFFFF]/5"
+                          }`}
+                        >
+                          <span className="w-6 h-6 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center text-white font-black text-xs flex-shrink-0">
+                            {index + 1}
+                          </span>
+                          <span className="text-left flex-1">{title}</span>
+                        </button>
+                      ))}
+                    </div>
+                    
+                    {/* Desktop: Horizontal tabs */}
+                    <div className="hidden md:flex flex-wrap gap-0 mb-0 border-b border-gray-700/50">
+                      {[
+                        "Project Overview & Goals",
+                        "User Research + Data Analysis",
+                        "Solution",
+                      ].map((title, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setActiveTab(index)}
+                          className={`relative inline-flex items-center gap-2 text-base font-medium px-6 py-3 rounded-t-[10px] transition-all border-t border-l border-r ${
+                            index === 0 ? "rounded-tl-[10px]" : ""
+                          } ${
+                            activeTab === index
+                              ? "text-white bg-[#FFFFFF]/10 border-gray-300/20 border-b-0 -mb-px"
+                              : "text-gray-400 border-transparent hover:text-white hover:bg-[#FFFFFF]/5"
+                          }`}
+                        >
+                          <span className="flex items-center gap-2">
+                            <span className="w-6 h-6 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center text-white font-black text-xs">
+                              {index + 1}
+                            </span>
+                            {title}
+                          </span>
+                        </button>
+                      ))}
+                    </div>
+
+                    {/* Tab Content */}
+                    <div className="min-h-[400px] border border-gray-700/50 md:border-t-0 rounded-lg md:rounded-b-[10px] bg-[#FFFFFF]/5 p-4 md:p-6">
+                      {activeTab === 0 && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <div className="space-y-6">
+                            <div>
+                              <h4 className="text-lg md:text-xl font-bold text-white mb-3">Project Overview</h4>
+                              <p className="text-gray-300 text-lg font-light leading-relaxed mb-4">
+                                In the current state, the Addicting Games website served as our only limited mobile solution, albeit not providing a native experience. With over 1 million monthly active users, the current mobile solution was not satisfactory and led to a lot of unwanted experiences.
+                              </p>
+                              <p className="text-gray-300 text-lg font-light leading-relaxed">
+                                The ideal state envisioned a mobile solution that enhances discoverability, ensuring user engagement and fostering a high retention rate. Addicting Games possess a massive library of 1000+ games; however, users encountered difficulty in finding games aligning with their preferences or those similar to their favorites.
+                              </p>
+                            </div>
+                            <div>
+                              <h4 className="text-lg md:text-xl font-bold text-white mb-3">My Role</h4>
+                              <p className="text-gray-300 text-lg font-light leading-relaxed">
+                                {project.role}
+                              </p>
+                            </div>
+                            {project.goals && project.goals.length > 0 && (
+                              <div>
+                                <h4 className="text-lg md:text-xl font-bold text-white mb-3">Goals</h4>
+                                <ul className="space-y-3">
+                                  {project.goals.map((goal, index) => (
+                                    <li key={index} className="flex items-start gap-3">
+                                      <span className="text-white mt-1 text-xl">•</span>
+                                      <span className="text-gray-300 text-lg font-light leading-relaxed">{goal}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            )}
+                          </div>
+                        </motion.div>
+                      )}
+                      {activeTab === 1 && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <div className="space-y-6">
+                            <div>
+                              <h4 className="text-lg md:text-xl font-bold text-white mb-3">User Research + Data Analysis</h4>
+                              <p className="text-gray-300 text-lg font-light leading-relaxed">
+                                {project.research?.method}
+                              </p>
+                            </div>
+                            {project.research?.oldVersion && (
+                              <div 
+                                className="relative w-full aspect-video rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity mt-6"
+                                onClick={() => openLightbox([project.research.oldVersion!], 0)}
+                              >
+                                <Image
+                                  src={project.research.oldVersion}
+                                  alt="Previous version"
+                                  fill
+                                  className="object-contain"
+                                />
+                              </div>
+                            )}
+                            {/* Research & Process Highlight Section */}
+                            {project.highlights && project.highlights.length > 0 && project.highlights[0].title === "Research & Process" && (
+                              <div className="mt-8">
+                                <div className="border border-gray-700/50 rounded-[10px] bg-[#FFFFFF]/5 p-6 md:p-8">
+                                  <div className="flex items-start gap-4 mb-6">
+                                    <span className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center text-white font-black text-sm flex-shrink-0">
+                                      1
+                                    </span>
+                                    <div className="flex-1">
+                                      <h4 className="text-lg md:text-xl font-semibold text-gray-300">Research & Process</h4>
+                                    </div>
+                                  </div>
+                                  <div className="grid grid-cols-1 md:grid-cols-[1.25fr_1fr] gap-3 md:gap-4">
+                                    {project.highlights[0].image && (
+                                      <div 
+                                        className="relative w-full aspect-video rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity"
+                                        onClick={() => openLightbox([project.highlights[0].image!], 0)}
+                                      >
+                                        <Image
+                                          src={project.highlights[0].image}
+                                          alt="Research & Process"
+                                          fill
+                                          className="object-contain"
+                                        />
+                                      </div>
+                                    )}
+                                    {project.highlights[0].sections && (
+                                      <div className="space-y-6">
+                                        {Object.entries(project.highlights[0].sections).map(([sectionTitle, sectionContent]) => (
+                                          <div key={sectionTitle}>
+                                            <h4 className="text-lg md:text-xl font-bold text-white mb-3">{sectionTitle}</h4>
+                                            <p className="text-gray-300 text-lg font-light leading-relaxed">{sectionContent}</p>
+                                          </div>
+                                        ))}
+                                      </div>
+                                    )}
+                                  </div>
+                                </div>
+                                {project.highlights[0].title === "Research & Process" && (
+                                  <div 
+                                    className="relative w-full rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity mt-6"
+                                    onClick={() => openLightbox(["/images/projects/addicting-games-mobile/mockup-finished_agpng.png"], 0)}
+                                  >
+                                    <Image
+                                      src="/images/projects/addicting-games-mobile/mockup-finished_agpng.png"
+                                      alt="Mockup Finished"
+                                      width={1920}
+                                      height={1080}
+                                      className="w-full h-auto"
+                                    />
+                                  </div>
+                                )}
+                                {/* Key Features Section */}
+                                {project.keyFeatures && project.keyFeatures.length > 0 && (
+                                  <div className="mt-8">
+                                    <h4 className="text-lg md:text-xl font-bold text-white mb-4">Key Features</h4>
+                                    <div className="border border-gray-700/50 rounded-[10px] bg-[#FFFFFF]/5 p-6">
+                                      <ul className="space-y-3">
+                                        {project.keyFeatures.map((feature, index) => (
+                                          <li key={index} className="flex items-start gap-3">
+                                            <span className="text-white mt-1 text-xl">•</span>
+                                            <span className="text-gray-300 text-lg font-light leading-relaxed">{feature}</span>
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    </div>
+                                  </div>
+                                )}
+                              </div>
+                            )}
+                          </div>
+                        </motion.div>
+                      )}
+                      {activeTab === 2 && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <div className="space-y-6">
+                            <div>
+                              <h4 className="text-lg md:text-xl font-bold text-white mb-3">Solution</h4>
+                              <p className="text-gray-300 text-lg font-light leading-relaxed mb-6">
+                                The mobile app concept centers around a functionality reminiscent of TikTok or Youtube shorts "feeds," offering a dynamic and swift approach to maintain high user retention and maximize game discoverability within the extensive AG collection.
+                              </p>
+                              {project.keyResults && project.keyResults.length > 0 && (
+                                <div className="mt-6 pt-6 border-t border-gray-700/50">
+                                  <h4 className="text-lg md:text-xl font-bold text-white mb-3">Results</h4>
+                                  <ul className="space-y-3">
+                                    {project.keyResults.map((result, index) => (
+                                      <li key={index} className="flex items-start gap-3">
+                                        <span className="text-white mt-1 text-xl">•</span>
+                                        <span className="text-gray-300 text-lg font-light leading-relaxed">{result}</span>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </div>
+                  </>
+                ) : project.id === "tabstats-dashboard" ? (
+                  /* Tab System for tabstats-dashboard */
+                  <>
+                    {/* Tab Navigation */}
+                    {/* Mobile: Vertical stacked tabs */}
+                    <div className="flex flex-col md:hidden gap-2 mb-4">
+                      {[
+                        "Transitioning from Web to Native Desktop",
+                        "Data-Driven Research & The Scoreboard 2.0",
+                        "Integrity Through Design (Cheater Detection)",
+                      ].map((title, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setActiveTab(index)}
+                          className={`relative w-full flex items-center gap-3 text-sm font-medium px-4 py-3 rounded-lg transition-all border ${
+                            activeTab === index
+                              ? "text-white bg-[#FFFFFF]/10 border-gray-300/20"
+                              : "text-gray-400 border-gray-700/50 hover:text-white hover:bg-[#FFFFFF]/5"
+                          }`}
+                        >
+                          <span className="w-6 h-6 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center text-white font-black text-xs flex-shrink-0">
+                            {index + 1}
+                          </span>
+                          <span className="text-left flex-1">{title}</span>
+                        </button>
+                      ))}
+                    </div>
+                    
+                    {/* Desktop: Horizontal tabs */}
+                    <div className="hidden md:flex flex-wrap gap-0 mb-0 border-b border-gray-700/50">
+                      {[
+                        "Transitioning from Web to Native Desktop",
+                        "Data-Driven Research & The Scoreboard 2.0",
+                        "Integrity Through Design (Cheater Detection)",
+                      ].map((title, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setActiveTab(index)}
+                          className={`relative inline-flex items-center gap-2 text-base font-medium px-6 py-3 rounded-t-[10px] transition-all border-t border-l border-r ${
+                            index === 0 ? "rounded-tl-[10px]" : ""
+                          } ${
+                            activeTab === index
+                              ? "text-white bg-[#FFFFFF]/10 border-gray-300/20 border-b-0 -mb-px"
+                              : "text-gray-400 border-transparent hover:text-white hover:bg-[#FFFFFF]/5"
+                          }`}
+                        >
+                          <span className="flex items-center gap-2">
+                            <span className="w-6 h-6 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center text-white font-black text-xs">
+                              {index + 1}
+                            </span>
+                            {title}
+                          </span>
+                        </button>
+                      ))}
+                    </div>
+
+                    {/* Tab Content */}
+                    <div className="min-h-[400px] border border-gray-700/50 md:border-t-0 rounded-lg md:rounded-b-[10px] bg-[#FFFFFF]/5 p-4 md:p-6">
+                      {activeTab === 0 && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <div className="space-y-6">
+                            <div>
+                              <h4 className="text-lg md:text-xl font-bold text-white mb-3">The Challenge</h4>
+                              <p className="text-gray-300 text-lg font-light leading-relaxed">
+                                Our previous overlay was restricted by the technical limitations of third-party platforms like Overwolf, resulting in a suboptimal user experience.
+                              </p>
+                            </div>
+                            <div>
+                              <h4 className="text-lg md:text-xl font-bold text-white mb-3">The Mission</h4>
+                              <p className="text-gray-300 text-lg font-light leading-relaxed">
+                                Architect a future-proof, lightweight native application that provided a feature-rich experience without impeding the frame-rate or system performance of a high-intensity tactical shooter.
+                              </p>
+                            </div>
+                            <div>
+                              <h4 className="text-lg md:text-xl font-bold text-white mb-3">The Design</h4>
+                              <p className="text-gray-300 text-lg font-light leading-relaxed">
+                                I focused on a modular UI that could be easily expanded to accommodate the game's frequent seasonal updates and evolving meta
+                              </p>
+                            </div>
+                            <div 
+                              className="relative w-full aspect-video rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity mt-6"
+                              onClick={() => openLightbox(["/images/projects/tabstats-dashboard/searchresultspng.png"], 0)}
+                            >
+                              <Image
+                                src="/images/projects/tabstats-dashboard/searchresultspng.png"
+                                alt="Search Results"
+                                fill
+                                className="object-contain"
+                              />
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+                      {activeTab === 1 && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <div className="space-y-6">
+                            <div>
+                              <h4 className="text-lg md:text-xl font-bold text-white mb-3">The Research</h4>
+                              <p className="text-gray-300 text-lg font-light leading-relaxed">
+                                I led a multi-channel research initiative, sifting through thousands of qualitative data points from Discord, Reddit, and Twitter to identify core player pain points.
+                              </p>
+                            </div>
+                            <div>
+                              <h4 className="text-lg md:text-xl font-bold text-white mb-3">The Discovery</h4>
+                              <p className="text-gray-300 text-lg font-light leading-relaxed">
+                                Competitive players needed more than just a &quot;kill-death ratio.&quot; They required in-match telemetry, specifically detailed damage-taken breakdowns per round to analyze tactical errors.
+                              </p>
+                            </div>
+                            <div>
+                              <h4 className="text-lg md:text-xl font-bold text-white mb-3">The Solution</h4>
+                              <p className="text-gray-300 text-lg font-light leading-relaxed">
+                                Designed a highly detailed, quick-view in-game scoreboard. This acted as a data-heavy replacement for the standard game UI, allowing players to check teammate ranks and past performance without ever tabbing out to a browser.
+                              </p>
+                            </div>
+                            <div 
+                              className="relative w-full aspect-video rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity mt-6"
+                              onClick={() => openLightbox(["/images/projects/tabstats-dashboard/in-game-advancedscoreboardpng.png"], 0)}
+                            >
+                              <Image
+                                src="/images/projects/tabstats-dashboard/in-game-advancedscoreboardpng.png"
+                                alt="In-Game Advanced Scoreboard"
+                                fill
+                                className="object-contain"
+                              />
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+                      {activeTab === 2 && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <div className="space-y-6">
+                            <div>
+                              <h4 className="text-lg md:text-xl font-bold text-white mb-3">The Innovation</h4>
+                              <p className="text-gray-300 text-lg font-light leading-relaxed">
+                                One of the most sought-after features was real-time security alerts.
+                              </p>
+                            </div>
+                            <div>
+                              <h4 className="text-lg md:text-xl font-bold text-white mb-3">The UX</h4>
+                              <p className="text-gray-300 text-lg font-light leading-relaxed">
+                                I designed a low-friction notification system that alerted players if they were currently in a lobby with a cheater, or if a player from a previous match had been flagged.
+                              </p>
+                            </div>
+                            <div>
+                              <h4 className="text-lg md:text-xl font-bold text-white mb-3">The Result</h4>
+                              <p className="text-gray-300 text-lg font-light leading-relaxed">
+                                This system turned Tabstats into an essential &quot;anti-cheat&quot; companion, driving high daily active usage and establishing deep user trust within the competitive community.
+                              </p>
+                            </div>
+                            <div 
+                              className="relative w-full aspect-video rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity mt-6"
+                              onClick={() => openLightbox(["/images/projects/tabstats-dashboard/companionapp-3png.png"], 0)}
+                            >
+                              <Image
+                                src="/images/projects/tabstats-dashboard/companionapp-3png.png"
+                                alt="Companion App"
+                                fill
+                                className="object-contain"
+                              />
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </div>
+                  </>
+                ) : project.highlights && project.highlights.length > 0 ? (
                   <div className="space-y-12">
                     {project.highlights.map((highlight, index) => (
                       <div key={index}>
